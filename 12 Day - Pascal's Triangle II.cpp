@@ -1,5 +1,5 @@
-
-// Time Complexity = o(n), Space Complexity = O(k)
+// 1st Method
+// Time Complexity = O(n), Space Complexity = O(k)
 
 class Solution {
 public:
@@ -14,8 +14,8 @@ public:
 };
 
 
-
-// Time Complexity = O(logn), Space Complexity = O(k)
+// 2nd Method
+// Time Complexity = O(n), Space Complexity = O(k)
 
 class Solution {
 public:
