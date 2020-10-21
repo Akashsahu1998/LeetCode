@@ -1,3 +1,22 @@
+
+// 1st Approach
+
+class Solution {
+public:
+    int maxLengthBetweenEqualCharacters(string str) {
+        int itr, jtr, maxStr = -1;        
+        for(itr = 0; itr < str.size(); itr++){            
+            for(jtr = str.size()-1; str[jtr] != str[itr]; jtr--){}
+            maxStr = max(maxStr, jtr - itr - 1);
+        }
+        return maxStr;
+    }
+};
+
+
+
+// 2nd Approach
+
 class Solution {
 public:
     int maxLengthBetweenEqualCharacters(string str) {
