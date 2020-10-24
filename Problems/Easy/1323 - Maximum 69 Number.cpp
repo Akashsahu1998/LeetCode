@@ -1,5 +1,5 @@
 
-Question) 1323. Maximum 69 Number
+// Question) 1323. Maximum 69 Number
 
 // Implementation
 
