@@ -9,18 +9,7 @@ class Solution {
 public:
     string destCity(vector<vector<string>>& paths) {        
         map<string, int> mp;
-        string str1, str2;
-        str1 = paths[0][0];
-        str2 = paths[0][1];
-        mp[str1] = 0;            
-        mp[str2] = 0;
-
-        for(int itr1 = 1 ; itr1 < paths.size(); itr1++){
-            str1 = paths[itr1][0];
-            str2 = paths[itr1][1];
-            mp[str1] = 0;
-            mp[str2] = 0;                
-        }
+        string str1, str2;       
         
         for(int itr1 = 0 ; itr1 < paths.size(); itr1++){
             str1 = paths[itr1][0];
