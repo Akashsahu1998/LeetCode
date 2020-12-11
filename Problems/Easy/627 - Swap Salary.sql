@@ -1,3 +1,4 @@
+
 // Question) 627. Swap Salary
 
 // SQL Question
@@ -16,4 +17,14 @@ update salary
 set sex = (case when sex = 'm' 
                     then 'f' 
                 else 'm' 
-            end) 
+            end)
+
+
+// 3rd Approach in Oracle/PL/SQL
+
+update salary
+set sex = (case when sex = 'f'
+                    then 'm'
+                else 'f'
+           end)
+
