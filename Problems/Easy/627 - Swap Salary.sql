@@ -8,3 +8,12 @@
 
 update salary
  set sex = if(sex = 'm', 'f', 'm')
+
+
+// 2nd Approach in MySQL
+
+update salary
+set sex = (case when sex = 'm' 
+                    then 'f' 
+                else 'm' 
+            end) 
