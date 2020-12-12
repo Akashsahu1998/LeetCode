@@ -18,3 +18,19 @@ public:
         return result;
     }
 };
+
+
+// 2nd Approach in Java
+
+class Solution {
+    public int[] sumZero(int n) {
+        int[] result = new int[n];
+        int itr = 0;
+        for(int a = -1, b = 1; b <= (n/2); ){
+            result[itr++] = b++;
+            result[itr++] = a--;
+        }
+        if(n % 2 == 1) result[itr] = 0;        
+        return result;
+    }
+}
