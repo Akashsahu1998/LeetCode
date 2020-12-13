@@ -4,7 +4,7 @@
 // Implementation
 
 // 1st Approach in CPP
-// Time Complexity = O(log N), Space Complexity = O(Log N)
+// Time Complexity = O(log N), Space Complexity = O(1)
 
 int numberOfMatches(int n) {
     int cnt = 0; 
@@ -34,7 +34,7 @@ public:
 
 
 // 3rd Approach in Java
-// Time Complexity = O(log N), Space Complexity = O(Log N)
+// Time Complexity = O(log N), Space Complexity = O(1)
 
 class Solution {
     public int numberOfMatches(int n) {
