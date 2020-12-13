@@ -2,10 +2,9 @@
 // Q1.) 1688. Count of Matches in Tournament
 
 // Implementation
-// Time Complexity = O(M * N)
-
 
 // 1st Approach in CPP
+// Time Complexity = O(log N), Space Complexity = O(Log N)
 
 int numberOfMatches(int n) {
     int cnt = 0; 
@@ -24,6 +23,7 @@ int numberOfMatches(int n) {
 
 
 // 2nd Approach in CPP
+// Time Complexity = O(1), Space Complexity = O(1)
 
 class Solution {
 public:
@@ -34,6 +34,7 @@ public:
 
 
 // 3rd Approach in Java
+// Time Complexity = O(log N), Space Complexity = O(Log N)
 
 class Solution {
     public int numberOfMatches(int n) {
@@ -52,4 +53,13 @@ class Solution {
     }
 }
 
+
+// 4th Approach in Java
+// Time Complexity = O(1), Space Complexity = O(1)
+
+class Solution {
+    public int numberOfMatches(int n) {        
+        return (n - 1);
+    }
+}
 
