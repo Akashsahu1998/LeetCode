@@ -5,6 +5,8 @@
 // Time Complexity = O(M * N)
 
 
+// 1st Approach in CPP
+
 int numberOfMatches(int n) {
     int cnt = 0; 
     while(n != 1){
@@ -19,5 +21,15 @@ int numberOfMatches(int n) {
     }
     return cnt;
 }
+
+
+// 2nd Approach in CPP
+
+class Solution {
+public:
+    int numberOfMatches(int n) {
+        return (n - 1);
+    }
+};
 
 
