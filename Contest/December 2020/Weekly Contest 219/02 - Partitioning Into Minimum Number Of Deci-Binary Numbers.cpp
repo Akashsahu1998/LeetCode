@@ -12,3 +12,11 @@ int minPartitions(string n) {
     for(char ch : n) res = max(ch - '0', res);
     return res;
 }
+
+
+// 2nd Approach in CPP
+// Time Complexity = O(N), Space Complexity = O(1)
+
+int minPartitions(string n) {
+    return *max_element(n.begin(), n.end()) - '0';
+}
