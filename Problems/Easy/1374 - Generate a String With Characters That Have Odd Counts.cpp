@@ -20,3 +20,21 @@ string generateTheString(int n) {
     }      
     return str;
 }
+
+
+// 2nd Approach in Java
+// Time Complexity = O(N), Space Complexity = O(N)
+
+public String generateTheString(int n) {
+        String str = "";        
+        if(n % 2 == 0){   // even
+            for(int itr = 0; itr < n-1; itr++) 
+                str += 'a';        
+            str += 'b';
+        }
+        else{
+            for(int itr = 0; itr < n; itr++)
+                str += 'a';
+        }      
+        return str;
+    }
