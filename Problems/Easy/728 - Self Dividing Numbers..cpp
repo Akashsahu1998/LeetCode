@@ -27,3 +27,28 @@ vector<int> selfDividingNumbers(int left, int right) {
     }
     return vect;    
 }
+
+
+// 2nd Approach in Java
+
+public boolean check(int left) {
+    int rem, num = left;
+    while(num != 0){
+        rem = num % 10;
+        if(rem == 0) return false;
+        if(left % rem != 0){
+            return false;                
+        }
+        num /= 10;            
+    }
+    return true;
+}
+
+public List<Integer> selfDividingNumbers(int left, int right) {
+    List<Integer> list=new ArrayList<Integer>();
+    while(left <= right){
+        if(check(left)) list.add(left);
+        left++;
+    }
+    return list;
+}
