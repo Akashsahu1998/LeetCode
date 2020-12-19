@@ -20,7 +20,7 @@ vector<int> finalPrices(vector<int>& prices) {
 }
 
 
-// 1st Approach in C++
+// 2nd Approach in C++
 // Time Complexity = O(N), Space Complexity = O(N)
 
 vector<int> finalPrices(vector<int>& prices) {
@@ -34,3 +34,36 @@ vector<int> finalPrices(vector<int>& prices) {
     }
     return prices;
 }
+
+
+// 3rd Approach in Java
+// Time Complexity = O(N^2), Space Complexity = O(1)
+
+public int[] finalPrices(int[] prices) {
+    for(int itr = 0; itr < prices.length; itr++){
+        for(int jtr = itr+1; jtr < prices.length; jtr++){
+            if(prices[itr] >= prices[jtr]){
+                prices[itr] -= prices[jtr];
+                break;
+            }                    
+        }
+    }
+    return prices;
+}
+
+
+// 4th Approach in Java
+// Time Complexity = O(N), Space Complexity = O(N)
+
+public int[] finalPrices(int[] prices) {
+    Stack<Integer> st = new Stack<Integer>();
+    for(int itr = 0; itr < prices.length; itr++){
+        while((st.size() > 0) && prices[st.peek()] >= prices[itr]){
+            prices[st.peek()] -= prices[itr];
+            st.pop();
+        }
+        st.push(itr);
+    }
+    return prices;
+}
+
