@@ -1,33 +1,35 @@
+
 // Question) 657. Robot Return to Origin
 
 
 // Implementation
 
 // 1st Approach in C++ Using Map
+// Time Complexity = O(N), Space Complexity = O(N)
 
-class Solution {
-public:
-    bool judgeCircle(string moves) {
-        map<char, int> mp;
-        for(int itr = 0; itr < moves.size(); itr++){
-            mp[moves[itr]]++;
-        }
-        
-        if(mp['U'] != 0 && mp['D'] != 0 && mp['L'] != 0 && mp['R'] != 0){
-            if((mp['U'] == mp['D']) && (mp['R'] == mp['L']))
-                return true;    
-            else if((mp['U'] == mp['D']) && (mp['R'] != mp['L'])){
-                return false;                
-            }
-            else if((mp['L'] == mp['R']) && (mp['U'] != mp['D'])){
-                return false;                
-            }            
-        }
-        
-        if((mp['U'] == mp['D']) && (mp['R'] == mp['L']))
-                return true;    
-        else
-            return false;
-                
+bool judgeCircle(string moves) {
+    map<char, int> mp;
+    for(int itr = 0; itr < moves.size(); itr++){
+        mp[moves[itr]]++;
+    }       
+    
+    if((mp['U'] == mp['D']) && (mp['R'] == mp['L']))
+            return true;    
+    else
+        return false;                
+}
+
+
+// 2nd Approach in C++ Wihtout Using Map
+// Time Complexity = O(N), Space Complexity = O(1)
+
+bool judgeCircle(string moves) {
+    int a = 0, b = 0;
+    for(int itr = 0; itr < moves.size(); itr++){
+       if(moves[itr] == 'U') a++; 
+       if(moves[itr] == 'D') a--;
+       if(moves[itr] == 'R') b++;
+       if(moves[itr] == 'L') b--;
     }
-};
+    return (a == 0) && (b == 0);
+}
