@@ -13,3 +13,14 @@ vector<int> runningSum(vector<int>& nums) {
     }
     return nums;
 }
+
+
+// 2nd Approach in Jav
+// Time Complexity = O(N), Space Complexity = O(1)
+
+public int[] runningSum(int[] nums) {
+    for(int itr = 1; itr < nums.length; itr++){
+        nums[itr] += nums[itr-1];
+    }
+    return nums;
+}
