@@ -15,3 +15,16 @@ string defangIPaddr(string address) {
     }            
     return str;
 }
+
+
+// 2ns Approach in Java
+// Time Complexity = O(N), Space Complexity = O(N)
+
+public String defangIPaddr(String address) {
+    String str = "";
+    for(int itr = 0; itr < address.length(); itr++){
+        if(address.charAt(itr) == '.') str += "[.]";                
+        else str += address.charAt(itr);                
+    }            
+    return str;
+}
