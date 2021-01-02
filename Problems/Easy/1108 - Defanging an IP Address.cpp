@@ -17,7 +17,7 @@ string defangIPaddr(string address) {
 }
 
 
-// 2ns Approach in Java
+// 2nd Approach in Java
 // Time Complexity = O(N), Space Complexity = O(N)
 
 public String defangIPaddr(String address) {
