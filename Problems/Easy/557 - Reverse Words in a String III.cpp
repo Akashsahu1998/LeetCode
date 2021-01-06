@@ -5,7 +5,7 @@
 // Implementation
 
 // 1st Approach in C++
-// Time Complexity = O(N), Space Complexity = O(N)
+// Time Complexity = O(N^2), Space Complexity = O(N)
 
 string reverseWords(string s) {
     string str = "";
@@ -25,7 +25,7 @@ string reverseWords(string s) {
 
 
 // 2nd Approach in Java
-// Time Complexity = O(N), Space Complexity = O(N)
+// Time Complexity = O(N^2), Space Complexity = O(N)
 
 public String reverseWords(String s) {
     String str = "";
