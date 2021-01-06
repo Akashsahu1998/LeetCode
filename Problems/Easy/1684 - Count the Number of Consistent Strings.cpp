@@ -5,6 +5,7 @@
 // Implementation
 
 // 1st Approach in C++
+
 int countConsistentStrings(string allowed, vector<string>& words) {
     int count = 0;
     for(int itr = 0; itr < words.size(); itr++){
@@ -31,6 +32,7 @@ int countConsistentStrings(string allowed, vector<string>& words) {
 
 
 // 2nd Approach in C++
+// Optimized Approach
 
 int countConsistentStrings(string allowed, vector<string>& words) {
     int count = 0;
@@ -49,6 +51,31 @@ int countConsistentStrings(string allowed, vector<string>& words) {
             }
         }
         if(flag == 0) count++;
+    }
+    return count;
+}
+
+
+// 3rd Approach in Java
+// Optimized Approach
+
+public int countConsistentStrings(String allowed, String[] words) {
+   int count = 0;
+   int[] arr = new int[26];
+   for(int itr = 0; itr < allowed.length(); itr++){
+        arr[allowed.charAt(itr)-'a']++;
+    }       
+    
+    for(int itr = 0; itr < words.length; itr++){
+        String str = words[itr];            
+        int flag = 0;
+        for(int ktr = 0; ktr < str.length(); ktr++){
+            if(arr[str.charAt(ktr)-'a'] == 0){
+                flag = 1;
+                break;
+            }
+        }
+        if(flag == 0) count++;        
     }
     return count;
 }
