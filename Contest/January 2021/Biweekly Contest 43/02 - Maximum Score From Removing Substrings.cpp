@@ -56,3 +56,59 @@ int maximumGain(string s, int x, int y) {
     }    
     return total;
 }
+
+
+// 2nd Approach in Java
+
+public int maximumGain(String s, int x, int y) {
+    String a = "", b = "";
+    int total = 0;
+    
+    for(int itr = 0; itr < s.length(); itr++){
+        if(s.charAt(itr) != 'a' && s.charAt(itr) != 'b'){
+            if(y >= x) {
+            	int min = Math.min(a.length(), b.length());
+            	total += x * min;
+            }
+            else {
+            	int min = Math.min(a.length(), b.length());
+            	total += y * min;
+            }
+            a = a.substring(0, 0);
+            b = b.substring(0, 0);                
+        }
+        else{
+            if(y >= x){
+                if(s.charAt(itr) == 'a'){
+                    if(b.length() != 0){
+                        total += y;
+                        b = b.substring(0, b.length() - 1);
+                    }
+                    else a += s.charAt(itr);
+                }
+                else b += s.charAt(itr);
+            }
+            else{
+                if(s.charAt(itr) == 'b'){
+                    if(a.length() != 0){
+                        total += x;
+                        a = a.substring(0, a.length() - 1);
+                    }
+                    else b += s.charAt(itr);
+                }
+                else a += s.charAt(itr);
+            }
+        }
+    }
+    if(y >= x) {
+    	int min = Math.min(a.length(), b.length());
+    	total += x * min;
+    }
+    else {
+    	int min = Math.min(a.length(), b.length());
+    	total += y * min;
+    }
+    return total;
+}
+
+
