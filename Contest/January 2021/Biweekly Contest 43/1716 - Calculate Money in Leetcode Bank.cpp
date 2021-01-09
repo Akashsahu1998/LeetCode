@@ -18,3 +18,19 @@ int totalMoney(int n) {
     }
     return money;
 }
+
+
+// 2nd Approach in Java
+// Time Complexity = O(N), Space Complexity = O(1)
+
+public int totalMoney(int n) {
+    int money = 0, mondayMoney = 1, weekMoney = 1;
+    for(int itr = 1; itr <= n; itr++){
+        if(itr % 7 == 0){
+            money += weekMoney;
+            weekMoney = ++mondayMoney;
+        } 
+        else money += weekMoney++;         
+    }
+    return money;
+}
