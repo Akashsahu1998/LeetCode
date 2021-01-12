@@ -34,3 +34,33 @@ vector<int> sortedSquares(vector<int>& nums) {
     }
     return res;
 }
+
+// 3rd Approach in Java
+// Time Complexity = O(N^2), Space Complexity = O(1)
+
+public int[] sortedSquares(int[] nums) {
+    for(int itr = 0; itr < nums.length; itr++){
+        nums[itr] = nums[itr]*nums[itr];
+    }
+    Arrays.sort(nums);
+    return nums;
+}
+
+// 4th Approach in Java
+// Time Complexity = O(N), Space Complexity = O(N)
+
+public int[] sortedSquares(int[] nums) {
+    int[] res = new int[nums.length];
+    int low = 0, high = nums.length-1;
+    for(int itr = nums.length-1; itr > -1; itr--){
+        if(Math.abs(nums[low]) > nums[high]){
+            res[itr] = nums[low]*nums[low];
+            low++;
+        }
+        else{
+            res[itr] = nums[high]*nums[high];
+            high--;
+        }
+    }
+    return res;
+}
