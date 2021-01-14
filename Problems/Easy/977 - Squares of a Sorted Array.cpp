@@ -5,7 +5,7 @@
 // Implementation
 
 // 1st Approach in C++
-// Time Complexity = O(N^2), Space Complexity = O(1)
+// Time Complexity = O(NlogN), Space Complexity = O(1)
 
 vector<int> sortedSquares(vector<int>& nums) {
     for(int itr = 0; itr < nums.size(); itr++){
@@ -36,7 +36,7 @@ vector<int> sortedSquares(vector<int>& nums) {
 }
 
 // 3rd Approach in Java
-// Time Complexity = O(N^2), Space Complexity = O(1)
+// Time Complexity = O(NlogN), Space Complexity = O(1)
 
 public int[] sortedSquares(int[] nums) {
     for(int itr = 0; itr < nums.length; itr++){
