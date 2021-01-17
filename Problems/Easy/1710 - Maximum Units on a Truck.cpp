@@ -63,4 +63,58 @@ int maximumUnits(vector<vector<int>>& boxTypes, int truckSize) {
 }
 
 
+// 3rd Approach in Java
 
+public int maximumUnits(int[][] boxTypes, int truckSize) {
+    for(int itr = 0; itr < boxTypes.length-1; itr++){
+    	for(int jtr = itr+1; jtr < boxTypes.length; jtr++){
+            if(boxTypes[itr][1] < boxTypes[jtr][1]){
+                int t1 = boxTypes[itr][0]; 
+                int t2 = boxTypes[itr][1];
+                
+                boxTypes[itr][0] = boxTypes[jtr][0];
+                boxTypes[itr][1] = boxTypes[jtr][1];
+                
+                boxTypes[jtr][0] = t1;
+                boxTypes[jtr][1] = t2;
+            }
+        }
+    }
+    
+    int count = 0, ans = 0;
+    for(int itr = 0; itr < boxTypes.length; itr++){
+        if(count+boxTypes[itr][0] <= truckSize){
+            count += boxTypes[itr][0];
+            ans += boxTypes[itr][0]*boxTypes[itr][1];
+        }
+        else{
+            int temp = truckSize - count;
+            count += temp;
+            ans += temp*boxTypes[itr][1];
+        }
+        if(count == truckSize) break;
+    }
+    return ans;
+}
+
+
+// 4th Approach in Java
+
+public int maximumUnits(int[][] boxTypes, int truckSize) {
+    Arrays.sort(boxTypes, (a ,b) -> -Integer.compare(a[1], b[1]));
+    
+    int count = 0, ans = 0;
+    for(int itr = 0; itr < boxTypes.length; itr++){
+        if(count+boxTypes[itr][0] <= truckSize){
+            count += boxTypes[itr][0];
+            ans += boxTypes[itr][0]*boxTypes[itr][1];
+        }
+        else{
+            int temp = truckSize - count;
+            count += temp;
+            ans += temp*boxTypes[itr][1];
+        }
+        if(count == truckSize) break;
+    }
+    return ans;
+}
