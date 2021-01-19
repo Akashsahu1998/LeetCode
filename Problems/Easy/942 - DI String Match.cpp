@@ -33,3 +33,33 @@ vector<int> diStringMatch(string S) {
     
     return res;
 }
+
+
+// 2nd Approach in Java
+// Time Complexity = O(N), Space Complexity = O(N)
+
+public int[] diStringMatch(String S) {
+    int[] res = new int[S.length()+1];
+    int ktr = S.length(), jtr = 0, index = 0;
+    
+    if(S.charAt(0) == 'I'){
+        res[index++] = jtr++;          
+    }
+    if(S.charAt(0) == 'D'){
+        res[index++] = ktr--;            
+    }
+    
+    for(int itr = 1; itr < S.length(); itr++){
+        if(S.charAt(itr) == 'I') res[index++] = jtr++;
+        if(S.charAt(itr) == 'D') res[index++] = ktr--;
+    }
+    
+    if(S.charAt(S.length()-1) == 'I'){
+        res[index++] = jtr++;
+    }
+    if(S.charAt(S.length()-1) == 'D'){
+        res[index++] = ktr--;            
+    }
+    
+    return res;
+}
