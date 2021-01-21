@@ -15,3 +15,19 @@ int numJewelsInStones(string jewels, string stones) {
     }
     return count;
 }
+
+
+// 2nd Approach in Java
+// Time Complexity = O(jewels.length() + stones.length()), Space Complexity = O(jewels.length())
+
+public int numJewelsInStones(String jewels, String stones) {
+    int count = 0;        
+    Set setJewels = new HashSet();
+    for(int itr = 0; itr < jewels.length(); itr++)
+        setJewels.add(jewels.charAt(itr)); 
+    
+    for(int itr = 0; itr < stones.length(); itr++){
+        if(setJewels.contains(stones.charAt(itr))) count++;  
+    }
+    return count;
+}
