@@ -17,3 +17,18 @@ int largestAltitude(vector<int>& gain) {
     }
     return maxPoint;
 }
+
+
+// 2nd Approach in Java
+// Time Complexity = O(N), Space Complexity = O(1)
+
+public int largestAltitude(int[] gain) {
+    int maxPoint = 0, temp = 0;
+    for(int itr = 0; itr < gain.length; itr++){
+        temp = gain[itr]+temp;
+        if(temp > maxPoint){
+            maxPoint = temp;
+        }            
+    }
+    return maxPoint;
+}
