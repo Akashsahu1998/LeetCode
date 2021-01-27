@@ -15,3 +15,16 @@ vector<int> shuffle(vector<int>& nums, int n) {
     }
     return resultArray;
 }
+
+
+// 2nd Approach in Java
+// Time Complexity = O(N), Space Complexity = O(N)
+
+ public int[] shuffle(int[] nums, int n) {
+    int[] resultArray = new int[nums.length];        
+    for(int itr = 0, jtr = nums.length/2, ktr = 0; jtr < nums.length; itr++, jtr++){            
+        resultArray[ktr++] = nums[itr];
+        resultArray[ktr++] = nums[jtr];
+    }
+    return resultArray;
+}
