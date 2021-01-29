@@ -20,7 +20,19 @@ int xorOperation(int n, int start) {
 }
 
 
-// 2nd Approach in Java
+// 2nd Approach in C++
+// Time Complexity = O(N), Space Complexity = O(1)
+
+int xorOperation(int n, int start) {
+    int res = start+(2*0);
+    for(int itr = 1; itr < n; itr++){
+        res ^= start+(2*itr);
+    }
+    return res;
+}
+
+
+// 3rd Approach in Java
 // Time Complexity = O(N), Space Complexity = O(N)
 
 public int xorOperation(int n, int start) {
@@ -35,3 +47,14 @@ public int xorOperation(int n, int start) {
     return res;
 }
 
+
+// 4th Approach in Java
+// Time Complexity = O(N), Space Complexity = O(1)
+
+public int xorOperation(int n, int start) {
+    int res = start+(2*0);
+    for(int itr = 1; itr < n; itr++){
+        res ^= start+(2*itr);
+    }
+    return res;
+}
