@@ -58,3 +58,15 @@ public int xorOperation(int n, int start) {
     }
     return res;
 }
+
+
+// 5th Approach in C
+// Time Complexity = O(N), Space Complexity = O(1)
+
+int xorOperation(int n, int start){
+    int res = start+(2*0);
+    for(int itr = 1; itr < n; itr++){
+        res ^= start+(2*itr);
+    }
+    return res;
+}
