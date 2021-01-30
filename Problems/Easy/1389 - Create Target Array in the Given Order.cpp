@@ -23,7 +23,7 @@ public int[] createTargetArray(int[] nums, int[] index) {
     
 
 // 2nd Approach in c++
-// Time Complexity = O(N^2), Space Complexity = O(1)
+// Time Complexity = O(N * M), Space Complexity = O(1)
 
 vector<int> createTargetArray(vector<int>& nums, vector<int>& index) {
     vector<int> targetArray;
