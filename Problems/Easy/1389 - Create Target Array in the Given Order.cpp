@@ -20,3 +20,15 @@ public int[] createTargetArray(int[] nums, int[] index) {
     }        
     return targetArray;
 }
+    
+
+// 2nd Approach in c++
+// Time Complexity = O(N^2), Space Complexity = O(1)
+
+vector<int> createTargetArray(vector<int>& nums, vector<int>& index) {
+    vector<int> targetArray;
+    for(int itr = 0; itr < index.size(); itr++){
+        targetArray.insert(targetArray.begin()+index[itr], nums[itr]);
+    }           
+    return targetArray;
+}
