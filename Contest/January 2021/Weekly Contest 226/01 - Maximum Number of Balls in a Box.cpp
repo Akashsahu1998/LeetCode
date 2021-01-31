@@ -37,4 +37,22 @@ int countBalls(int lowLimit, int highLimit) {
         Max = max(Max, ump[digitOfSum]);                                    
     }
     return Max;
+}   
+
+
+// 3rd Approach in Java
+// Time Complexity = O(NLogN), Space Complexity = O(N) where N = 1024
+
+public int countBalls(int lowLimit, int highLimit) {
+    int[] array = new int[1024];
+    int max = -1;
+    for (int itr = lowLimit; itr <= highLimit; itr++) {
+        int sumOfDigit = 0;
+        for (int jtr = itr; jtr > 0; jtr /= 10) {
+            sumOfDigit += jtr % 10;
+        }
+        ++array[sumOfDigit];
+        max = Math.max(max, array[sumOfDigit]);   
+    }
+    return max;
 }
