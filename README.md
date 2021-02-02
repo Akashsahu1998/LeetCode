@@ -12,7 +12,7 @@ In this LeetCode Repository, I am trying to put the codes of all LeetCode Proble
 Examples: 
 1) LeetCode / Contest / Weekly Contest 209 / 01 - Special Array With X Elements Greater Than or Equal X.cpp 
 2) LeetCode / Contest / Easy / 595 - Big Countries.cpp
-and so on...
+and so on.
 
 
 Thank you.
