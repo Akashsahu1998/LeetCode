@@ -16,3 +16,16 @@ vector<int> decompressRLElist(vector<int>& nums) {
     }
     return vect;
 }
+
+
+// 2nd Approach in C++
+// Using insert
+
+// Time Complexity = O(N), Space Complexity = O(N)
+
+vector<int> decompressRLElist(vector<int>& nums) {
+    vector<int> vect;
+    for(int itr = 0; itr < nums.size(); itr += 2)
+        vect.insert(vect.end(), nums[itr], nums[itr+1]);
+    return vect;
+}
