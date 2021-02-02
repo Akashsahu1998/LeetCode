@@ -48,3 +48,23 @@ public int[] decompressRLElist(int[] nums) {
     }
     return arr;
 }
+
+
+// 4th Approach in Java
+// Using Arrays.fill method
+
+// Time Complexity = O(N), Space Complexity = O(N)
+
+public int[] decompressRLElist(int[] nums) {
+    int size = 0;
+    for(int itr = 0; itr < nums.length; itr += 2){
+        size += nums[itr];
+    }
+    
+    int[] arr = new int[size];        
+    for(int itr = 0, start = 0, index = 0; itr < nums.length; itr += 2){            
+        Arrays.fill(arr, start, start + nums[itr], nums[itr+1]);
+        start += nums[itr];
+    }
+    return arr;
+}
