@@ -29,3 +29,22 @@ vector<int> decompressRLElist(vector<int>& nums) {
         vect.insert(vect.end(), nums[itr], nums[itr+1]);
     return vect;
 }
+
+
+// 3rd Approach in Java
+// Time Complexity = O(N), Space Complexity = O(N)
+
+public int[] decompressRLElist(int[] nums) {
+    int size = 0;
+    for(int itr = 0; itr < nums.length; itr += 2){
+        size += nums[itr];
+    }
+    
+    int[] arr = new int[size];        
+    for(int itr = 0, index = 0; itr < nums.length; itr++){
+        int freq = nums[itr++];
+        int val = nums[itr];
+        for(int jtr = 0; jtr < freq; jtr++) arr[index++] = val;
+    }
+    return arr;
+}
