@@ -26,3 +26,17 @@ int isPrefixOfWord(string sentence, string searchWord) {
     }
     return -1;
 }
+
+// 2nd Approach in C++
+// Time Complexity = O(searchWord.length*Number of words), Space Complexity = O(Number of words)
+
+int isPrefixOfWord(string sentence, string searchWord) {
+    string word;
+    stringstream ss(sentence); 
+    int count = 0;
+    while(ss >> word){
+        count++;
+        if(word.find(searchWord) == 0 ) return count;      
+    }
+    return -1;
+}
