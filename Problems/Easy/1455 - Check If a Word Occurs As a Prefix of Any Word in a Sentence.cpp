@@ -27,6 +27,7 @@ int isPrefixOfWord(string sentence, string searchWord) {
     return -1;
 }
 
+
 // 2nd Approach in C++
 // Time Complexity = O(searchWord.length*Number of words), Space Complexity = O(Number of words)
 
@@ -38,5 +39,17 @@ int isPrefixOfWord(string sentence, string searchWord) {
         count++;
         if(word.find(searchWord) == 0 ) return count;      
     }
+    return -1;
+}
+
+
+// 3rd Approach in Java
+// Time Complexity = O(searchWord.length*Number of words), Space Complexity = O(Number of words)
+
+public int isPrefixOfWord(String sentence, String searchWord) {        
+    String[] arrayOfString = sentence.split(" ");   
+    int count = 0;
+    for(int itr = 0; itr < arrayOfString.length; itr++)
+        if(arrayOfString[itr].indexOf(searchWord) == 0) return itr+1;
     return -1;
 }
