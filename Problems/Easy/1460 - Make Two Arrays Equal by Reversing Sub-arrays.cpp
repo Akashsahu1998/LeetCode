@@ -19,3 +19,18 @@ bool canBeEqual(vector<int>& target, vector<int>& arr) {
     return true;
 }
 
+
+// 2nd Approach in Java
+// Time Complexity = O(N), Space Complexity = O(N)
+
+public boolean canBeEqual(int[] target, int[] arr) {
+    int[] map = new int[10001];
+    for(int itr = 0; itr < target.length; itr++){
+        map[target[itr]]++;
+        map[arr[itr]]--;
+    }        
+    for(int itr = 0; itr < map.length; itr++){
+        if(map[itr] != 0) return false;
+    }
+    return true;
+}
