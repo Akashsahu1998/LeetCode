@@ -20,4 +20,20 @@ int sumOfUnique(vector<int>& nums) {
 }
 
 
+// 2nd Approach in Java
+// Time Complexity = O(N), Space Complexity = O(1)
+
+public int sumOfUnique(int[] nums) {
+    Map<Integer, Integer> umap = new HashMap<Integer, Integer>();
+    for(int itr = 0; itr < nums.length; itr++){
+        if(umap.containsKey(nums[itr])) umap.put(nums[itr], umap.get(nums[itr])+1);
+        else umap.put(nums[itr], 1);
+    }
+    int sum = 0;
+    for(Integer entry : umap.keySet()){
+        if(umap.get(entry) == 1) sum += entry;
+    }
+    return sum;
+}
+
 
