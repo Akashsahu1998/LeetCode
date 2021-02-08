@@ -5,7 +5,7 @@
 // Implementation
 
 // 1st Approach in C++
-// Time Complexity = O(N), Space Complexity = O(1)
+// Time Complexity = O(N), Space Complexity = O(N)
 
 int sumOfUnique(vector<int>& nums) {
     unordered_map<int, int> umap;
@@ -21,7 +21,7 @@ int sumOfUnique(vector<int>& nums) {
 
 
 // 2nd Approach in Java
-// Time Complexity = O(N), Space Complexity = O(1)
+// Time Complexity = O(N), Space Complexity = O(N)
 
 public int sumOfUnique(int[] nums) {
     Map<Integer, Integer> umap = new HashMap<Integer, Integer>();
