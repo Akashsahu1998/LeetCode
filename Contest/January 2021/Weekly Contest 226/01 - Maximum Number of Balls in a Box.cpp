@@ -5,10 +5,10 @@
 // Implementation
 
 // 1st Approach in C
-// Time Complexity = O(NLogN), Space Complexity = O(N) where N = 1024
+// Time Complexity = O(NLogN), Space Complexity = O(N) where N = 46
 
 int countBalls(int lowLimit, int highLimit){
-    int array[1024] = {0};
+    int array[46] = {0};
     int max = -1;
     for (int itr = lowLimit; itr <= highLimit; itr++) {
         int sumOfDigit = 0;
@@ -23,7 +23,7 @@ int countBalls(int lowLimit, int highLimit){
 
 
 // 2nd Approach in C++
-// Time Complexity = O(NLogN), Space Complexity = O(N) where N = 1024
+// Time Complexity = O(NLogN), Space Complexity = O(N) where N = 46
 
 int countBalls(int lowLimit, int highLimit) {        
     unordered_map<int, int> ump;
@@ -41,10 +41,10 @@ int countBalls(int lowLimit, int highLimit) {
 
 
 // 3rd Approach in Java
-// Time Complexity = O(NLogN), Space Complexity = O(N) where N = 1024
+// Time Complexity = O(NLogN), Space Complexity = O(N) where N = 46
 
 public int countBalls(int lowLimit, int highLimit) {
-    int[] array = new int[1024];
+    int[] array = new int[46];
     int max = -1;
     for (int itr = lowLimit; itr <= highLimit; itr++) {
         int sumOfDigit = 0;
