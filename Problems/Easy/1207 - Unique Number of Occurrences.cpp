@@ -23,7 +23,7 @@ bool uniqueOccurrences(vector<int>& arr) {
 
 
 // 2nd Approach in Java
-// Time Complexity = O(N), Space Complexity = O(1)
+// Time Complexity = O(N), Space Complexity = O(N)
 
 public boolean uniqueOccurrences(int[] arr) {
     HashMap<Integer, Integer> h1 = new HashMap<Integer, Integer>();
