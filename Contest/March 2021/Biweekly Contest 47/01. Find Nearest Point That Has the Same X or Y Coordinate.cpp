@@ -26,3 +26,28 @@ int nearestValidPoint(int x, int y, vector<vector<int>>& points) {
     }
     return index;
 }
+
+
+// 2nd Approach in Java
+// Time Complexity = O(N), Space Complexity = O(1)
+
+public int nearestValidPoint(int x, int y, int[][] points) {
+    int minimumValue = -1, index = -1;
+    for(int itr = 0; itr < points.length; itr++){
+        if(points[itr][0] != x && points[itr][1] != y) continue;
+        
+        if(minimumValue == -1){
+            minimumValue = Math.abs(x - points[itr][0]) + Math.abs(y - points[itr][1]);
+            index = itr;
+            continue;
+        }
+        
+        int var = Math.abs(x - points[itr][0]) + Math.abs(y - points[itr][1]);            
+        if(minimumValue > var){
+            minimumValue = var;
+            index = itr;
+        }
+    }
+    return index;
+}
+
