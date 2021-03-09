@@ -13,7 +13,7 @@ bool checkOnesSegment(string s) {
     for(int itr = 1; itr < s.size(); itr++){
         if(s[itr-1] == '0' && s[itr] == '1') return false;
     }        
-    return true;
+    return true; 
 }
 
 
