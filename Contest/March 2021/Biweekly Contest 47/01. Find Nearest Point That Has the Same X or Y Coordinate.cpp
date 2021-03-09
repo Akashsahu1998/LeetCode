@@ -24,7 +24,7 @@ int nearestValidPoint(int x, int y, vector<vector<int>>& points) {
             index = itr;
         }
     }
-    return index;
+    return index; 
 }
 
 
