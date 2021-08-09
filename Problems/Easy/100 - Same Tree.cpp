@@ -5,7 +5,7 @@
 // Implementation
 
 // 1st Approach in C++
-// Time Complexity = O(N), Space Complexity = (O(W)+O(W)) = O(W) where W is the width of the Binary Tree
+// Time Complexity = O(N), Space Complexity = O(W) where W is the width of the Binary Tree
 
 bool isSameTree(TreeNode* p, TreeNode* q) {        
     
