@@ -5,7 +5,7 @@
 // Implementation
 // BFS Method
 
-// 1st Approach in C++
+// 1st Approach
 // Time Complexity = O(N), Space Complexity = O(W) where W is the Width of the Binary Tree
 
 class Solution {
@@ -32,5 +32,33 @@ public:
             }
         }
        return res;
+    }
+};
+
+
+// Implementation
+// Recursive Method
+
+// 2nd Approach
+// Time Complexity = O(N), Space Complexity = O(H) where H is the Height of the Binary Tree
+
+class Solution {
+public:
+    void printRight(TreeNode* root, int level, int *maxLevel){
+        if(root == NULL) return;
+        if(level > *maxLevel){
+            res.push_back(root->val);
+            *maxLevel = level;
+        }
+
+        printRight(root->right, level+1, maxLevel);
+        printRight(root->left, level+1, maxLevel);        
+    }
+    
+    vector<int> res;
+    vector<int> rightSideView(TreeNode* root) {
+        int maxLevel = 0;
+        printRight(root, 1, &maxLevel);
+        return res;
     }
 };
