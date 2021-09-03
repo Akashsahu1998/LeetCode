@@ -30,6 +30,7 @@ TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
 
 // Using Unordered Map Approach 
 // Time Complexity = O(N), Space Complexity = O(N) where N is the size of the inorder vector
+// This approach is giving TLE, but still mentioning the approach for the knowledge
 
 TreeNode* buildBinaryTree(vector<int>& preorder, vector<int>& inorder, int is, int ie, unordered_map<int, int> ump, int& preIndex) {
     if(is > ie) return NULL;
@@ -52,3 +53,26 @@ TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
     return buildBinaryTree(preorder, inorder, 0, inorder.size()-1, ump, preIndex);
 }
 
+
+// Without Map Approach
+// Time Complexity = O(N), Space Complexity = O(H) where H is the height of the Binary Tree
+
+TreeNode* buildBinaryTree(vector<int>& preorder, vector<int>& inorder, int& inorderPosition, int& preorderPosition, int stop){
+    if(preorderPosition >= preorder.size()) return NULL;
+    if(inorder[inorderPosition] == stop){
+        inorderPosition++;
+        return NULL;
+    }
+        
+    TreeNode *root = new TreeNode(preorder[preorderPosition++]);
+    
+    root->left = buildBinaryTree(preorder, inorder, inorderPosition, preorderPosition, root->val);
+    root->right = buildBinaryTree(preorder, inorder, inorderPosition, preorderPosition, stop);
+    return root;
+}
+
+TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {        
+    int inorderPosition = 0;
+    int preorderPosition = 0;
+    return buildBinaryTree(preorder, inorder, inorderPosition, preorderPosition, INT_MIN);
+}
