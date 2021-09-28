@@ -34,6 +34,7 @@ public:
 // 2nd Approach Using DFS
 // Time Complexity = O(N), Space Complexity = O(H) where H is the height of the Binary Tree
 // In this solution we require only one traversal of binary tree.
+// But in this approach both given key should be present.
 class Solution {
 public:    
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
