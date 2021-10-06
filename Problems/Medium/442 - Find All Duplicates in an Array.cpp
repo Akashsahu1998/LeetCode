@@ -19,3 +19,18 @@ public:
         return res;
     }
 };
+
+
+// Efficient Approach
+// Time Complexity = O(N), Space Complexity = O(1)
+class Solution {
+public:
+    vector<int> findDuplicates(vector<int>& nums) {
+        vector<int> res;
+        for(int itr = 0; itr < nums.size(); itr++){
+            if(nums[abs(nums[itr])-1] < 0) res.push_back(abs(nums[itr]));
+            else nums[abs(nums[itr])-1] = -nums[abs(nums[itr])-1];
+        }
+        return res;
+    }
+};
