@@ -6,7 +6,6 @@
 
 // 1st Approach using the helper(findPath) method
 // Time Complexity = O(N), Space Complexity = O(H) where H is the height of the Binary Tree
-
 class Solution {
 public:
     bool findPath(TreeNode* root, int targetSum, int sum){
@@ -27,7 +26,6 @@ public:
 
 // 2nd Approach without using the any helper method
 // Time Complexity = O(N), Space Complexity = O(H) where H is the height of the Binary Tree
-
 class Solution {
 public:
     bool hasPathSum(TreeNode* root, int targetSum) {        
@@ -38,5 +36,17 @@ public:
             return (targetSum == 0) ? true : false;
         }
         return (hasPathSum(root->left, targetSum) || hasPathSum(root->right, targetSum));        
+    }
+};
+
+
+// Same as 2nd Approach but nicely refactored
+// Time Complexity = O(N), Space Complexity = O(H) where H is the height of the Binary Tree
+class Solution {
+public:
+    bool hasPathSum(TreeNode* root, int targetSum) {
+        if (root == NULL) return false;
+        if (root->val == targetSum && !root->left && !root->right) return true;
+        return hasPathSum(root->left, targetSum - root->val) || hasPathSum(root->right, targetSum - root->val);
     }
 };
