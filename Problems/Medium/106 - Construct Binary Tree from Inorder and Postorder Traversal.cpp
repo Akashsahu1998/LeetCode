@@ -33,3 +33,33 @@ public:
         return builtTree(inorder, postorder, 0, inorder.size()-1, 0, postorder.size()-1);
     }
 };
+
+// Efficient Approach
+// Time Complexity = O(N), Space Complexity = O(N) Where N is the number of element into Inorder array
+// Giving TLE
+class Solution {
+public:    
+    TreeNode* builtTree(vector<int>& inorder, vector<int>& postorder, int inStart, int inEnd, int &index, unordered_map<int, int> mp){
+        if(inStart > inEnd) return NULL;
+        
+        int curr = postorder[index];
+        TreeNode* root = new TreeNode(curr);
+        index--;
+        
+        if(inStart == inEnd) return root;
+        int inIndex = mp[curr];
+        
+        root->right = builtTree(inorder, postorder, inIndex+1, inEnd, index, mp);
+        root->left = builtTree(inorder, postorder, inStart, inIndex-1, index, mp);
+        
+        return root;
+    }
+    
+    TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
+        unordered_map<int, int> mp;
+        for (int itr = 0; itr < inorder.size(); itr++)
+                mp[inorder[itr]] = itr;
+        int index = inorder.size() - 1;
+        return builtTree(inorder, postorder, 0, postorder.size()-1, index, mp);
+    }
+};
