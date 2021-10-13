@@ -63,3 +63,31 @@ public:
         return builtTree(inorder, postorder, 0, postorder.size()-1, index, mp);
     }
 };
+
+
+// Most Efficient Approach
+// Time Complexity = O(N), Space Complexity = O(H) Where H is the height of the binary tree
+class Solution {
+public:    
+    TreeNode* buildBinaryTree(vector<int>& inorder, vector<int>& postorder, int &inorderPosition, int &postorderPosition, int stop){
+        if(postorderPosition == -1) return NULL;
+        
+        if(inorder[inorderPosition] == stop){
+            inorderPosition--;
+            return NULL;
+        }
+        
+        TreeNode* root = new TreeNode(postorder[postorderPosition--]);
+        
+        root->right = buildBinaryTree(inorder, postorder, inorderPosition, postorderPosition, root->val);
+        root->left = buildBinaryTree(inorder, postorder, inorderPosition, postorderPosition, stop);
+        
+        return root;
+    }
+    
+    TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
+        int inorderPosition = inorder.size()-1;
+        int postorderPosition = postorder.size()-1;
+        return buildBinaryTree(inorder, postorder, inorderPosition, postorderPosition, INT_MIN);
+    }
+};
