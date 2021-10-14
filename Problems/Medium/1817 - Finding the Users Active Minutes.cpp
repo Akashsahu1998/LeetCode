@@ -46,3 +46,21 @@ public:
         return res;
     }    
 };
+
+// Efficient Approach
+// Time Complexity = O(N), Space Complexity = O(N)
+class Solution {
+public:
+    vector<int> findingUsersActiveMinutes(vector<vector<int>>& logs, int k) {
+        unordered_map<int, set<int>> umap;
+        
+        for(vector<int> log: logs)
+            umap[log[0]].insert(log[1]);
+        
+        vector<int> res(k, 0);
+        for(auto itr: umap)
+            res[itr.second.size()-1]++;
+        
+        return res;
+    }    
+};
