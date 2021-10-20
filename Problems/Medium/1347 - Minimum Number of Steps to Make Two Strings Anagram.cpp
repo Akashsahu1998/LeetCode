@@ -6,6 +6,7 @@
 
 // Naive Approach
 // Time Complexity = O(N), Space Complexity = O(N)
+// Here we are using 2 maps
 class Solution {
 public:
     int minSteps(string s, string t) {
@@ -25,5 +26,26 @@ public:
             else count += ch.second;
         }
         return count;
+    }
+};
+
+// Efficient Approach
+// Time Complexity = O(N), Space Complexity = O(N)
+// Here we are using only 1 map
+class Solution {
+public:
+    int minSteps(string s, string t) {
+        int count = 0, itr = 0, jtr = 0;
+        unordered_map<char, int> mp;        
+        
+        while(itr < s.length()){
+            mp[s[itr++]]++;
+            mp[t[jtr++]]--;            
+        }
+        
+        for(auto ch: mp){
+            if(ch.second < 0) count += ch.second;
+        }
+        return abs(count);
     }
 };
