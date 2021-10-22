@@ -4,7 +4,7 @@
 
 // Implementation
 
-// Time Complexity = O(N*(2^N)), Space Complexity = O(O(N*(2^N))) where H is the height of the Binary Tree
+// Time Complexity = O(N*(2^N)), Space Complexity = O(O(N*(2^N)))
 class Solution {
 public:
     vector<vector<int>> subsets(vector<int>& nums) {
