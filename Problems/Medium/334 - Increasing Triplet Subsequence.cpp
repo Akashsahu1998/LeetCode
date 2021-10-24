@@ -22,3 +22,19 @@ public:
     }
 };
 
+
+// Efficient Approach
+// Time Complexity = O(N), Space Complexity = O(1)
+class Solution {
+public:
+    // Efficient Approach
+    bool increasingTriplet(vector<int>& nums) {
+        int a = INT_MAX, b = INT_MAX;
+        for(auto itr : nums){
+            if(itr <= a) a = itr;
+            else if(itr <= b) b = itr;
+            else return true;
+        }
+        return false;
+    }
+};
