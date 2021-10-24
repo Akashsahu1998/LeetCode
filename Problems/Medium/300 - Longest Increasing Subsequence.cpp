@@ -4,6 +4,27 @@
 
 // Implementation
 
+
+// Naive Approach using DP
+// Time Complexity = O(N^2), Space Complexity = O(N)
+class Solution {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+        vector<int> dpArr(nums.size());
+        fill(dpArr.begin(), dpArr.end(), 1);
+        int res = 1;
+        for(int itr = 1; itr < nums.size(); itr++){
+            for(int jtr = 0; jtr < itr; jtr++){
+                if(nums[jtr] < nums[itr]) dpArr[itr] = max(dpArr[itr], dpArr[jtr]+1);
+            }
+            res = max(res, dpArr[itr]);
+        }        
+        return res;
+    }
+};
+
+
+// Efficient Approach using binary search
 // Time Complexity = O(N log(N)), Space Complexity = O(N)
 class Solution {
 public:
