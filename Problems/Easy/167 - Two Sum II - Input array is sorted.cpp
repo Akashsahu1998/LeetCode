@@ -36,3 +36,18 @@ public int[] twoSum(int[] numbers, int target) {
     ans[1] = jtr+1;       
     return ans;
 }
+
+
+// 3rd Approach in C++
+// Unordered map Solution
+// Time Complexity = O(N), Space Complexity = O(N)
+
+vector<int> twoSum(vector<int>& nums, int target) {
+    unordered_map<int, int> mp;               
+    for(int itr = 0; itr < nums.size(); itr++){
+        int remainingNum = target - nums[itr];
+        if(mp[remainingNum]) return {mp[remainingNum], itr+1};
+        else mp[nums[itr]] = itr+1;
+    }
+    return {};
+}
