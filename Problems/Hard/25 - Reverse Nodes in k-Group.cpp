@@ -40,3 +40,28 @@ public:
         return dummy->next;
     }
 };
+
+
+// Recursive Approach
+// Time Complexity = O(N), Space Complexity = O(N)
+class Solution {
+public:
+    ListNode* reverseKGroup(ListNode* head, int k) {
+        ListNode *node = head;
+        for(int itr = 0; itr < k; itr++){
+            if(!node) return head;
+            node = node->next;
+        }
+        
+        ListNode *cur = head, *prev = NULL, *nex = NULL;        
+        for(int itr = 0; itr < k; itr++){
+            nex = cur->next;
+            cur->next = prev;
+            prev = cur;
+            cur = nex;
+        }
+        
+        head->next = reverseKGroup(cur, k);
+        return prev;
+    }
+};
