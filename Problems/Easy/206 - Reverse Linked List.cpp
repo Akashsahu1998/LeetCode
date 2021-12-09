@@ -1,9 +1,10 @@
 
-// Question) 206. Reverse Linked List206. Reverse Linked List
+// Question) 206. Reverse Linked List
 
 
 // Implementation
 
+// Iterative Approach
 // Time Complexity = O(N), Space Complexity = O(1)
 
 class Solution {
@@ -18,5 +19,21 @@ public:
             head = next;
         }
         return prev;
+    }
+};
+
+
+// Recursive Approach
+// Time Complexity = O(N), Space Complexity = O(N)
+
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {        
+        if(head == NULL || head->next == NULL) return head;
+        
+        ListNode* node = reverseList(head->next);
+        head->next->next = head;
+        head->next = NULL;
+        return node;
     }
 };
