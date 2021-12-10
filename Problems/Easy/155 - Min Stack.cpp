@@ -26,10 +26,9 @@ public:
     void pop() {        
         if(s.top() == min) {
             s.pop();
-            min = s.top();
-            s.pop();
+            min = s.top();            
         }
-        else s.pop();
+        s.pop();
     }
     
     int top() {
