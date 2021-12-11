@@ -1,5 +1,5 @@
 
-// Question) 25. Reverse Nodes in k-Group
+// Question) 1552. Magnetic Force Between Two Balls.cpp
 
 
 // Implementation
