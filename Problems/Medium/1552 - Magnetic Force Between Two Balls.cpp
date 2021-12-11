@@ -5,7 +5,7 @@
 // Implementation
 
 // Using Binary Search
-// Time Complexity = O(NLogN), Space Complexity = O(1)
+// Time Complexity = O(NLogN), Space Complexity = O(1) 
 class Solution {
 public:
     bool isPossible(vector<int>& position, int mid, int m) {
