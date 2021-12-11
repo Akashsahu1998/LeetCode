@@ -4,7 +4,7 @@
 
 // Implementation
 
-// Iterative Approach
+// Using Binary Search
 // Time Complexity = O(NLogN), Space Complexity = O(1)
 class Solution {
 public:
