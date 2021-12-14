@@ -4,11 +4,10 @@
 
 // Implementation
 
-// Time Complexity = O(N), Space Complexity = O(N)
-
 // 1st Approach
 // Using Map and Stack
 // Traversing from back
+// Time Complexity = O(N), Space Complexity = O(N)
 class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
@@ -36,6 +35,7 @@ public:
 // 2nd Approach
 // Using Map and Stack
 // Traversing from start
+// Time Complexity = O(N), Space Complexity = O(N)
 class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
