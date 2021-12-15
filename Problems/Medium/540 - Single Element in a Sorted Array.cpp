@@ -4,6 +4,7 @@
 
 // Implementation
 
+// Using Binary Search
 // Time Complexity = O(log N), Space Complexity = O(1)
 class Solution {
 public:
