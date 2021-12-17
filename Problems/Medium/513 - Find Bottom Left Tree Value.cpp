@@ -4,6 +4,7 @@
 
 // Implementation
 
+// 1st Approach
 // Using level order traversal from left to right
 // Time Complexity = O(N), Space Complexity = O(N)
 class Solution {
@@ -28,6 +29,7 @@ public:
 };
 
 
+// 2nd Approach
 // Using level order traversal from right to left
 // Time Complexity = O(N), Space Complexity = O(N)
 class Solution {
@@ -47,6 +49,32 @@ public:
                 if(temp->left) q.push(temp->left);
             }
         }
+        return ans;
+    }
+};
+
+
+// 3rd Approach
+// Efficient Solution
+// Using DFS
+// Time Complexity = O(N), Space Complexity = O(H), where H is the height of the tree
+class Solution {
+public:
+    void findBottomLeftValue(TreeNode* root, int depth, int &maxDepth, int &ans) {
+        if(!root) return;
+        findBottomLeftValue(root->left, depth+1, maxDepth, ans);
+        findBottomLeftValue(root->right, depth+1, maxDepth, ans);
+        
+        if(depth > maxDepth){
+            maxDepth = depth;
+            ans = root->val;
+        }
+    }
+    
+    int findBottomLeftValue(TreeNode* root) {        
+        int ans = root->val;
+        int depth = 0, maxDepth = 0;
+        findBottomLeftValue(root, depth, maxDepth, ans);
         return ans;
     }
 };
