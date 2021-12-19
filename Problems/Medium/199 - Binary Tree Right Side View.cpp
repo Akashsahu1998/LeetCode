@@ -15,8 +15,7 @@ public:
         queue<TreeNode*> q;
         q.push(root);
         
-        while(!q.empty()){
-            bool flag = true;
+        while(!q.empty()){            
             res.push_back(q.front()->val);
             
             for(int itr = 0; itr < q.size(); itr++){
