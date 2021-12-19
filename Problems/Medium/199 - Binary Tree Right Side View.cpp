@@ -4,7 +4,7 @@
 
 // Implementation
 
-// DFS
+// BFS
 // Time Complexity = O(N), Space Complexity = O(N)
 class Solution {
 public:
@@ -27,6 +27,25 @@ public:
                 if(temp->right) q.push(temp->right);
             }
         }
+        return res;
+    }
+};
+
+
+// DFS
+// Time Complexity = O(N), Space Complexity = O(H)
+class Solution {
+public:
+    void findRightSideView(TreeNode* root, vector<int> &res, int level){
+        if(!root) return;
+        if(level > res.size()) res.push_back(root->val);
+        findRightSideView(root->right, res, level+1);
+        findRightSideView(root->left, res, level+1);
+    }
+    
+    vector<int> rightSideView(TreeNode* root) {
+        vector<int> res;
+        findRightSideView(root, res, 1);
         return res;
     }
 };
