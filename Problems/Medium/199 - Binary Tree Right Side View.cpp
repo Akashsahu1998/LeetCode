@@ -15,15 +15,16 @@ public:
         queue<TreeNode*> q;
         q.push(root);
         
-        while(!q.empty()){            
+       while(!q.empty()){            
+            int size = q.size();
             res.push_back(q.front()->val);
             
-            for(int itr = 0; itr < q.size(); itr++){
+            for(int itr = 0; itr < size; itr++){
                 TreeNode* temp = q.front();
                 q.pop();                
-                
-                if(temp->left) q.push(temp->left);
+                                
                 if(temp->right) q.push(temp->right);
+                if(temp->left) q.push(temp->left);
             }
         }
         return res;
