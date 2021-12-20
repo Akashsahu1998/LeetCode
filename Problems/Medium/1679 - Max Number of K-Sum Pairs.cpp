@@ -23,3 +23,25 @@ public:
         return count;
     }
 };
+
+
+// Using Unordered Map
+// Time Complexity = O(N), Space Complexity = O(N)
+class Solution {
+public:
+    int maxOperations(vector<int>& nums, int k) {
+        int count = 0;
+        unordered_map<int, int> mp;
+        
+        for(int itr = 0; itr < nums.size(); itr++){
+            int tempSum = k - nums[itr];
+            if(mp[tempSum]){
+                mp[tempSum]--;
+                mp[nums[itr]] = 0;
+                count++;
+            }
+            else mp[nums[itr]]++;
+        }
+        return count;
+    }
+};
