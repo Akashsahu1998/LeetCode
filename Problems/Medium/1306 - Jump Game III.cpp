@@ -16,3 +16,36 @@ public:
         return canReach(arr, start + prev) || canReach(arr, start - prev);
     }
 };
+
+
+// Using Queue
+// Time Complexity = O(N), Space Complexity = O(N)
+class Solution {
+public:    
+    bool canReach(vector<int>& arr, int start) {
+        queue<int> q;
+        q.push(start);
+        while(!q.empty()){
+            int size = q.size();
+            for(int itr = 0; itr < size; itr++){
+                int index = q.front();
+                q.pop();
+                
+                // Checking Left
+                if(index - arr[index] >= 0){
+                    if(arr[index - arr[index]] == 0) return true;
+                    else if(arr[index - arr[index]] > 0) q.push(index - arr[index]);
+                }
+                
+                // Checking Right
+                if(index + arr[index] < arr.size()){
+                    if(arr[index + arr[index]] == 0) return true;
+                    else if(arr[index + arr[index]] > 0) q.push(index + arr[index]);
+                }
+                
+                arr[index] = -1;
+            }
+        }
+        return false;
+    }
+};
