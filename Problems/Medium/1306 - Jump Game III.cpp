@@ -4,6 +4,7 @@
 
 // Implementation
 
+// DFS
 // Recursive Approach
 // Time Complexity = O(N), Space Complexity = O(N) (we are considering the recursion stack)
 class Solution {
@@ -18,6 +19,7 @@ public:
 };
 
 
+// BFS
 // Using Queue
 // Time Complexity = O(N), Space Complexity = O(N)
 class Solution {
