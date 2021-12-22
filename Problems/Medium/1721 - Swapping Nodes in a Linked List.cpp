@@ -4,6 +4,8 @@
 
 // Implementation
 
+
+// 1st Approach
 // Swapping the Actual Node not only value
 // Time Complexity = O(N), Space Complexity = O(1)
 class Solution {
@@ -12,7 +14,7 @@ public:
         // if list contain only one node
         if(!head->next) return head;
         
-        // finding the len of the list
+        // finding the length of the list
         ListNode* cur = head;
         int len = 0;
         while(cur){
@@ -64,6 +66,40 @@ public:
         // if both node are adjacent to each other
         if(frontNext == backCur) backCur->next = frontCur;        
         if(frontCur == backNext) frontCur->next = backCur;
+        
+        return head;
+    }
+};
+
+
+// 2nd Approach
+// Swapping the value only
+// Time Complexity = O(N), Space Complexity = O(1)
+class Solution {
+public:
+    ListNode* swapNodes(ListNode* head, int k) {
+        // setting ptr1 & ptr2 to head and kthNode to null
+        ListNode *ptr1 = head, *ptr2 = head, *kthNode = NULL;
+        
+        // running the ptr1 till kth node
+        while(--k){
+            ptr1 = ptr1->next;
+        }
+        
+        // setting kth node
+        kthNode = ptr1;
+        
+        // moving ptr1 one step ahead 
+        ptr1 = ptr1->next;
+        
+        // taking ptr2 to the node which needs to swap from back
+        while(ptr1){
+            ptr1 = ptr1->next;
+            ptr2 = ptr2->next;
+        }
+        
+        // swapping the values
+        swap(kthNode->val, ptr2->val);
         
         return head;
     }
