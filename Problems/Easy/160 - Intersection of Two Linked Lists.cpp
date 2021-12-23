@@ -44,7 +44,7 @@ public:
         // For example
         // headA = [1, 2, 3, 4]
         // headB = [8, 4]
-        // Just assume it as
+        // Just assume it as headA = headA + headB, and headB = headB + headA
         // headA = [1, 2, 3, 4, 8, 4]
         // headB = [8, 4, 1, 2, 3, 4]
         // we are iterating in this way
