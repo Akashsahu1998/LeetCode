@@ -41,7 +41,7 @@ public:
             cur = cur->next;
             copyCur = copyCur->next;
         }
-        
+        // return copy->next, bcz copy was pointing to 0
         return copy->next;
     }
 };
@@ -87,7 +87,7 @@ public:
             cur = cur->next;
             copyCur = copyCur->next;
         }
-        
+        // return copy->next, bcz copy was pointing to 0
         return copy->next;
     }
 };
