@@ -7,7 +7,7 @@
 // Efficient Approach
 // Iterative Approach
 // Time Complexity = O(max(M,N)), Space Complexity = O(1)
-// class Solution {
+ class Solution {
  public:    
      ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
          ListNode *dummy = new ListNode(0);
@@ -38,7 +38,7 @@
  
 // Recursive Approach
 // Not an efficient approach
-// just for knowledge purpose
+// Just for knowledge purpose
 // Time Complexity = O(max(M,N)), Space Complexity = O(max(M,N))
 class Solution {
 public:    
