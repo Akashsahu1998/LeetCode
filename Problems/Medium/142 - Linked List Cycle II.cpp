@@ -19,7 +19,7 @@ public:
         }
         
         // no cycle
-        if(!fast || !fast->next || !slow) return NULL;
+        if(!fast || !fast->next) return NULL;
                 
         // start slow again from head
         slow = head;        
