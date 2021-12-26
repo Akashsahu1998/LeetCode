@@ -39,3 +39,64 @@ public:
         return ans;
     }
 };
+
+
+// Efficient Approach
+// Traversing 3 times
+// Time Complexity = O(N), Space Complexity = O(N)
+class Solution {
+public:
+    int largestRectangleArea(vector<int>& heights) {
+        int n = heights.size();
+        vector<int> leftArr(n), rightArr(n);
+        stack<int> st;
+        
+        // finding element on left which is lesser than the current element
+        for(int itr = 0; itr < n; itr++){
+            while(!st.empty() && heights[st.top()] >= heights[itr]){
+                st.pop();
+            }
+            
+            // if stack is empty then put 0
+            if(st.empty()){
+                leftArr[itr] = 0;
+            }
+            else{
+                leftArr[itr] = st.top() + 1;
+            }
+            
+            st.push(itr);
+        }
+        
+        // clear stack, to create rightArr
+        while(!st.empty()){
+            st.pop();
+        }
+        
+        // finding element on right which is lesser than the current element
+        for(int itr = n-1; itr >= 0; itr--){
+            while(!st.empty() && heights[st.top()] >= heights[itr]){
+                st.pop();
+            }
+            
+            // if stack is empty then put n-1
+            if(st.empty()){
+                rightArr[itr] = n-1;
+            }
+            else{
+                rightArr[itr] = st.top() - 1;
+            }
+            
+            st.push(itr);
+        }
+        
+        // calculating the max rectangle by using left & right less current value
+        int ans = -1;
+        for(int itr = 0; itr < n; itr++){
+            int sum = (rightArr[itr] - leftArr[itr] + 1) * heights[itr];
+            ans = max(ans, sum);
+        }
+        
+        return ans;
+    }
+};
