@@ -10,58 +10,87 @@
 // Space Complexity = O(Col)
 class Solution {
 public: 
-    int findTheLargestRectangeInHistogram(vector<int> heights){
-        int n = heights.size();
-        vector<int> leftArr(n), rightArr(n);
-        stack<int> st;
+//	  Traversing 3 times
+//    int findTheLargestRectangeInHistogram(vector<int> heights){
+//        int n = heights.size();
+//        vector<int> leftArr(n), rightArr(n);
+//        stack<int> st;
+//
+//        // finding element on left which is lesser than the current element
+//        for(int itr = 0; itr < n; itr++){
+//            while(!st.empty() && heights[st.top()] >= heights[itr]){
+//                st.pop();
+//            }
+//
+//            // if stack is empty then put 0
+//            if(st.empty()){
+//                leftArr[itr] = 0;
+//            }
+//            else{
+//                leftArr[itr] = st.top() + 1;
+//            }
+//
+//            st.push(itr);
+//        }
+//
+//        // clear stack, to create rightArr
+//        while(!st.empty()){
+//            st.pop();
+//        }
+//
+//        // finding element on right which is lesser than the current element
+//        for(int itr = n-1; itr >= 0; itr--){
+//            while(!st.empty() && heights[st.top()] >= heights[itr]){
+//                st.pop();
+//            }
+//
+//            // if stack is empty then put n-1
+//            if(st.empty()){
+//                rightArr[itr] = n-1;
+//            }
+//            else{
+//                rightArr[itr] = st.top() - 1;
+//            }
+//
+//            st.push(itr);
+//        }
+//
+//        // calculating the max rectangle by using left & right less current value
+//        int ans = -1;
+//        for(int itr = 0; itr < n; itr++){
+//            int sum = (rightArr[itr] - leftArr[itr] + 1) * heights[itr];
+//            ans = max(ans, sum);
+//        }
+//
+//        return ans;
+//    }
 
-        // finding element on left which is lesser than the current element
-        for(int itr = 0; itr < n; itr++){
-            while(!st.empty() && heights[st.top()] >= heights[itr]){
-                st.pop();
-            }
-
-            // if stack is empty then put 0
-            if(st.empty()){
-                leftArr[itr] = 0;
+	// Traversing 1 time 
+    int findTheLargestRectangeInHistogram(vector<int>& heights) {
+        stack<int> s;
+        int itr = 0, maxArea = -1;
+        while(itr < heights.size()){
+            if(s.empty() || heights[s.top()] <= heights[itr]){
+                s.push(itr++);
             }
             else{
-                leftArr[itr] = st.top() + 1;
-            }
-
-            st.push(itr);
+                int top = s.top();
+                s.pop();
+                int area = heights[top] * (s.empty() ? itr
+                                                    : itr - s.top() - 1);
+                maxArea = max(maxArea, area);
+            }            
+        }   
+        
+        while(!s.empty()){
+            int top = s.top();
+            s.pop();
+            int area = heights[top] * (s.empty() ? itr
+                                                : itr - s.top() - 1);
+            maxArea = max(maxArea, area);
         }
 
-        // clear stack, to create rightArr
-        while(!st.empty()){
-            st.pop();
-        }
-
-        // finding element on right which is lesser than the current element
-        for(int itr = n-1; itr >= 0; itr--){
-            while(!st.empty() && heights[st.top()] >= heights[itr]){
-                st.pop();
-            }
-
-            // if stack is empty then put n-1
-            if(st.empty()){
-                rightArr[itr] = n-1;
-            }
-            else{
-                rightArr[itr] = st.top() - 1;
-            }
-
-            st.push(itr);
-        }
-
-        // calculating the max rectangle by using left & right less current value
-        int ans = -1;
-        for(int itr = 0; itr < n; itr++){
-            int sum = (rightArr[itr] - leftArr[itr] + 1) * heights[itr];
-            ans = max(ans, sum);
-        }
-
-        return ans;
+        return maxArea;
     }
     
     int maximalRectangle(vector<vector<char>>& matrix) {
