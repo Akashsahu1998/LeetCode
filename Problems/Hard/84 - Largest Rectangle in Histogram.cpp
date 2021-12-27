@@ -100,3 +100,37 @@ public:
         return ans;
     }
 };
+
+// Reference : https://www.geeksforgeeks.org/largest-rectangle-under-histogram/
+// Most Efficient Approach
+// Traversing 1 time
+// Time Complexity = O(N), Space Complexity = O(N)
+class Solution {
+public:
+    int largestRectangleArea(vector<int>& heights) {
+        stack<int> s;
+        int itr = 0, maxArea = -1;
+        while(itr < heights.size()){
+            if(s.empty() || heights[s.top()] <= heights[itr]){
+                s.push(itr++);
+            }
+            else{
+                int top = s.top();
+                s.pop();
+                int area = heights[top] * (s.empty() ? itr
+                                                    : itr - s.top() - 1);
+                maxArea = max(maxArea, area);
+            }            
+        }        
+        
+        while(!s.empty()){
+            int top = s.top();
+            s.pop();
+            int area = heights[top] * (s.empty() ? itr
+                                                : itr - s.top() - 1);
+            maxArea = max(maxArea, area);
+        }
+
+        return maxArea;
+    }
+};
