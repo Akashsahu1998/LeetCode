@@ -67,4 +67,37 @@ public:
 };
 
 
+// https://www.youtube.com/watch?v=CZQGRp93K4k&t=153s
+// Most Efficient Approach
+// using dequeue
+// Traversing 1 time
+// Time Complexity = (O(N) + O(N)) => O(N),  N elemens we are iterating and N element we are inserting & deleting in queue
+
+// Space Complexity = O(K), max to max only K elements we are putting into dequeue
+class Solution {
+public:
+    vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+        vector<int> res;
+        deque<int> dq;
+        
+        for(int itr = 0; itr < nums.size(); itr++){
+            // removing the index which is going out of our window
+            if(!dq.empty() && dq.front() == itr-k) dq.pop_front();
+            
+            // pop till the coming element is greater
+            while(!dq.empty() && nums[dq.back()] < nums[itr]){
+                dq.pop_back();
+            }
+            
+            dq.push_back(itr);
+            
+            // since we are iterating from 0th index that's why this if condition
+            if(itr >= k-1) res.push_back(nums[dq.front()]);
+        }
+        
+        return res;
+    }
+};
+
+
 
