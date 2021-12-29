@@ -30,7 +30,7 @@ public:
 
 // Efficient Solution
 // using the res vector only to get the next greater element
-// Time Complexity = O(N), Space Complexity = O(1)
+// Time Complexity = O(N), Space Complexity = O(1), not considering result vector bcz its a part of output
 class Solution {
 public:
     vector<int> dailyTemperatures(vector<int>& temperatures) {
