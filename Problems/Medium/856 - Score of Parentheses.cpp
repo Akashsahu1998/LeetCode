@@ -52,6 +52,7 @@ public:
             if(s[itr] == '(') depth++;
             else depth--;
             
+            // we need to add the 2^depth, when we are getting any pair like ()
             if(s[itr] == ')' && s[itr-1] == '('){
                 res += pow(2, depth);
             }            
