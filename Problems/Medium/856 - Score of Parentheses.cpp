@@ -38,3 +38,24 @@ public:
         return st.top();
     }
 };
+
+
+// 2nd Approach
+// Most Efficient Approach
+// Time Complexity = O(N), Space Complexity = O(1)
+class Solution {
+public:
+    int scoreOfParentheses(string s) {
+        int depth = 0, res = 0;
+        
+        for(int itr = 0; itr < s.size(); itr++){
+            if(s[itr] == '(') depth++;
+            else depth--;
+            
+            if(s[itr] == ')' && s[itr-1] == '('){
+                res += pow(2, depth);
+            }            
+        }
+        return res;
+    }
+};
