@@ -35,3 +35,23 @@ public:
         }        
     }    
 };
+
+
+
+// 2nd Approach
+// Efficient Approach
+// Post Order Traversal
+// Time Complexity = O(N), Space Complexity = O(N), considering the recursion call stack
+class Solution {
+private:
+    TreeNode *prevPtr = NULL;
+public:
+    void flatten(TreeNode* root) {
+        if(!root) return;
+        flatten(root->right);
+        flatten(root->left);
+        root->right = prev;
+        root->right = NULL;
+        prevPtr = root;
+    }
+};
