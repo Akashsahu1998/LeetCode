@@ -39,6 +39,8 @@ public:
 
 
 // 2nd Approach
+// 1 Traversal
+// Recursive Approach
 // Efficient Approach
 // Post Order Traversal
 // Time Complexity = O(N), Space Complexity = O(N), considering the recursion call stack
@@ -53,5 +55,35 @@ public:
         root->right = prev;
         root->right = NULL;
         prevPtr = root;
+    }
+};
+
+
+
+// 3rd Approach
+// Most Efficient Approach
+// Iterative Approach
+// Time Complexity = O(N), Space Complexity = O(1)
+class Solution {
+public:
+    void flatten(TreeNode* root) {
+        TreeNode *cur = root;
+        while(cur){
+            if(cur->left){
+                TreeNode *run = cur->left;                
+                while(run->right){
+                    run = run->right;
+                }
+                // move all the nodes from cur->right to run->right
+                run->right = cur->right;
+                
+                // move all the nodes from cur->left to cur->right, bcz we dont need left side
+                cur->right = cur->left;
+                
+                // just make the left side null
+                cur->left = NULL;
+            }
+            cur = cur->right;
+        }
     }
 };
