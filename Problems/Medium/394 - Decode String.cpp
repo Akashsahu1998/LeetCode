@@ -8,10 +8,6 @@
 // Naive Approach
 // Using 2 stacks
 // Time Complexity = O(N), Space Complexity = O(N)
-// 1st
-// Naive Approach
-// Using 2 stacks
-// Time Complexity = O(N), Space Complexity = O(N)
 class Solution {
 public:
     string decodeString(string s) {
