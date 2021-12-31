@@ -102,3 +102,46 @@ public:
         return res;
     }
 };
+
+
+
+// 3rd
+// Recursive Approach
+// Time Complexity = O(N), Space Complexity = O(N), considering the resursion stack
+class Solution {
+public:
+    string decodeTheString(string s, int &itr){
+        string res = "";
+        
+        while(itr < s.size() && s[itr] != ']'){
+            if(isdigit(s[itr])){
+                int num = 0;
+                while(itr < s.size() && isdigit(s[itr])){
+                    num = num * 10 + (s[itr++] - '0');
+                }
+                // to escape the '['
+                itr++;
+                
+                // store the return result and repeat it num times
+                string temp = decodeTheString(s, itr);
+                
+                // to escape the ']'
+                itr++;
+                
+                while(num--){
+                    res += temp;
+                }
+            }
+            else{
+                res += s[itr++];
+            }
+        }
+        
+        return res;    
+    }
+    
+    string decodeString(string s) {
+        int itr = 0;
+        return decodeTheString(s, itr);
+    }
+};
