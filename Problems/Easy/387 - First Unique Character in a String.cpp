@@ -27,3 +27,23 @@ public:
         return -1;
     }
 };
+
+
+// Using Unordered Map
+// Time Complexity = O(N), Space Complexity = O(N)
+class Solution {
+public:
+    int firstUniqChar(string s) {
+        unordered_map<char, int> mp;        
+        
+        // counting the frequency of a character present into string
+        for(int itr = 0; itr < s.size(); itr++) mp[s[itr]]++;
+                
+        for(int itr = 0; itr < s.size(); itr++){
+            // at the time when we are getting char frequency as 1, we are returning the itr
+            // as itr is a index on which the character is appearing first
+            if(mp[s[itr]] == 1) return itr;
+        }
+        return -1;
+    }
+};
