@@ -41,7 +41,7 @@ public:
                 
         for(int itr = 0; itr < s.size(); itr++){
             // at the time when we are getting char frequency as 1, we are returning the itr
-            // as itr is a index on which the character is appearing first
+            // as itr is a index on which the character is unique and appearing first into string
             if(mp[s[itr]] == 1) return itr;
         }
         return -1;
