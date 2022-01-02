@@ -29,3 +29,20 @@ public:
         return res;
     }
 };
+
+
+// Efficient Approach
+// Time Complexity = O(N), Space Complexity = O(1)
+class Solution {
+public:
+    int numberOfBeams(vector<string>& bank) {        
+        int res = 0, prev = 0;        
+        for(int itr = 0; itr < bank.size(); itr++){
+            int cnt = count(bank[itr].begin(), bank[itr].end(), '1');            
+            res += cnt * prev;
+            if(cnt > 0) prev = cnt;
+        }
+        
+        return res;
+    }
+};
