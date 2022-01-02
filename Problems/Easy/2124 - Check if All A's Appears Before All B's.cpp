@@ -4,8 +4,9 @@
 
 // Implementation
 
+// 1st
 // Using flag variable
-// Time Complexity = O(N), Space Complexity = O(N)
+// Time Complexity = O(N), Space Complexity = O(1)
 
 class Solution {
 public:
@@ -20,8 +21,9 @@ public:
 };
 
 
+// 2nd
 // Just simply checking the [index-1] value
-// Time Complexity = O(N), Space Complexity = O(N)
+// Time Complexity = O(N), Space Complexity = O(1)
 class Solution {
 public:
     bool checkString(string str) {       
@@ -33,8 +35,9 @@ public:
 };
 
 
+// 3rd
 // Using is_sorted() in cpp STL
-// Time Complexity = O(N), Space Complexity = O(N)
+// Time Complexity = O(N), Space Complexity = O(1)
 class Solution {
 public:
     bool checkString(string str) {
