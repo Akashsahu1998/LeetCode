@@ -4,16 +4,17 @@
 
 // Implementation
 
-// Using unordered_map
-// Time Complexity = O(N), Space Complexity = O(N)
+// Using vector as a map
+// Time Complexity = O(N), Space Complexity = O(1), bcz we're using vector of 60 length, which is constant
 class Solution {
 public:
     int numPairsDivisibleBy60(vector<int>& time) {
-        unordered_map<int, int> mp;
+        // unordered_map<int, int> mp;
+        vector<int> mp(60);
         int res = 0;
         
         for(int itr = 0; itr < time.size(); itr++){
-            int rem = time[itr] % 60;            
+            int rem = time[itr] % 60;
             
             // again (mod by 60) bcz, we are adding the rem into mp otherwise it will be an issue
             // i.e [60,60,60]
