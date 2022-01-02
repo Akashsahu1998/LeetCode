@@ -31,3 +31,13 @@ public:
         return true;
     }
 };
+
+
+// Using is_sorted() in cpp STL
+// Time Complexity = O(N), Space Complexity = O(N)
+class Solution {
+public:
+    bool checkString(string str) {
+        return is_sorted(str.begin(), str.end());
+    }
+};
