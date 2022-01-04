@@ -24,3 +24,15 @@ public:
         return res;
     }
 };
+
+
+// Efficient Approach
+// Time Complexity = O(logN), Space Complexity = O(1)
+class Solution {
+public:
+    int bitwiseComplement(int n) {
+        int dig = 1;
+        while(n > dig) dig = dig * 2 + 1;
+        return dig - n;
+    }
+};
