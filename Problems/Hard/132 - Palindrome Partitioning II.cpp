@@ -4,6 +4,7 @@
 
 // Implementation
 
+// 1st
 // Using Gap & Cut Strategy
 // Will give TLE
 // Naive Approach
@@ -55,7 +56,7 @@ public:
 };
 
 
-
+// 2nd
 // Using Gap & Cut Strategy
 // Efficient Approach
 // Time Complexity = O(N^2), Space Complexity = O(N^2)
