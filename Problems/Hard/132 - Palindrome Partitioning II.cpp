@@ -100,3 +100,37 @@ public:
         return res[n-1];
     }
 };
+
+
+// 3rd
+// Using Gap & Cut Strategy
+// Most Efficient Approach
+// Time Complexity = O(N^2), Space Complexity = O(N^2)
+class Solution {
+public:
+    int minCut(string str) {
+        int n = str.size();
+        
+        // for gap strategy
+        vector<vector<bool>> dp(n, vector<bool>(n, false));
+        vector<int> res(n);
+        
+        // using prefix technique
+        for(int itr = 0; itr < n; itr++){
+            int minValue = itr;
+            
+            for(int jtr = 0; jtr <= itr; jtr++){
+                
+                if(str[itr] == str[jtr] && (itr-jtr<3 || dp[jtr+1][itr-1])){
+                    dp[jtr][itr] = true; 
+                    minValue = (jtr == 0) ? 0 : min(minValue, res[jtr-1]+1);
+                }
+            }
+            
+            res[itr] = minValue;
+        }
+        
+        // returning the last index of the res
+        return res[n-1];
+    }
+};
