@@ -4,6 +4,7 @@
 
 // Implementation
 
+// Naive Approach
 // Time Complexity = O(logN), Space Complexity = O(1) not considering string length
 class Solution {
 public:
