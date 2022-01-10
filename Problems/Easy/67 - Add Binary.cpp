@@ -4,7 +4,9 @@
 
 // Implementation
 
-// Time Complexity = O(max(m, n)), Space Complexity = O(max(m, n)), where m & n is the length of a & b;
+//Time Complexity = O(max(m, n))
+//Space Complexity = O(max(m, n)), here we are considering the size of sum also
+//where m & n is the length of a & b;
 class Solution {
 public:
     string addBinary(string a, string b) {
