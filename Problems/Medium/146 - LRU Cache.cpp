@@ -4,7 +4,7 @@
 
 // Implementation
 
-// Using doubly linked list
+// Using doubly linked list & unordered_map
 // Time Complexity = O(1), Space Complexity = O(N)
 class LRUCache {
 public:
