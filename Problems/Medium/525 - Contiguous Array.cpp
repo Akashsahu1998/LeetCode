@@ -28,7 +28,7 @@ public:
             }
             
             // if sum is already in the map, then just calculate the maximum length of the subarray
-            // if sum is not present then just add it into the map
+            // if sum is not present then just add it into the map with the value as a index, so later on, that index will help us to find the maximum length
             if(mp.find(sum) != mp.end()){
                 maxLength = max(maxLength, itr - mp[sum]);
             }
