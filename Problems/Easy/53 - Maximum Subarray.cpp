@@ -5,6 +5,7 @@
 // Implementation
 
 // 1st Approach
+// Naive Approach
 // Using DP & Memoization
 // Time Complexity = O(N), Space Complexity = O(N)
 class Solution {
@@ -33,6 +34,7 @@ public:
 
 
 // 2nd Approach
+// Efficient Approach
 // Using Kadane Algorithm
 // Time Complexity = O(N), Space Complexity = O(1)
 class Solution {
