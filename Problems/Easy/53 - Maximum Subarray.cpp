@@ -53,3 +53,42 @@ public:
         return maxAns;
     }
 };
+
+
+
+// follow up que
+// if we need to find, the starting and ending index
+// Using Kadane Algorithm
+// Time Complexity = O(N), Space Complexity = O(1)
+ class Solution {
+ public:
+     int maxSubArray(vector<int>& nums) {
+
+         int curMax = 0, maxAns = INT_MIN, startIndex = 0, endIndex = 0, reserveIndex = 0;
+        
+         for(int itr = 0; itr < nums.size(); itr++){
+            
+             // if our curMax value is more than 0, then only we will add it with current value of nums, otherwise just put a current value into curMax for current index
+             // we will also store the startingindex as itr when curMax is less than 0
+             if(curMax < 0){
+                 curMax = nums[itr];
+                 // we are using reserveIndex for this case, i.e [-2,1,-3,4,-1,2,1,-5,4,-8,4]
+                 reserveIndex = startIndex;                
+                 startIndex = itr;
+             }
+             else curMax = curMax + nums[itr];
+            
+            
+             // calculating the max at each index from curMax            
+             if(maxAns < curMax){
+                 maxAns = curMax;
+                 endIndex = itr;                
+             }
+         }
+        
+         if(startIndex > endIndex) startIndex = reserveIndex;
+                
+         cout << startIndex << " " << endIndex << endl;
+         return maxAns;
+     }
+ };
