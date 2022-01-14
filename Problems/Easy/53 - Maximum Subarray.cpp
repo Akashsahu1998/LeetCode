@@ -4,7 +4,7 @@
 
 // Implementation
 
-
+// 1st Approach
 // Using DP & Memoization
 // Time Complexity = O(N), Space Complexity = O(N)
 class Solution {
@@ -27,6 +27,29 @@ public:
             // calculating the max at each index from dp
             maxAns = max(maxAns, dp[itr]);
         }
+        return maxAns;
+    }
+};
+
+
+// 2nd Approach
+// Using Kadane Algorithm
+// Time Complexity = O(N), Space Complexity = O(1)
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+
+        int curMax = 0, maxAns = INT_MIN;
+                
+        for(int itr = 0; itr < nums.size(); itr++){
+            
+            // if our curMax value is more than 0, then only we will add it with current value of nums, otherwise just put a current value into curMax for current index
+            curMax = (curMax > 0) ? curMax + nums[itr] : nums[itr];
+            
+            // calculating the max at each index from curMax
+            maxAns = max(maxAns, curMax);
+        }
+        
         return maxAns;
     }
 };
