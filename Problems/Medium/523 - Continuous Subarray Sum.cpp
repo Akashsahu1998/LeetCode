@@ -31,7 +31,7 @@ public:
 // 2nd
 // Efficient Approach
 // Using unodered_map
-// Time Complexity = O(N), Space Complexity = O(N)
+// Time Complexity = O(N), Space Complexity = O(K)
 class Solution {
 public:
     bool checkSubarraySum(vector<int>& nums, int k) {
@@ -65,7 +65,7 @@ public:
 // 3rd
 // Efficient Approach
 // Using unodered_set
-// Time Complexity = O(N), Space Complexity = O(N)
+// Time Complexity = O(N), Space Complexity = O(K)
 class Solution {
 public:
     bool checkSubarraySum(vector<int>& nums, int k) {
