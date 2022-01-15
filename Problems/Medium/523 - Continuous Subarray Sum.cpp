@@ -59,3 +59,35 @@ public:
         return false;
     }
 };
+
+
+
+// 3rd
+// Efficient Approach
+// Using unodered_set
+// Time Complexity = O(N), Space Complexity = O(N)
+class Solution {
+public:
+    bool checkSubarraySum(vector<int>& nums, int k) {
+        
+        // taking a set to store the previous remainder
+        unordered_set<int> st;          
+        int sum = 0, previousRem = 0;
+        
+        for(int itr = 0; itr < nums.size(); itr++){
+            // adding current element into sum
+            sum += nums[itr];
+            
+            // finding the remainder of the sum
+            int sumMod = sum % k;
+            
+            // if count of sumMod in set is more than 0, it means, we got the subarray of minimum length 2 
+            if(st.count(sumMod)) return true;
+            
+            // insert the previousRem
+            st.insert(previousRem);
+            previousRem = sumMod;
+        }
+        return false;
+    }
+};
