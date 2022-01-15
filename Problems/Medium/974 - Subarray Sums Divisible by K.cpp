@@ -5,7 +5,7 @@
 // Implementation
 
 // Using unodered_map & prefix sum
-// Time Complexity = O(N), Space Complexity = O(N)
+// Time Complexity = O(N), Space Complexity = O(K)
 class Solution {
 public:
     int subarraysDivByK(vector<int>& nums, int k) {
@@ -38,7 +38,7 @@ public:
 
 
 // Using Vector & Prefix Sum
-// Time Complexity = O(N), Space Complexity = O(N)
+// Time Complexity = O(N), Space Complexity = O(K)
 class Solution {
 public:
     int subarraysDivByK(vector<int>& nums, int k) {
