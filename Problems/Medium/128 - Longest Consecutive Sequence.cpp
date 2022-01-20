@@ -42,3 +42,40 @@ public:
         return maxLen;
     }
 };
+
+
+
+// Using Unordered Set
+// Time Complexity = O(N), Space Complexity = O(N)
+class Solution {
+public:
+    int longestConsecutive(vector<int>& arr) {
+        int n = arr.size();
+        if(n == 0) return 0;
+        
+        // taking set to store all elements
+        unordered_set<int> st(arr.begin(), arr.end());
+                
+        int maxLen = INT_MIN;
+        
+        // iterating over the arr, and
+        // checking if any arr[itr]-1 is present into set, then do nothing, 
+        // if not present it means, its our starting of the sub sequence so, we will count how many values of this sequence is present while moving it by 1
+        for(int itr = 0; itr < n; itr++){
+            int len = 0;
+            int val = arr[itr];
+            if(st.find(val-1) != st.end()){
+                continue;
+            }
+            else{
+                while(st.find(val) != st.end()){
+                    len++;
+                    val++;
+                }
+                
+                maxLen = max(maxLen, len);
+            }
+        }
+        return maxLen;
+    }
+};
