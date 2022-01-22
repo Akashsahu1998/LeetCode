@@ -5,6 +5,7 @@
 // Implementation
 
 // Using Moore's Voting Algorithm
+// In this que max 1 element can be a majority element
 // Time Complexity = O(N),
 // Space Complexity = O(1)
 class Solution {
