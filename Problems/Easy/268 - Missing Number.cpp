@@ -8,7 +8,7 @@
 // Using sum approach 
 // Time Complexity = O(N)
 // Space Complexity = O(1)
-// In this approach there is a chance of integer overflow
+// In this approach there is a possibility of integer overflow
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
@@ -37,6 +37,7 @@ public:
 // Space Complexity = O(1)
 // Approach,  suppose i.e arr = [1,2,3,5], n = 5, and our 1 to n elements are = 1,2,3,4,5
 // so, 1^1 is 0, so in this way if we will xor all arr elements with natural elements only 4 will left
+// Better approach than 1st, bcz here no possibility of integer overflow
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
