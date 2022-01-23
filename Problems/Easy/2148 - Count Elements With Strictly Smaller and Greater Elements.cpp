@@ -31,3 +31,29 @@ public:
         return count;
     }
 };
+
+
+
+// 2nd Arpproach
+// Efficient Solution
+// Time Complexity = O(N)
+// Space Complexity = O(1)
+class Solution {
+public:
+    int countElements(vector<int>& nums) {
+        int n = nums.size();
+                
+        // finding the small and big element from the array using predefined function
+        int small = *min_element(nums.begin(), nums.end());
+        int big = *max_element(nums.begin(), nums.end());
+        
+        // store the result count
+        int count = 0;
+        
+        // if any element is having smaller and greater element, then increase the count
+        for(int itr = 0; itr < n; itr++){
+            if(nums[itr] > small && nums[itr] < big) count++;
+        }
+        return count;
+    }
+};
