@@ -73,7 +73,7 @@ public:
     int missingNumber(vector<int>& nums) {
         int n = nums.size();
         
-        // array elements xor
+        // array and natural elements xor
         int xorArrAndNaturalEle = nums[0];
         for(int itr = 1, jtr = 1; jtr <= n; itr++, jtr++){
             
