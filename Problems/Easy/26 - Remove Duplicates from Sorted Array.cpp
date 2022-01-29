@@ -22,3 +22,21 @@ public:
         return count;
     }
 };
+
+
+
+// 2nd Approach
+// Time Complexity = O(N)
+// Space Complexity = O(1)
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        if(nums.size() == 0) return 0;
+        
+        int index = 1;
+        for(int itr = 1; itr < nums.size(); itr++){
+            if(nums[itr] != nums[itr-1]) nums[index++] = nums[itr];            
+        }
+        return index;
+    }
+};
