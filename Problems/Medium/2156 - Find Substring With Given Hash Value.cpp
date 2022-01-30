@@ -29,7 +29,7 @@ public:
             ans = (ans * power) % modulo;            
         }
         
-        return (ans * (temp * temp) % modulo) % modulo;
+        return (ans * ((temp * temp) % modulo)) % modulo;
     }
     
     string subStrHash(string s, int power, int modulo, int k, int hashValue) {        
