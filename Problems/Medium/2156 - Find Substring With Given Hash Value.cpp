@@ -24,10 +24,15 @@ public:
         unsigned long long int ans = 1;
         unsigned long long int temp = findPower(power, jtr/2, modulo) % modulo;
         
-        // if jtr is odd
+         // if r is odd
+        // suppose n^5 => n^2 * n^2 * n
+       
         if(jtr % 2){
             ans = (ans * power) % modulo;            
         }
+        
+        // if r is even
+        // suppose n^4 => n^2 * n^2
         
         return (ans * ((temp * temp) % modulo)) % modulo;
     }
@@ -76,10 +81,15 @@ public:
         long long ans = 1;
         long long temp = findPower(power, jtr/2, modulo) % modulo;
         
-        // if jtr is odd
+        // if r is odd
+        // suppose n^5 => n^2 * n^2 * n
+       
         if(jtr % 2){
             ans = (ans * power) % modulo;            
         }
+        
+        // if r is even
+        // suppose n^4 => n^2 * n^2
         
         return (ans * ((temp * temp) % modulo)) % modulo;
     }
