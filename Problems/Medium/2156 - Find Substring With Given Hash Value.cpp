@@ -7,7 +7,7 @@
 // Naive Approach
 // Give TLE
 // Time Complexity = O(N * K * LogN)
-// Space Complexity = O(1)
+// Space Complexity = O(LogN), bcz of the recursion call stack of power function
 
 class Solution {
 public:
@@ -16,7 +16,7 @@ public:
     // using this way bcz of overflow issue
     // in this approach, everytime we are doing modulo, so it will never overflow
     // in pow directly we can't do modulo
-	// it will give the result into O(logN)
+	// it will give the result into O(logN) time and will take O(logN) for the space
     unsigned long long int findPower(int power, int jtr, int modulo){
         if(jtr == 0) return 1;
         if(jtr == 1) return power%modulo;
@@ -65,7 +65,7 @@ public:
 // Efficient Approach
 // Using sliding window technique and finding the power of numbers efficiently
 // Time Complexity = O(N * LogN)
-// Space Complexity = O(1)
+// Space Complexity = O(LogN), bcz of the recursion call stack of power function
 class Solution {
 public:
     
@@ -73,7 +73,7 @@ public:
     // using this way bcz of overflow issue
     // in this approach, everytime we are doing modulo, so it will never overflow
     // in pow directly we can't do modulo
-    // it will give the result into O(logN)
+    // it will give the result into O(logN) time and will take O(logN) for the space
     long long findPower(int power, int jtr, int modulo){
         if(jtr == 0) return 1;
         if(jtr == 1) return (power%modulo);
