@@ -82,3 +82,40 @@ public:
         return maxCount;
     }
 };
+
+
+
+// 3rd Approach
+// Using window sliding technique
+// Using Unordered Map
+// Time Complexity = O(N)
+// Space Complexity = O(N), it will be having all the unique element present into map
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        
+        // using map to store the unique char of and their respective index according to the given string(s)
+        unordered_map<char, int> mp;                
+        int maxCount = 0;
+        
+        // iterating over the string
+        // using itr & jtr to track current window in which, we which we are having unique element
+        // basically jtr will be having the start index of the current unqiue window, and
+        // itr will be having the last index of the current unqiue window
+        for(int itr = 0, jtr = 0; itr < s.size(); itr++){
+            char ch = s[itr];
+            
+            // if char already presents then update the start of the current unique window(jtr)
+            if(mp.find(ch) != mp.end()){
+                jtr = max(jtr, mp[ch] + 1); // we are taking max bcz, to handle these type of cases, i.e : s = "abba";
+            }
+            
+            // putting the current index as a value into the key char
+            mp[ch] = itr;
+            
+            // getting the maxCount using the start(jtr) of the current unqiue window and end(itr) of the current unique window + 1
+            maxCount = max(maxCount, itr - jtr + 1);
+        }
+        return maxCount;
+    }
+};
