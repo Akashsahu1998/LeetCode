@@ -70,7 +70,7 @@ public:
         while((itr >= 0 && jtr < s.size()) && (s[itr] == s[jtr])){
             itr--;
             jtr++;
-        }
+        } 
         
         // if we are getting big len, then simply update the start and len
         if(len < jtr - itr - 1){
