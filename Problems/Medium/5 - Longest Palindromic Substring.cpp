@@ -4,6 +4,7 @@
 
 // Implementation
 
+// 1st Approach
 // Using Dynamic Programming
 // Time Complexity = O(N^2)
 // Space Complexity = O(N^2)
@@ -50,5 +51,51 @@ public:
         
         // return the substr from itr of length (jtr-jtr+1)
         return s.substr(itrResult, jtrResult - itrResult + 1);
+    }
+};
+
+
+// 2nd Approach
+// Time Complexity = O(N^2)
+// Space Complexity = O(1)
+class Solution {
+public:   
+    // will store the starting index into start and maximum length of the pallindromic substring into len
+    int start, len;
+    
+    // function to extend the length of string, and check whether its a pallindrome or not
+    void extendAndCheckPallindromPossible(string s, int itr, int jtr){
+        
+        // check itr & jtr, is valid, and also check the itr and jtr index values are equal
+        while((itr >= 0 && jtr < s.size()) && (s[itr] == s[jtr])){
+            itr--;
+            jtr++;
+        }
+        
+        // if we are getting big len, then simply update the start and len
+        if(len < jtr - itr - 1){
+            start = itr + 1;
+            len = jtr - itr - 1;
+        }
+    }
+    
+    string longestPalindrome(string s) {
+        int n = s.size();
+        
+        // if string is less than equal to 1, then simply return the string, bcz it will be pallindrome
+        if(n <= 1) return s;
+        
+        // itearting over the string
+        for(int itr = 0; itr < n-1; itr++){
+            
+            // checking for odd index, i.e = abc
+            extendAndCheckPallindromPossible(s, itr, itr);
+            
+            // checking for even index, i.e = abba
+            extendAndCheckPallindromPossible(s, itr, itr+1);
+        }
+        
+        // return the substr from start index of length len
+        return s.substr(start, len);
     }
 };
