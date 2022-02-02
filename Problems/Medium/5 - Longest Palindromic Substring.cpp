@@ -61,7 +61,7 @@ public:
 class Solution {
 public:   
     // will store the starting index into start and maximum length of the pallindromic substring into len
-    int start, len;
+    int start = 0, len = 0;
     
     // function to extend the length of string, and check whether its a pallindrome or not
     void extendAndCheckPallindromPossible(string s, int itr, int jtr){
