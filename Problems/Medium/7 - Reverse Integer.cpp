@@ -4,7 +4,7 @@
 
 // Implementation
 
-// Time Complexity = O(N)
+// Time Complexity = O(Log(N))
 // Space Complexity = O(1)
 class Solution {
 public:
