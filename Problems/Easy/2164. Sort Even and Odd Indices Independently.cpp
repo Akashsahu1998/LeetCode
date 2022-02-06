@@ -5,7 +5,7 @@
 // Implementation
 
 // 1st Approach
-// Using two array
+// Using two extra array
 // Time Complexity : O(NLogN)
 // Space Complexity : O(N)
 
@@ -32,6 +32,53 @@ public:
         for(int itr = 0, i = 0, j = 0; itr < nums.size(); itr++){
             if(itr%2 == 0) nums[itr] = even[i++];
             else nums[itr] = odd[j++];
+        }
+        
+        return nums;
+    }
+};
+
+
+
+// 2nd Approach
+// Using one extra array
+// Time Complexity : O(NLogN)
+// Space Complexity : O(N)
+
+class Solution {
+public:
+    vector<int> sortEvenOdd(vector<int>& nums) {
+        
+        int n = nums.size();
+        vector<int> arr;
+        
+        // push the even index values into arr
+        for(int itr = 0; itr < n; ){
+            arr.push_back(nums[itr]);
+            itr += 2;
+        }
+        
+        // sort the arr in ascending order and place back into the even index of nums
+        sort(arr.begin(), arr.end());
+        for(int itr = 0, jtr = 0; itr < n; ){
+            nums[itr] = arr[jtr++];
+            itr += 2;
+        }
+        
+        // clear the arr, so we can resuse it for odd index
+        arr.clear();
+        
+        // push the odd index values into arr
+        for(int itr = 1; itr < n; ){
+            arr.push_back(nums[itr]);
+            itr += 2;
+        }
+        
+        // sort the arr into descending order and place back into the odd index of nums
+        sort(arr.begin(), arr.end(), greater<int>());
+        for(int itr = 1, jtr = 0; itr < n; ){
+            nums[itr] = arr[jtr++];
+            itr += 2;
         }
         
         return nums;
