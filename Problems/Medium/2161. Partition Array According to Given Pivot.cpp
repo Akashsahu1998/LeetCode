@@ -35,3 +35,36 @@ public:
         return nums;
     }
 };
+
+
+
+// 2nd Approach
+// Using 1 extra array
+// Time Complexity = O(N)
+// Space Complexity = O(N)
+
+class Solution {
+public:
+    // always starting low from 0, bcz we need to enter small element from 0th index
+    // incrementing same when a is less than pivot, bcz the total number of element which are smaller than pivot, from there we need to start inserting same number
+    // decrementing high when a is greater than pivot, bcz the total number of element which are greater than pivot, from the last, we need to start inserting high number
+    
+    vector<int> pivotArray(vector<int>& nums, int pivot) {        
+        
+        int low = 0, same = 0, high = nums.size();
+        
+        for(auto a : nums){
+            if(a < pivot) same++;
+            else if(a > pivot) high--;
+        }
+        
+        vector<int> res(nums.size());
+        for(auto a : nums){
+            if(a < pivot) res[low++] = a;
+            else if(a > pivot) res[high++] = a;
+            else res[same++] = a;
+        }
+        
+        return res;
+    }
+};
