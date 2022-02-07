@@ -12,16 +12,16 @@ public:
     int myAtoi(string s) {
         int itr = 0, n = s.size();
         
-        // 1st Step : to skip all leading spaces
+        // skip all leading spaces
         while(s[itr] == ' ') itr++;
         
-        // 2nd Step : to check whether its negative or position number
+        // check whether its negative or position number
         int sign = 1;
         if(itr < n && s[itr] == '+' || s[itr] == '-'){
             sign = (s[itr++] == '+') ? 1 : -1;            
         }
         
-        // 3rd Step : read the next char's until and unless the non digit char occurs or end of the string reached
+        // read the next char's until and unless the non digit char occurs or end of the string reached
         // if non digit char occurs just ignore the rest of the string
         int num = 0;
         while(itr < n && s[itr] >= '0' && s[itr] <= '9'){
