@@ -5,7 +5,7 @@
 // Implementation
 
 // Using unordered set
-// Time Complexity = O(1) for all functions, except toString() -> (O(N))
+// Time Complexity = O(1) for all functions, except flip() & toString() -> (O(N))
 // Space Complexity = O(N)
 
 class Bitset {
