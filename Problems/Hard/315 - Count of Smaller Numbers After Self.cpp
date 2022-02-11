@@ -20,12 +20,14 @@ public:
         mergeSort(originalArr, mid+1, end, result);
         
         int leftIndex = start, rightIndex = mid+1, countElementsOfRightArrWhichAreLessThanLeftArr = 0;
-        vector<pair<int, int>> temp;
+        
+        // using to create a merge array for particular partition
+        vector<pair<int, int>> tempMergeArr;
         
         while(leftIndex <= mid && rightIndex <= end){
             if(originalArr[leftIndex].first > originalArr[rightIndex].first){
                 
-                temp.push_back(originalArr[rightIndex]);
+                tempMergeArr.push_back(originalArr[rightIndex]);
                 
                 countElementsOfRightArrWhichAreLessThanLeftArr++;
                 rightIndex++;
@@ -34,24 +36,25 @@ public:
                 
                 result[originalArr[leftIndex].second] += countElementsOfRightArrWhichAreLessThanLeftArr;
                 
-                temp.push_back(originalArr[leftIndex]);
+                tempMergeArr.push_back(originalArr[leftIndex]);
                 leftIndex++;
             }
         }
         
         while(leftIndex <= mid){
             result[originalArr[leftIndex].second] += countElementsOfRightArrWhichAreLessThanLeftArr;
-            temp.push_back(originalArr[leftIndex]);
+            tempMergeArr.push_back(originalArr[leftIndex]);
             leftIndex++;            
         }
         
         while(rightIndex <= end){
-            temp.push_back(originalArr[rightIndex]);
+            tempMergeArr.push_back(originalArr[rightIndex]);
             rightIndex++;
         }
         
+        // copying merge array into original array
         int index = start;
-        for(auto a : temp){
+        for(auto a : tempMergeArr){
             originalArr[index++] = a;
         }
     }
@@ -60,10 +63,10 @@ public:
         int n = nums.size();
         vector<pair<int, int>> originalArr;
         
-        for(int itr = 0; itr < n; itr++) {
-        	originalArr.push_back({nums[itr], itr});
-		}
-		
+        for(int itr = 0; itr < n; itr++){
+            originalArr.push_back({nums[itr], itr});
+        }
+        
         vector<int> result(n, 0);
         
         mergeSort(originalArr, 0, n-1, result);
