@@ -40,6 +40,7 @@ public:
 
 // 2nd Approach
 // Using 1 extra array
+// Three Pointer
 // Time Complexity = O(N)
 // Space Complexity = O(N)
 
