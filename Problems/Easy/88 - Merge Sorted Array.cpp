@@ -38,3 +38,40 @@ public:
         }
     }
 };
+
+
+// Efficient Approach
+// Time Complexity : O(N+M) + O(NlogN) + O(MlogM) => O((N+M)log(N+M))
+// Space Complexity : O(1)
+class Solution {
+public:
+    void merge(vector<int>& nums1, int n, vector<int>& nums2, int m) {
+        
+        // take 3 pointers, itr will point to nums1, and jtr will point to nums2, and ktr will start from nums1 end
+        int itr = 0, jtr = 0, ktr = n - 1;
+   
+        // run till itr is less than equal to ktr, and jtr is less than m
+        while (itr <= ktr && jtr < m) {
+            
+            // we are doing this, bcz we know the fact that both arr are sorted
+            // if nums1[itr] is greater than nums2[jtr], then just increment itr by 1
+            if (nums1[itr] < nums2[jtr])
+                itr++;
+            else {  // otherwise just swap nums1[ktr] and nums2[jtr], and decrement ktr by 1 & increment jtr by 1
+                swap(nums2[jtr++], nums1[ktr--]);
+            }
+        }
+       
+        // Sort first array
+        sort(nums1.begin(), nums1.begin() + n);
+       
+        // Sort second array
+        sort(nums2.begin(), nums2.end());
+        
+        // in last, just put all the values of nums2 into nums1
+        itr = n, jtr = 0;
+        while(jtr < m){
+            nums1[itr++] = nums2[jtr++];
+        }        
+    }
+};
