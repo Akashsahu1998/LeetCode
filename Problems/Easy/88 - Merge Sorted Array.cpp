@@ -6,7 +6,7 @@
 
 // 1st Approach
 // Naive Approach
-// Time Complexity : O(n * m)
+// Time Complexity : O(N * M)
 // Space Complexity : O(1)
 class Solution {
 public:
@@ -87,7 +87,7 @@ class Solution {
 public:
     void merge(vector<int>& nums1, int n, vector<int>& nums2, int m) {
         
-        // take 3 pointers, itr will point to nums1, and jtr will point to nums2, and ktr will start from nums1 end
+        // take 3 pointers, itr will start from nums1 end, and jtr will start from nums2 end, and ktr will start from nums1 end
         int itr = n-1, jtr = m-1, ktr = m + n - 1;
         
         // run untill & unless jtr become less than 0
