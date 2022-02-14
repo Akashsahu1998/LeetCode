@@ -75,3 +75,26 @@ public:
         }        
     }
 };
+
+
+// Most Efficient Approach
+// Time Complexity : O(N)
+// Space Complexity : O(1)
+class Solution {
+public:
+    void merge(vector<int>& nums1, int n, vector<int>& nums2, int m) {
+        
+        // take 3 pointers, itr will point to nums1, and jtr will point to nums2, and ktr will start from nums1 end
+        int itr = n-1, jtr = m-1, ktr = m + n - 1;
+        
+        // run untill & unless jtr become less than 0
+        while(jtr >= 0){
+            
+            // if itr is greater is greater than 0, and num1[itr] is greater than nums1[jtr] then put the nums[itr] into nums1[ktr] and decrement itr and ktr by 1
+            if(itr >= 0 && nums1[itr] > nums2[jtr]) nums1[ktr--] = nums1[itr--];
+            
+            // else put the nums[jtr] into nums1[ktr] and decrement jtr and ktr by 1
+            else nums1[ktr--] = nums2[jtr--];
+        }
+    }
+};
