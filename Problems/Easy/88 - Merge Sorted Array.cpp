@@ -81,7 +81,7 @@ public:
 
 // 3rd Approach
 // Most Efficient Approach
-// Time Complexity : O(N)
+// Time Complexity : O(N), where N = length of the nums1 vector
 // Space Complexity : O(1)
 class Solution {
 public:
