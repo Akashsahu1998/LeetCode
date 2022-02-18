@@ -6,8 +6,8 @@
 
 // 1st Approach
 // Idea: Convert into string, then just use two pointer's technique
-// Time Complexity: O(LogN)
-// Space Complexity: O(1)
+// Time Complexity: O(N)
+// Space Complexity: O(1), if we are not considering string into space
 class Solution {
 public:
     bool isPalindrome(int x) {
