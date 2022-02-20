@@ -25,9 +25,6 @@ public:
 
 // Efficient Solution
 // Time Complexity = O(1)
-// Space Complexity = O(1), not considering the res vector, bcz its a part of result
-// Efficient Solution
-// Time Complexity = O(1)
 // Space Complexity = O(1)
 class Solution {
 public:
