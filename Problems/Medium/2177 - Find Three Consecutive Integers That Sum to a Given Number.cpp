@@ -26,17 +26,16 @@ public:
 // Efficient Solution
 // Time Complexity = O(1)
 // Space Complexity = O(1), not considering the res vector, bcz its a part of result
+// Efficient Solution
+// Time Complexity = O(1)
+// Space Complexity = O(1)
 class Solution {
 public:
-    vector<long long> sumOfThree(long long num) {        
-        vector<long long> res;
-        
+    vector<long long> sumOfThree(long long num) {
         long long sum = num/3;
         if(((sum-1) + sum + (sum+1)) == num){
-            res.push_back(sum-1);
-            res.push_back(sum);
-            res.push_back(sum+1);
+            return {sum-1, sum, sum+1};
         }
-        return res;
+        return {};
     }
 };
