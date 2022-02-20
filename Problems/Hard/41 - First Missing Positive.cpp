@@ -13,18 +13,22 @@ class Solution {
 public:
     int firstMissingPositive(vector<int>& nums) {
         int n = nums.size();
-        vector<int> mp(n+2, 0);
+        vector<int> mp(n+2, 0); // taking n+2 to handle base case like this, i.e => [1,2,3]
         
         for(int itr = 0; itr < n; itr++){
+            
+            // this condition bcz, we don't want to calculate frequency of negative element and the element more than n
             if(nums[itr] >= 1 && nums[itr] <= n){
                 mp[nums[itr]]++;
             }
         }
         
+        // starting from 1, bcz we have to find the first positive number from 1
         for(int itr = 1; itr <= n+1; itr++){
             if(mp[itr] == 0) return itr;
         }
         
+        // if not found, return -1
         return -1;
     }
 };
