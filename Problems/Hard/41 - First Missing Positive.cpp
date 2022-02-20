@@ -28,7 +28,6 @@ public:
             if(mp[itr] == 0) return itr;
         }
         
-        // if not found, return -1
         return -1;
     }
 };
@@ -45,8 +44,8 @@ public:
         
         for(int itr = 0; itr < n; itr++){
             
-            // idea is to put all the elements into their equal index, i.e 2 will be on 2nd index, like this
-            // neglect all numbers which are less than 1, and all numbers which are greater than 1, and
+            // idea is to put all the elements into their equal index(assuming index from 1), i.e 2 will be on (2 - 1)index, like this
+            // neglect all numbers which are less than 1, and all numbers which are greater than n, and
             // if current nums[itr] is not equal to (nums[nums[itr] - 1]) value, then do swap
             // with this (nums[itr] != nums[nums[itr] - 1]) also handling the case i.e [1,1]
             // its 0 based indexing that's why using nums[itr] - 1             
