@@ -10,18 +10,15 @@
 // Space Complexity = O(1), not considering the res vector, bcz its a part of result
 class Solution {
 public:
-    vector<long long> sumOfThree(long long num) {
-        vector<long long> res;
+    vector<long long> sumOfThree(long long num) {        
         for(long long itr = -1; itr <= num/3; itr++){
             long long sum = itr + (itr+1) + (itr+2);
             if(sum == num){
-                res.push_back(itr);
-                res.push_back(itr+1);
-                res.push_back(itr+2);
+                return {itr, itr+1, itr+2};
                 break;
             }
         }
-        return res;
+        return {};
     }
 };
 
