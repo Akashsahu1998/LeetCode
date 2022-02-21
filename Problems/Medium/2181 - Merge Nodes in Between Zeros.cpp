@@ -34,3 +34,34 @@ public:
         return ans->next;
     }
 };
+
+
+// 2nd Approach
+// Better Approach
+// Without Using extra Node
+// Time Complexity = O(N)
+// Space Complexity = O(1), not using any extra node list
+
+class Solution {
+public:
+    ListNode* mergeNodes(ListNode* head) {        
+        head = head->next;
+        ListNode* left = head;
+        
+        while(left){
+            int sum = 0;
+            ListNode* right = left;
+            
+            while(right->val != 0){
+                sum += right->val;
+                right = right->next;
+            }
+            
+            left->val = sum;
+            left->next = right->next;
+            left = left->next;
+        }
+        
+        return head;
+    }
+};
