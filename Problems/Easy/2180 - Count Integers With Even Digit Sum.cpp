@@ -40,11 +40,11 @@ public:
 // Space Complexity: O(1)
 
 // Idea: Observe this pattern 
-// num = 6 = [2,4,6]
-// num = 10 = [2,4,6,8]
-// num = 15 = [2,4,6,8,11,13,15]
-// num = 20 = [2,4,6,8,11,13,15,17,19,20]
-// num = 27 = [2,4,6,8,11,13,15,17,19,20,22,24,26]
+// 1) num = 6 = [2,4,6] => 3
+// 2) num = 10 = [2,4,6,8] => 4
+// 3) num = 15 = [2,4,6,8,11,13,15] => 7
+// 4) num = 20 = [2,4,6,8,11,13,15,17,19,20] => 10
+// 5) num = 27 = [2,4,6,8,11,13,15,17,19,20,22,24,26] => 13
 
 // from this pattern we can observe one thing, if we are taking the sum of the digits of the num, and if that sum is even then we can directly divide our num by 2, and return the result, but if our sum if odd then we need to do (num-1)/2 to get the desired results.
 
