@@ -5,7 +5,7 @@
 // Implementation
 
 // 1st Approach
-// Using Hashing & Backtracking
+// Using DFS, Hashing & Backtracking
 class Solution {
 public:
     void makeCombinations(string digits, int index, string mapping[], string output, vector<string> &ans){
@@ -48,7 +48,7 @@ public:
 
 
 // 2nd Approach
-// Using BFS
+// Using BFS & Hashing
 class Solution {
 public:
     vector<string> letterCombinations(string digits) {
@@ -76,6 +76,7 @@ public:
                 }
             }
             
+            // swapping the temp and ans, basically wanted to put temp into result
             swap(ans, temp);
         }
         
