@@ -44,3 +44,41 @@ public:
         return ans;
     }
 };
+
+
+
+// 2nd Approach
+// Using BFS
+class Solution {
+public:
+    vector<string> letterCombinations(string digits) {
+        vector<string> ans;        
+        if(digits.size() == 0) return ans;
+        
+        ans.push_back("");
+        
+        // map the letters with the index(consider it as a number on the keypad)
+        string mapping[10] = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        
+        // iterating over the digits
+        for(auto digit : digits){
+            vector<string> temp;
+            
+            // finding the index of the digit present into digits, and taking the letters present over that particular index into the mapping
+            string str = mapping[digit - '0'];
+            
+            // iterating over the characters of the letter for particular key
+            for(auto ch :  str){
+                
+                // iterating over the ans
+                for(auto res : ans){
+                    temp.push_back(res + ch);
+                }
+            }
+            
+            swap(ans, temp);
+        }
+        
+        return ans;
+    }
+};
