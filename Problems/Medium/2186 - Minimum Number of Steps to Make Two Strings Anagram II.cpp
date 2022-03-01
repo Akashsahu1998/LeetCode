@@ -5,8 +5,8 @@
 // Implementation
 
 // Using Unordered Map
-// Time Complexity: O(N)
-// Time Complexity: O(N)
+// Time Complexity: O(M+N), where M = s.size(), N = t.size()
+// Time Complexity: O(M),	where M = s.size()
 class Solution {
 public:
     int minSteps(string s, string t) {
