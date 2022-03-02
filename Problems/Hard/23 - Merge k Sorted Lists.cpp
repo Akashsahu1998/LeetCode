@@ -47,7 +47,7 @@ public:
 
 
 // 2nd Approach
-// Using Priority Queue
+// Using Priority Queue(Min Heap)
 // Time Complexity = O(N * logK)
 // Space Complexity = O(max(k.length))
 
@@ -102,5 +102,66 @@ public:
         
         // returning the result
         return res->next;
+    }
+};
+
+
+
+// 3rd Approach
+// Using Divide & Conquer Strategy
+// Time Complexity = O(N * logK)
+// Space Complexity = O(max(k.length))
+
+// Idea: divide the list, take two pointers one from start, another from last, and merge the lists of both start and end index, and store into the start index and increment start by 1 and decrement end by 1, so in the last will be having the all k lists at 0th index in sorted form.
+
+class Solution {
+private:
+    // Recursive Approach to merge the sorted lists
+    // Time Complexity = O(max(first, second))
+    // Space Complexity = O(max(first, second)), bcz of stack trace
+    ListNode* mergeTwoLists(ListNode* first, ListNode* second){
+        if(!first) return second;
+        if(!second) return first;        
+        
+        if(first->val < second->val){
+            first->next = mergeTwoLists(first->next, second);
+            return first;
+        }
+        else{
+            second->next = mergeTwoLists(first, second->next);
+            return second;
+        }
+    }
+    
+public:    
+    ListNode* mergeKLists(vector<ListNode*>& lists) {
+        
+        // base case
+        if(lists.size() == 0) return NULL;
+        
+        // start will always start from 0th node, and end will start from last node
+        int start = 0, end = lists.size()-1;
+        
+        while(end > 0){
+            
+            // intialize start to 0 everytime
+            start = 0;
+            
+            // run the loop till the time, start is less than the end
+            while(start < end){
+                
+                // merge the start index and end index node and store the merged list into the start index
+                lists[start] = mergeTwoLists(lists[start], lists[end]);
+                
+                // increment start by 1
+                start++;
+                
+                // decrement end by 1
+                end--;
+            }
+        }
+        
+        // at the end will be having the all merged nodes on the 0th index
+        return lists[0];
     }
 };
