@@ -54,8 +54,7 @@ public:
 // Idea: Storing all k nodes into the Priority Queue and after that just looping until its size become 0, while looping storing the top node into the dummy list, bcz it will be a smallest node, and adding the next of the kth node into Priority Queue, if its not null
 
 class Solution {
-public:
-    
+private:
     // using this stuct to compare the data of the node, bcz we are storing the list into the Priority Queue
     struct compare {
         bool operator()(const ListNode* l, const ListNode* r) {
@@ -63,6 +62,7 @@ public:
         }
     };
     
+public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
         
         // using pq to store the nodes in the ascending order, by default priority queue stores elements into ascending order only
