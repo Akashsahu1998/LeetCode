@@ -5,9 +5,8 @@
 // Implementation
 
 // 1st Approach
-// Not an Efficient Method
 // Time Complexity = O(N * max(k.length))
-// Space Complexity = O(max(k.length))=, bcz of the recursive mergeTwoLists function
+// Space Complexity = O(max(k.length)), bcz of the recursive mergeTwoLists function
 
 // Idea : Iterating over the k lists from 1 to N, and adding all the lists into lists[0], and in last returning that lists[0], bcz all other k lists are getting merged into this lists[0]
 
@@ -43,7 +42,6 @@ public:
         return lists[0];
     }
 };
-
 
 
 // 2nd Approach
@@ -104,7 +102,6 @@ public:
         return res->next;
     }
 };
-
 
 
 // 3rd Approach
