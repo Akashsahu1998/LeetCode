@@ -20,7 +20,7 @@ public:
         for(int row = 0; row < 9; row++){
             for(int col = 0; col < 9; col++){
                 
-                // if the current index value if dot(.) then we don't need to do anything 
+                // if the current index value is dot(.) then we don't need to do anything 
                 if(board[row][col] != '.'){
                     
                     // if any particular (row index with value) or (col index with value) or (box index with value) already visited it means that is not a valid sudoku, so we will directly return false
