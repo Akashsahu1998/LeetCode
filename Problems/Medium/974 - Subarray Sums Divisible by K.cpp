@@ -42,7 +42,7 @@ public:
 class Solution {
 public:
     int subarraysDivByK(vector<int>& nums, int k) {
-         // taking a vector as a map to calculate the frequency if a remainder
+         // taking a vector as a map to calculate the frequency of a remainder
         vector<int> mp(k+1, 0);
         mp[0] = 1;
         int sum = 0, count = 0;
@@ -67,3 +67,14 @@ public:
         return count;
     }
 };
+
+
+
+
+/*
+Solution Info:
+
+1) use un_map
+2) totalsum and remainder
+3) check remainder into map, store into the result and incr count
+*/
