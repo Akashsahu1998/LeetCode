@@ -19,8 +19,8 @@ public:
         
         while(low <= high){
             int cut1 = (low + high) / 2;
-            // +1 bcz, if its even suppose n1 = 4, n2 = 6 then cut2 will be 5 
-            // and if its odd suppose, n1 = 3, n2 = 4 then cut2 will be 4, bcz we need +1 of mid, that's why
+            // +1 bcz, if its even suppose n1 = 4, n2 = 6 then cut2 will be 3
+            // and if its odd suppose, n1 = 3, n2 = 4 then cut2 will be 3, bcz we need +1 of mid, that's why
             int cut2 = ((n1 + n2 + 1) / 2) - cut1;
             
             int left1 = (cut1 == 0) ? INT_MIN : nums1[cut1 - 1];
