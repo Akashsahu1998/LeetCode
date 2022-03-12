@@ -49,3 +49,26 @@ public:
         return abs(count);
     }
 };
+
+
+// Efficient Approach
+// Time Complexity = O(N), Space Complexity = O(N)
+// Here we are using only 1 map, counting the unmatched char
+class Solution {
+public:
+    int minSteps(string s, string t) {
+        unordered_map<char, int> mp;
+        
+        for(auto ch : s) mp[ch]++;
+        
+        int unmatchChar = 0;
+        for(auto ch : t){
+            if(mp[ch]){
+                mp[ch]--;
+            }
+            else unmatchChar++;
+        }
+        
+        return unmatchChar;
+    }
+};
