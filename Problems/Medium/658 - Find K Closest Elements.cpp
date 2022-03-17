@@ -4,7 +4,7 @@
 
 // Implementation
 
-// using max heap
+// Using Max Heap
 // Time Complexity : O(NLogN)
 // Space Complexity : O(K)
 
@@ -33,5 +33,30 @@ public:
         sort(res.begin(), res.end());
         
         return res;
+    }
+};
+
+
+// 2nd Approach
+// Using Two Pointers
+// Time Complexity : O(N)
+// Space Complexity : O(1)
+
+class Solution {
+public:
+    vector<int> findClosestElements(vector<int>& arr, int k, int x) {
+        
+        int lo = 0, hi = arr.size() - 1;
+        
+		while (hi - lo >= k) {
+			if (abs(arr[lo] - x) > abs(arr[hi] - x)) lo++;
+            else hi--;
+		}
+        
+		vector<int> res;
+		for (int i = lo; i <= hi; i++) {
+			res.push_back(arr[i]);
+		}
+		return res;
     }
 };
