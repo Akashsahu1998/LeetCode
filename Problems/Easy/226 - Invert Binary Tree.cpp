@@ -6,7 +6,7 @@
 
 // Recursive Approach
 // Time Complexity : O(N)
-// Space Complexity : O(H), Where H is the height of the tree
+// Space Complexity : O(H), Where H is the height of the Binary Tree
 
 class Solution {
 public:
@@ -27,7 +27,7 @@ public:
 // Iterative Approach
 // Using Stack
 // Time Complexity : O(N)
-// Space Complexity : O(N)
+// Space Complexity : O(W), Where W is the width of the Binary Tree**
 
 class Solution {
 public:
