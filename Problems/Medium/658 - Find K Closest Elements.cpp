@@ -46,17 +46,18 @@ class Solution {
 public:
     vector<int> findClosestElements(vector<int>& arr, int k, int x) {
         
-        int lo = 0, hi = arr.size() - 1;
+        int left = 0, right = arr.size() - 1;
         
-		while (hi - lo >= k) {
-			if (abs(arr[lo] - x) > abs(arr[hi] - x)) lo++;
-            else hi--;
+		while (right - left >= k) {
+			if (abs(arr[left] - x) > abs(arr[right] - x)) left++;
+            else right--;
 		}
         
 		vector<int> res;
-		for (int i = lo; i <= hi; i++) {
+		for (int i = left; i <= right; i++) {
 			res.push_back(arr[i]);
 		}
+        
 		return res;
     }
 };
