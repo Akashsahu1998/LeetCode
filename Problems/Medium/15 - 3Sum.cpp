@@ -20,6 +20,7 @@ public:
         // sort the nums
         sort(nums.begin(), nums.end());
         
+        // iterate over the nums
         for(int itr = 0; itr < nums.size()-2; itr++){            
             
             // skip all continous same element, doing bcz to avoid duplicate triplets
