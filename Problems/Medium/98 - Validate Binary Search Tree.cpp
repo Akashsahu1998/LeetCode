@@ -5,7 +5,7 @@
 // Implementation
 
 // Using Stack & Previous Pointer
-// Time Complexity = O(N)
+// Time Complexity = O(N), where N is the total nuumber of nodes in the Binary Tree
 // Space Complexity = O(H), where H is the Height of the Binary Tree
 class Solution {
 public:
