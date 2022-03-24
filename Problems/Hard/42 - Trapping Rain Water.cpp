@@ -53,3 +53,22 @@ public:
         return ans;
     }
 };
+
+
+/*
+
+**1) Approach O(N^2) Time, Space O(1)**
+1) iterate over the array and find the max from left and max from right as well
+2) calculate the ans based on this
+
+**2) Approach O(N) Time, Space (N)**
+1) store the max element from left
+2) store the max element from right
+3) just iterate over the array and calculate the ans
+
+**3) Approach O(N) Time, Space (1)**
+1) take var left, right, start left from 0 and right from end
+2) take two more var, leftMax in which we will store the left max value from left, and in rightMax we will store the max value from right side.
+3) check the left and right element, and for these update the respective values and calculate the ans
+
+*/
