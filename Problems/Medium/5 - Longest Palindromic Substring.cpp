@@ -7,7 +7,7 @@
 // 1st Approach
 // Using Dynamic Programming
 // Time Complexity = O(N^2)
-// Space Complexity = O(N^2)
+// Space Complexity = O(N^2) 
 class Solution {
 public:
     string longestPalindrome(string s) {
