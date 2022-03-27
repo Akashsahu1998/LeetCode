@@ -5,7 +5,7 @@
 // Implementation
 
 // Using Binary Search
-// Time Complexity: O(LogN)
+// Time Complexity: Average Case : O(LogN), Worst Case : O(N)
 // Space Complexity: O(1)
 class Solution {
 public:
