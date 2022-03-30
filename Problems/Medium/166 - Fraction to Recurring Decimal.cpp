@@ -17,6 +17,7 @@ public:
             ans += "-";
         }
         
+        // basically converting into the long abs value
         long num = labs(numerator), den = labs(denominator);
         
         long quotient = num / den;
