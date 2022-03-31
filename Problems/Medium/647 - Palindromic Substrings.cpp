@@ -38,9 +38,12 @@ public:
 
 // 2nd Approach
 // Better than the 1st Approach, Without DP
-// Simply iterating over the string and checking whether we can extend string as a pallindrome or not for odd & even length by moving left & right side
 // Time Complexity: O(N^2)
 // Space Complexity: O(1)
+
+// Idea: Simply iterating over the string and checking whether we can extend string as a pallindrome or not for odd & even length by moving left & right side
+
+
 class Solution {
 private:
     void tryToExtendPallindrome(string s, int left, int right, int &ans){
