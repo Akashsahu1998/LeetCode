@@ -7,7 +7,7 @@
 // 1st Approach
 // Using DP, gap strategy
 // Time Complexity: O(N^2)
-// Space Complexity: O(1)
+// Space Complexity: O(N^2)
 class Solution {
 public:
     int countSubstrings(string s) {
@@ -29,6 +29,38 @@ public:
                 
                 if(dp[itr][jtr]) ans++;
             }
+        }
+        
+        return ans;
+    }
+};
+
+
+// 2nd Approach
+// Better than the 1st Approach, Without DP
+// Simply iterating over the string and checking whether we can extend string as a pallindrome or not for odd & even length by moving left & right side
+// Time Complexity: O(N^2)
+// Space Complexity: O(1)
+class Solution {
+private:
+    void tryToExtendPallindrome(string s, int left, int right, int &ans){
+        while(left >= 0 && right < s.size() && s[left] == s[right]) {
+            ans++;
+            left--;
+            right++;
+        }
+    }
+    
+public:
+    int countSubstrings(string s) {
+        int ans = 0;
+        
+        for(int itr = 0; itr < s.size(); itr++){
+            // odd length
+            tryToExtendPallindrome(s, itr, itr, ans);
+            
+            // even length
+            tryToExtendPallindrome(s, itr, itr+1, ans);
         }
         
         return ans;
