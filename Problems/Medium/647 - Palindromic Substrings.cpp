@@ -5,13 +5,13 @@
 // Implementation
 
 // 1st Approach
-// Using DP, gap strategy
+// Using DP, Gap Strategy
 // Time Complexity: O(N^2)
 // Space Complexity: O(N^2)
 class Solution {
 public:
     int countSubstrings(string s) {
-        int ans = 0, n = s.size();
+        int ans = 0, n = s.size(); 
         
         vector<vector<int>> dp(n, vector<int>(n, 0));
         
