@@ -5,7 +5,8 @@
 // Implementation
 
 // Using DFS + Backtracking
-// Time Complexity = O(ROW*COL), Space Complexity = O(1)
+// Time Complexity = O(ROW*COL)
+// Space Complexity = O(ROW*COL)
 class Solution {
 private:    
     bool dfs(vector<vector<char>>& board, string word, int itr, int jtr, int index){
