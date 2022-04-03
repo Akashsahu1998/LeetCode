@@ -8,7 +8,7 @@
 // Time Complexity = O(2^N)
 // Space Complexity = O(1), not considering the ans vector, bcz its a part of output
 class Solution {
-public:
+private:
     void solve(int open, int close, string output, vector<string> &ans){
         
         // base case
@@ -31,7 +31,8 @@ public:
             solve(open, close-1, closeOutput, ans);
         }
     }
-    
+
+public:    
     vector<string> generateParenthesis(int n) {
         
         // to store ans
