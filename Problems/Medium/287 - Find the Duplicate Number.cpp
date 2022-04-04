@@ -4,7 +4,7 @@
 
 // Implementation
 
-// By modifying the array
+// By modifying the original array
 // Time Complexity = O(N)
 // Space Complexity = O(1)
 
@@ -23,7 +23,7 @@ public:
 };
 
 
-// Using slow & fast pointers
+// Using slow & fast pointers, without modifying the original array
 // Time Complexity = O(N)
 // Space Complexity = O(1)
 
