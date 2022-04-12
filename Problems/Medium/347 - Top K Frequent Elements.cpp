@@ -8,6 +8,8 @@
 // Time Complexity = O(NLogK)
 // Space Complexity = O(N)
 
+// Idea: using map to get the frequency of the elements & multi set to get the min heap, so will get the maximum value
+
 class Solution {
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
