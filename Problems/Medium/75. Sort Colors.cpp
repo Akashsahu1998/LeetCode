@@ -52,6 +52,8 @@ public:
 // Time Complexity = O(N)
 // Space Complexity = O(1)
 
+// Check mid value for 0,1,2 
+
 class Solution {
 public:
     void sortColors(vector<int>& nums) {
