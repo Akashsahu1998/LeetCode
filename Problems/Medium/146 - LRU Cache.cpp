@@ -26,6 +26,8 @@ public:
     
     // tail->prev will hold the old added node
     ListNode *tail = new ListNode(-1, -1);
+    
+    // taking map to store the key and the value as a node address
     unordered_map<int, ListNode*> mp;    
     
     LRUCache(int capacity) {
