@@ -18,7 +18,7 @@ public:
                 if(matrix[i][j] == 0){
                     matrix[i][0] = matrix[0][j] = 0;
                 }
-            }1
+            }
         }
         
         for(int i = row-1; i >= 0; i--){
