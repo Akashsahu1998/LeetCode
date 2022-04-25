@@ -47,7 +47,7 @@ public:
 
 // 3rd Approach
 // Most Efficient Approach
-// Traversing 1 time
+// Traversing 1 time only
 // Using 3 pointers
 // Time Complexity = O(N)
 // Space Complexity = O(1)
