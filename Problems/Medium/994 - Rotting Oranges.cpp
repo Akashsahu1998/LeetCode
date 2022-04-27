@@ -17,7 +17,7 @@ public:
         for(int i = 0; i < row; i++){
             for(int j = 0; j < col; j++){
                 if(grid[i][j] == 2) q.push({i, j});
-                if(grid[i][j] == 1) fresh++;
+                if(grid[i][j] == 1) fresh++;    // counting the number of fresh oranges there
             }
         }
         
