@@ -4,6 +4,7 @@
 
 // Implementation
 
+// 1st Approach
 // Naive Approach
 // Using Unordered Map
 // Time Complexity = O(N), Space Complexity = O(N)
@@ -32,15 +33,17 @@ public:
     }
 };
 
+
+// 2nd Approach
 // Efficient Approach
-// Idea is to iterate over a list two times
+// Idea is to iterate over each list two times
 // Time Complexity = O(N), Space Complexity = O(1)
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-        ListNode* curA = headA;
-        ListNode* curB = headB;
-        
+        ListNode *a = headA;
+        ListNode *b = headB;
+
         // For example
         // headA = [1, 2, 3, 4]
         // headB = [8, 4]
@@ -49,10 +52,11 @@ public:
         // headB = [8, 4, 1, 2, 3, 4]
         // we are iterating in this way
         
-        while(curA != curB){
-            curA = curA ? curA->next : headB;
-            curB = curB ? curB->next : headA;
+        while(a != b){
+            a = a ? a->next : headB;
+            b = b ? b->next : headA;
         }
-        return curA;
+        
+        return a;
     }
 };
