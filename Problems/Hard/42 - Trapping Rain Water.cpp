@@ -4,8 +4,10 @@
 
 // Implementation
 
+// 1st Approach
 // Using stack
-// Time Complexity = O(N), Space Complexity = O(N)
+// Time Complexity = O(N)
+// Space Complexity = O(N)
 class Solution {
 public:
     int trap(vector<int>& height) {
@@ -30,27 +32,37 @@ public:
 };
 
 
+// 2nd Approach
 // Using two pointer approach
-// Time Complexity = O(N), Space Complexity = O(1)
+// Time Complexity = O(N)
+// Space Complexity = O(1)
 class Solution {
 public:
     int trap(vector<int>& height) {
-        int ans = 0, left = 0, right = height.size()-1, leftMax = -1, rightMax = -1;
+        int totalWater = 0, left = 0, leftMax = 0, right = height.size()-1, rightMax = 0;
         
         while(left < right){
-            if(height[right] >= height[left]){
-                if(height[left] >= leftMax) leftMax = height[left];
-                else ans += leftMax - height[left];
+            if(height[left] <= height[right]){
+                if(height[left] > leftMax){
+                    leftMax = height[left];
+                }
+                else{
+                    totalWater += leftMax - height[left];
+                }
                 left++;
             }
             else{
-                if(height[right] >= rightMax) rightMax = height[right];
-                else ans += rightMax - height[right];
+                if(height[right] > rightMax){
+                    rightMax = height[right];
+                }
+                else{
+                    totalWater += rightMax - height[right];
+                }
                 right--;
             }
         }
         
-        return ans;
+        return totalWater;
     }
 };
 
