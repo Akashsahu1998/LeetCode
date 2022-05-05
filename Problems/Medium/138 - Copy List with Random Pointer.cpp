@@ -4,6 +4,7 @@
 
 // Implementation
 
+// 1st Approach
 // Naive Approach
 // Using Unordered Map
 // Time Complexity = O(N), Space Complexity = O(N)
@@ -47,6 +48,7 @@ public:
 };
 
 
+// 2nd Approach
 // Efficient Approach
 // Time Complexity = O(N), Space Complexity = O(1)
 class Solution {
