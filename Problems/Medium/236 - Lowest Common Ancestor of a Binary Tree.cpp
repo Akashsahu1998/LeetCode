@@ -5,7 +5,8 @@
 // Implementation
 
 // 1st Approach Using path arrays
-// Time Complexity = O(N), Space Complexity = O(H) where H is the height of the Binary Tree
+// Time Complexity = O(N)
+// Space Complexity = O(H) where H is the height of the Binary Tree
 // In this solution we require three traversal of binary tree (0(N)+0(N)+0(N)) => 3(0(N)) => 0(N).
 
 class Solution {
@@ -32,17 +33,22 @@ public:
 
 
 // 2nd Approach Using DFS
-// Time Complexity = O(N), Space Complexity = O(H) where H is the height of the Binary Tree
+// Time Complexity = O(N)
+// Space Complexity = O(H) where H is the height of the Binary Tree
 // In this solution we require only one traversal of binary tree.
 // But in this approach both given key should be present.
 class Solution {
-public:    
+public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        if(root == NULL) return NULL;
+        if(!root) return NULL;
+        
         if(root == p || root == q) return root;
-        TreeNode* lcaLeft = lowestCommonAncestor(root->left, p, q);
-        TreeNode* lcaRight = lowestCommonAncestor(root->right, p, q);
-        if(lcaLeft && lcaRight) return root;        
-        return lcaLeft ? lcaLeft : lcaRight;
+        
+        TreeNode* leftLCA = lowestCommonAncestor(root->left, p, q);
+        TreeNode* rightLCA = lowestCommonAncestor(root->right, p, q);
+        
+        if(leftLCA && rightLCA) return root;
+        
+        return leftLCA ? leftLCA : rightLCA;
     }
 };
