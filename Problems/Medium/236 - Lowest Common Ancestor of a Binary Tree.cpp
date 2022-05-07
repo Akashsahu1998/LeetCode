@@ -5,8 +5,9 @@
 // Implementation
 
 // 1st Approach Using path arrays
+// Brute Force
 // Time Complexity = O(N)
-// Space Complexity = O(H) where H is the height of the Binary Tree
+// Space Complexity = O(H), where H is the height of the Binary Tree
 // In this solution we require three traversal of binary tree (0(N)+0(N)+0(N)) => 3(0(N)) => 0(N).
 
 class Solution {
@@ -33,8 +34,9 @@ public:
 
 
 // 2nd Approach Using DFS
+// Efficient Approach
 // Time Complexity = O(N)
-// Space Complexity = O(H) where H is the height of the Binary Tree
+// Space Complexity = O(H), where H is the height of the Binary Tree
 // In this solution we require only one traversal of binary tree.
 // But in this approach both given key should be present.
 class Solution {
