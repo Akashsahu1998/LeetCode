@@ -24,7 +24,7 @@ private:
 public:
     vector<vector<int>> subsets(vector<int>& nums) {
         vector<vector<int>> res;
-        vector<int> temp;
+        vector<int> temp; 
         generateSubsets(nums, res, temp, 0);
         
         return res;
