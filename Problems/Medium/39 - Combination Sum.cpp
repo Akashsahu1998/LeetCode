@@ -10,27 +10,28 @@
 
 class Solution {
 private:
-    void solve(int index, int target, vector<int> candidates, vector<int> ans, vector<vector<int>> &res){
-        if(index == candidates.size()){
+    void findCombination(vector<int> &candidates, int target, vector<vector<int>> &res, vector<int> &temp, int index){
+        if(index == candidates.size() || target == 0){
             if(target == 0){
-                res.push_back(ans);             
+                res.push_back(temp);
             }
             return;
         }
         
         if(candidates[index] <= target){
-            ans.push_back(candidates[index]);
-            solve(index, target-candidates[index], candidates, ans, res);
-            ans.pop_back();
+            temp.push_back(candidates[index]);
+            findCombination(candidates, target - candidates[index], res, temp, index);
+            temp.pop_back();
         }
-        solve(index+1, target, candidates, ans, res);        
+        findCombination(candidates, target, res, temp, index+1);
     }
-    
+
 public:
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
         vector<vector<int>> res;
-        vector<int> ans;
-        solve(0, target, candidates, ans, res);
+        vector<int> temp;
+        
+        findCombination(candidates, target, res, temp, 0);
         return res;
     }
 };
