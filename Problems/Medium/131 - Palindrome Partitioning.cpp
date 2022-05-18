@@ -5,7 +5,7 @@
 // Implementation
 
 // 1st Approach
-// DFS, Backtracking
+// Using DFS, Backtracking
 // Time Complexity = O(2^N)
 // Space Complexity = O(N), not considering 2-D vector, bcz that's a part of output
 class Solution {
