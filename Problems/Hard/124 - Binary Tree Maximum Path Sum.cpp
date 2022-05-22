@@ -5,7 +5,8 @@
 // Implementation
 
 // DFS Traversal
-// Time Complexity = O(N), Space Complexity = O(H), where H is the height of the Binary Tree.
+// Time Complexity = O(N)
+// Space Complexity = O(H), where H is the height of the Binary Tree
 class Solution {
 public:
     int maxPathSumFromBinaryTree(TreeNode* root, int &ans) {
