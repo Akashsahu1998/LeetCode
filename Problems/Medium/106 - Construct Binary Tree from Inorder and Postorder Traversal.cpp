@@ -4,8 +4,10 @@
 
 // Implementation
 
+// 1st Approach
 // Naive Approach
-// Time Complexity = O(N^2), Space Complexity = O(H) Where H is the height of the binary tree
+// Time Complexity = O(N^2)
+// Space Complexity = O(H), Where H is the height of the binary tree
 class Solution {
 public:
     int search(vector<int>& inorder, int inStart, int inEnd, int key){        
@@ -34,39 +36,47 @@ public:
     }
 };
 
-// Efficient Approach
-// Time Complexity = O(N), Space Complexity = O(N) Where N is the number of element into Inorder array
-// Giving TLE
+// https://www.youtube.com/watch?v=IH9jN6VdMOc
+// 2nd Approach
+// Using Unordered Map
+// Time Complexity = O(N)
+// Space Complexity = O(N), Where H is the height of the binary tree
 class Solution {
-public:    
-    TreeNode* builtTree(vector<int>& inorder, vector<int>& postorder, int inStart, int inEnd, int &index, unordered_map<int, int> mp){
-        if(inStart > inEnd) return NULL;
+    private:
+    TreeNode* solve(vector<int>& postorder, int left, int right, int &index, unordered_map<int, int> &mp){
         
-        int curr = postorder[index];
-        TreeNode* root = new TreeNode(curr);
-        index--;
+        if (left > right) return NULL;
+
+        TreeNode * root = new TreeNode(postorder[index--]);
+        int mid = mp[root -> val];
         
-        if(inStart == inEnd) return root;
-        int inIndex = mp[curr];
-        
-        root->right = builtTree(inorder, postorder, inIndex+1, inEnd, index, mp);
-        root->left = builtTree(inorder, postorder, inStart, inIndex-1, index, mp);
+        root->right = solve(postorder, mid+1, right, index, mp);
+
+        root->left = solve(postorder, left, mid-1, index, mp);
         
         return root;
-    }
+    }   
     
+public:
     TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
         unordered_map<int, int> mp;
-        for (int itr = 0; itr < inorder.size(); itr++)
-                mp[inorder[itr]] = itr;
-        int index = inorder.size() - 1;
-        return builtTree(inorder, postorder, 0, postorder.size()-1, index, mp);
+
+        for(int i = 0; i < inorder.size(); i++) {
+           mp[inorder[i]] = i;
+        }
+        
+        int index = postorder.size()-1;
+
+        return solve(postorder, 0, postorder.size()-1, index, mp);
     }
 };
 
 
-// Most Efficient Approach
-// Time Complexity = O(N), Space Complexity = O(H) Where H is the height of the binary tree
+// GFG
+// 3rd Approach
+// Without using Unordered Map
+// Time Complexity = O(N)
+// Space Complexity = O(N), Where H is the height of the binary tree
 class Solution {
 public:    
     TreeNode* buildBinaryTree(vector<int>& inorder, vector<int>& postorder, int &inorderPosition, int &postorderPosition, int stop){
