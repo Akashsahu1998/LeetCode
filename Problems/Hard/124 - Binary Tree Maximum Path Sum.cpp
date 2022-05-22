@@ -16,7 +16,7 @@ public:
         ans = max(ans, leftSum + rightSum + root->val);
         return max(leftSum, rightSum) + root->val;
     }
-    
+     
     int maxPathSum(TreeNode* root) {
         int ans = INT_MIN;
         maxPathSumFromBinaryTree(root, ans);
