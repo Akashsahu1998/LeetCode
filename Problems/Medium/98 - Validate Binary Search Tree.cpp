@@ -57,3 +57,30 @@ public:
         return solve(root, LLONG_MIN, LLONG_MAX);
     }
 };
+
+
+
+// 3rd Approach
+// Recursive / DFS Approach
+// Inorder Traversal & Previous Pointer
+// Time Complexity = O(N), where N is the total nuumber of nodes in the Binary Tree
+// Space Complexity = O(N), In the case of skewed tree it will read all the n nodes in the Binary Tree
+class Solution {
+private:
+    bool solve(TreeNode* root, TreeNode* prev){
+        if(!root) return true;
+        
+        if(!solve(root->left, prev)) return false;
+        
+        if(prev && prev->val >= root->val) return false;
+        prev = root;
+        
+        return solve(root->right, prev);
+    }
+
+public:
+    bool isValidBST(TreeNode* root) {
+        TreeNode* prev = NULL;
+        return solve(root, prev);
+    }
+};
