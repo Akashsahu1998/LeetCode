@@ -8,7 +8,7 @@
 // Iterative Approach
 // Using Stack & Previous Pointer
 // Time Complexity = O(N), where N is the total nuumber of nodes in the Binary Tree
-// Space Complexity = O(H), where H is the Height of the Binary Tree
+// Space Complexity = O(N), In the case of skewed tree it will read all the n nodes in the Binary Tree
 class Solution {
 public:
     bool isValidBST(TreeNode* root) {
