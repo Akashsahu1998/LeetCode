@@ -4,21 +4,27 @@
 
 // Implementation
 
-// 1st Approach in C++
-// Time Complexity = O(N), Space Complexity = O(H) where H is the height of the Binary Tree
+// Using Divide & Conquer strategy
+// Time Complexity : O(N)
+// Space Complexity : O(H), where H is the height of the BST
 
 class Solution {
-public:
-    TreeNode* convertArrayToBST(vector<int>& nums, int start, int end){
-        if(start == end) return NULL;
-        int mid = (start+end)/2;
-        TreeNode *root = new TreeNode(nums[mid]);
-        root->left = convertArrayToBST(nums, start, mid);
-        root->right = convertArrayToBST(nums, mid+1, end);
+private:
+    TreeNode* solve(vector<int>& nums, int start, int end){
+        if(start > end) return NULL;
+        
+        int mid = start + (end - start)/2;
+        
+        TreeNode* root = new TreeNode(nums[mid]);
+        
+        root->left = solve(nums, start, mid-1);
+        root->right = solve(nums, mid+1, end);
+        
         return root;
     }
     
+public:
     TreeNode* sortedArrayToBST(vector<int>& nums) {
-        return convertArrayToBST(nums, 0, nums.size());
+        return solve(nums, 0, nums.size()-1);
     }
 };
