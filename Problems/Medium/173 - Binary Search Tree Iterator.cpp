@@ -28,8 +28,9 @@ public:
     }
     
     void pushAll(TreeNode* root){
-        for(TreeNode* i = root; i != NULL; i = i->left){
-            st.push(i);
+        while(root){
+            st.push(root);
+            root = root->left;
         }
     }
 };
