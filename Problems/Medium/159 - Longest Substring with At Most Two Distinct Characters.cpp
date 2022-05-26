@@ -5,7 +5,7 @@
 // Implementation
 
 // 1st Approach
-// Using Unordered Map & Windows Sliding Technique
+// Using Unordered Map & Window Sliding Technique
 // Time Complexity = O(N)
 // Space Complexity = O(N)
 
@@ -19,7 +19,7 @@ public:
         int left = 0, right = 0;
         
         // hashmap character -> its rightmost position
-        map<char, int> mp;
+        unordered_map<char, int> mp;
 
         int maxLenAns = 2, freq = INT_MAX;
         char ch = '';
@@ -53,7 +53,7 @@ public:
 
 
 // 2nd Approach
-// Using Unordered Map & Windows Sliding Technique
+// Using Unordered Map & Window Sliding Technique
 // Time Complexity = O(N)
 // Space Complexity = O(N)
 class Solution {
@@ -66,7 +66,7 @@ public:
         int left = 0, right = 0;
         
         // hashmap character -> its rightmost position
-        map<char, int> mp;
+        unordered_map<char, int> mp;
 
         int maxLenAns = 2;
 
