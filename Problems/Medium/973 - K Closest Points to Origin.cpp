@@ -5,8 +5,28 @@
 // Implementation
 
 // 1st Approach
-// Using Max Heap (Priority Queue)
+// Using Normal Sorting
 // Time Complexity: O(NLogN)
+// Space Complexity: O(1)
+class Solution {
+private:
+    bool static comp(vector<int> &a, vector<int> &b){
+        int temp1 = (a[0] * a[0]) + (a[1] * a[1]);
+        int temp2 = (b[0] * b[0]) + (b[1] * b[1]);
+        return temp1 < temp2;
+    }
+    
+public:
+    vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
+        sort(points.begin(), points.end(), comp);
+        
+        return vector<vector<int>>(points.begin(), points.begin() + k);
+    }
+};
+
+// 2nd Approach
+// Using Max Heap (Priority Queue)
+// Time Complexity: O(NLogK)
 // Space Complexity: O(N)
 class Solution {
 public:
