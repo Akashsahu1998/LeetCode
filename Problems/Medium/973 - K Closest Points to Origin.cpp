@@ -52,3 +52,47 @@ public:
         return res;
     }
 };
+
+
+// 3rd Approach
+// Quick Select
+// Time Complexity: O(NLogK)
+// Space Complexity: O(1)
+class Solution {
+private:
+    int generateValue(vector<int>& arr) {
+        return arr[0]*arr[0] + arr[1]*arr[1];
+    }
+    
+    int partition(vector<vector<int>>& points, int low, int high) {
+        int pivot = generateValue(points[high]);
+        
+        for (int i = low; i < high; ++i) {
+            if(generateValue(points[i]) < pivot){
+                swap(points[i], points[low++]);
+            }                
+        }
+        
+        swap(points[high], points[low]);
+        
+        return low;
+    }
+    
+public:
+    vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
+        int low = 0, high = points.size() - 1;
+        k--;
+        while(true) {
+            int pivotIndex = partition(points, low, high);
+            
+            if (pivotIndex < k) {
+                low = pivotIndex + 1;
+            } 
+            else if(pivotIndex > k){
+                high = pivotIndex - 1;
+            }
+            else break;
+        }
+        return vector<vector<int>>(points.begin(), points.begin() + k + 1);
+    }
+};
