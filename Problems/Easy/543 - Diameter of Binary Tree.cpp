@@ -4,9 +4,9 @@
 
 // Implementation
 
-// DFS Approach in C++
-// Time Complexity = O(N), Space Complexity = O(H) where H is the height of the Binary Tree
-
+// Using DFS
+// Time Complexity : (N)
+// Space Complexity : (H), where H is the height of the binary tree
 class Solution {
 public:
     int findDiameter(TreeNode* root, int &res){
