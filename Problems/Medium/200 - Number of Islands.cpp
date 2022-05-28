@@ -5,7 +5,9 @@
 // Implementation
 
 // Using DFS
-// Time Complexity = O(ROW*COL), Space Complexity = O(1)
+// Time Compexity : O(M*N)
+// Space Compexity : O(M*N), bcz of the recursion stack stra
+
 class Solution {
 public:
     void dfs(vector<vector<char>>& grid, int itr, int jtr){
