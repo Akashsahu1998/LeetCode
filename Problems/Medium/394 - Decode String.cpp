@@ -5,9 +5,10 @@
 // Implementation
 
 // 1st
-// Naive Approach
-// Using 2 stacks
-// Time Complexity = O(N), Space Complexity = O(N)
+// Iterative Approach
+// Time Complexity : O((max(K) ^ count(K)) * N), where max(K) is the maximum number and count(K) is the count of nested k values, 
+//						and N is the length of a given string s
+// Space Complexity : O(M + N), where M is the number of letter and N is the number of digits
 class Solution {
 public:
     string decodeString(string s) {
@@ -54,7 +55,7 @@ public:
 
 
 // 2nd
-// Efficient Approach
+// Iterative Approach
 // Using 1 stack
 // Time Complexity = O(N), Space Complexity = O(N)
 class Solution {
@@ -103,7 +104,8 @@ public:
 
 // 3rd
 // Recursive Approach
-// Time Complexity = O(N), Space Complexity = O(N), considering the resursion stack
+// Time Complexity : O(max(K) * N), where max(K) is the maximum number and N is the length of a given string s
+// Space Complexity : O(M + N), where M is the number of letter and N is the number of digits
 class Solution {
 public:
     string decodeTheString(string s, int &itr){
