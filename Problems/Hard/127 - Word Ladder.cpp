@@ -13,39 +13,43 @@
 class Solution {
 public:
     int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
-        unordered_set<string> st;
-        
-        for(auto word : wordList){
-            st.insert(word);
+        unordered_set<string> dictionary;
+        for(auto a : wordList){
+            dictionary.insert(a);
         }
         
-        if(st.find(endWord) == st.end()) return 0;
+        // if end word didn't found, so it means we don't have any sequence
+        if(dictionary.find(endWord) == dictionary.end()) return 0;
+        
+        // taking queue, bcz we are traversing in BFS way
+        queue<string> words;
+        words.push(beginWord);
         
         int count = 0;
-        queue<string> word;
-        word.push(beginWord);
-        
-        while(!word.empty()){
-            count++;
-            int size = word.size();
+        while(!words.empty()){
+            count++;            
+            int size = words.size();
             
             for(int i = 0; i < size; i++){
-                string top = word.front();
-                word.pop();
+                string top = words.front();
+                words.pop();
                 
-                for(int j = 0; j < top.size(); j++){
-                    char ch = top[j];
-                    
-                    for(char c = 'a'; c <= 'z'; c++){
-                        top[j] = c;
+                // change each index char one by one, try to replace it by a-z char, and check whether it present into dictionary or not
+                for(int j = 0; j < top.size(); j++){                    
+                    int orgChar = top[j];
+
+                    for(char ch = 'a'; ch <= 'z'; ch++){
                         
+                        // changing index j, with values from a - z
+                        top[j] = ch;
+
                         if(top == endWord) return count+1;
-                        if(st.find(top) == st.end()) continue;
-                        
-                        st.erase(top);
-                        word.push(top);
+                        if(dictionary.find(top) == dictionary.end()) continue;
+
+                        words.push(top);
+                        dictionary.erase(top);
                     }
-                    top[j] = ch;
+                    top[j] = orgChar;
                 }
             }
         }
