@@ -36,3 +36,29 @@ public:
         return res;
     }
 };
+
+
+//Another Approach
+// -> this solution is also working
+class Solution {
+public:
+    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+        sort(intervals.begin(), intervals.end());
+        
+        vector<vector<int>> res;
+        
+        int smallValue = intervals[0][0], bigValue = intervals[0][1];
+        for(int i = 1; i < intervals.size(); i++){
+            if(bigValue >= intervals[i][0]){
+                bigValue = max(bigValue, intervals[i][1]);
+            }
+            else{
+                res.push_back({smallValue, bigValue});
+                smallValue = intervals[i][0];
+                bigValue = intervals[i][1];
+            }
+        }
+        res.push_back({smallValue, bigValue});
+        return res;
+    }
+};
