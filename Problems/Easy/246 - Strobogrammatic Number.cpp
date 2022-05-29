@@ -34,3 +34,27 @@ public:
         return true;
     }
 };
+
+
+// 2nd Approach
+// Using Two Pointer Approach & Unordered Map
+// Time Complexity: O(N)
+// Space Complexity: O(1), we are only taking unordered map of 6 size, so it can be considered as a constant.
+
+class Solution {
+public:
+    bool isStrobogrammatic(string num) {
+        unordered_map<char, char> mp{{'0', '0'}, {'1', '1'}, {'8', '8'}, {'9', '6'}, {'6', '9'}};
+        
+        int left = 0, right = num.size()-1;
+        while(left <= right){
+            if(mp.find(num[left]) == mp.end() || mp[num[left]] != num[right]) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        
+        return true;
+    }
+};
