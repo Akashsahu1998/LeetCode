@@ -39,7 +39,7 @@ public:
 // 2nd Approach
 // Using Two Pointer Approach & Unordered Map
 // Time Complexity: O(N)
-// Space Complexity: O(1), we are only taking unordered map of 6 size, so it can be considered as a constant.
+// Space Complexity: O(1), we are only taking unordered map of 5 size, so it can be considered as a constant.
 
 class Solution {
 public:
