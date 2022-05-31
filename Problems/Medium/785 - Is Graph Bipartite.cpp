@@ -13,7 +13,7 @@
 
 class Solution {
 private:
-    bool bfs(int src, vector<vector<int>>& graph, vector<int> color){
+    bool BFS(int src, vector<vector<int>>& graph, vector<int> color){
         // giving 1 color to first node
         color[src] = 1;
         
@@ -50,7 +50,7 @@ public:
         
         for(int i = 0; i < graph.size(); i++){
             if(color[i] == -1){
-                if(!bfs(i, graph, color)) return false;
+                if(!BFS(i, graph, color)) return false;
             }
         }
         
