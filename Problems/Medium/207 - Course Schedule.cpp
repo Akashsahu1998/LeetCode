@@ -6,7 +6,7 @@
 
 // Using Cycle detection technique, DFS
 // Time Complexity = O(N+E)
-// Space Complexity = (O(N+E) + O(N) + O(N)) => O(N)
+// Space Complexity = (O(N+E) + O(N) + O(N)) => O(N+E)
 // Where N is the nunber of vertices in the graph and E is the number of edges
 // https://www.youtube.com/watch?v=kXy0ABd1vwo
 
