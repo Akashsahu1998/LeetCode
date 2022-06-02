@@ -24,6 +24,9 @@ public:
         
         vector<int> distance(n+1, INT_MAX);        
         distance[k] = 0;
+        
+        // to create min heap we need to take pass these 3 parameters
+        // data type, vector type, comparison
         priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
         
         pq.push({0, k});
