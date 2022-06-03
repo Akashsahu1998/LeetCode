@@ -5,7 +5,7 @@
 // Implementation
 
 // Using Union Find
-// Time Complexity = O(N * a(N)), where a is the Inverse Ackermann Function and N will never go higher than 4 in the universe.
+// Time Complexity = O(N * alpha(N)), where alpha is the Inverse Ackermann Function and N will never go higher than 4 in the universe.
 // Space Complexity = O(N)
 
 class Solution {
