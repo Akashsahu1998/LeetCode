@@ -12,11 +12,11 @@
 
 class Solution {
 private:
-    void dfs(unordered_map<string, vector<pair<string, double>>> &graph, unordered_set<string> &st, string source, string destination, double &ans, double temp){
+    void dfs(unordered_map<string, vector<pair<string, double>>> &graph, unordered_set<string> &visited, string source, string destination, double &ans, double temp){
         
-        if(st.find(source) != st.end()) return;
+        if(visited.find(source) != visited.end()) return;
         
-        st.insert(source);
+        visited.insert(source);
         
         if(source == destination){
             ans = temp;
@@ -24,7 +24,7 @@ private:
         }
         
         for(auto adjacentNode : graph[source]){
-            dfs(graph, st, adjacentNode.first, destination, ans, temp * adjacentNode.second);
+            dfs(graph, visited, adjacentNode.first, destination, ans, temp * adjacentNode.second);
         }
     }
     
@@ -47,9 +47,11 @@ public:
             string destination = queries[i][1];
             
             double ans = -1.0, temp = 1.0;
-            unordered_set<string> st;
+            unordered_set<string> visited;
+            
+            // if source or destination any of them is not present into graph, then ans(-1) will come
             if(graph.find(source) != graph.end() && graph.find(destination) != graph.end()){
-                dfs(graph, st, source, destination, ans, temp);
+                dfs(graph, visited, source, destination, ans, temp);
             }
             
             res.push_back(ans);
