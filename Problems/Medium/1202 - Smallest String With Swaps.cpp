@@ -63,3 +63,72 @@ public:
         return s;
     }
 };
+
+
+// 2nd Approach
+// Using Disjoin Set Union
+// Time complexity: O((E + V) * a(V) + VlogV), where a is the Inverse Ackermann Function and V will never go higher than 4 in the universe.
+// Space complexity: O(V)
+
+class Solution {
+private:
+    int findParent(int node, vector<int> &parent){
+        if(parent[node] == node) return node;
+        
+        return parent[node] = findParent(parent[node], parent);
+    }
+    
+    void unionFind(int source, int destination, vector<int> &parent){
+        int sourceParent = findParent(source, parent);
+        int destinationParent = findParent(destination, parent);
+        
+        if(sourceParent != destinationParent){
+            parent[destinationParent] = sourceParent;
+        }
+    }
+    
+public:
+    string smallestStringWithSwaps(string s, vector<vector<int>>& pairs) {
+        
+        // generate the parent vector
+        vector<int> parent(s.size());
+        for(int i = 0; i < s.size(); i++){
+            parent[i] = i;
+        }
+        
+        // iterating over the pair, and making union of source & destination
+        for(auto pair : pairs){
+            int source = pair[0];
+            int destination = pair[1];
+            
+            unionFind(source, destination, parent);
+        }
+        
+        // finding the parent of each vertices and creating the map of that root which contains the list of vertices for that particular root
+        unordered_map<int, vector<int>> mp;
+        for(int i = 0; i < s.size(); i++){
+            int root = findParent(i, parent);
+            mp[root].push_back(i);
+        }
+        
+        for(auto m : mp){
+            
+            vector<int> list = m.second;
+            
+            // iterate over the list and put all the char's present into the particular index of list into characters array.            
+            vector<char> characters;
+            for(int i = 0; i < list.size(); i++){
+                characters.push_back(s[list[i]]);
+            }
+            
+            // sort the charactes, bcz we are having leverage of swapping
+            sort(characters.begin(), characters.end());
+            
+            for(int i = 0; i < list.size(); i++){
+                s[list[i]] = characters[i];
+            }
+        }
+        
+        return s;
+    }
+};
