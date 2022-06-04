@@ -61,30 +61,19 @@ private:
     
 public:
     int countComponents(int n, vector<vector<int>>& edges) {
-        vector<int> parent(n), rank(n);
+        vector<int> parent(n);
         
         for(int i = 0; i < n; i++){
             parent[i] = i;
-            rank[i] = 0;
         }
         
         int countComponents = n;
         for(int i = 0; i < edges.size(); i++){
-            int x = findParent(parent, edges[i][0]);
-            int y = findParent(parent, edges[i][1]);
+            int sourceParent = findParent(parent, edges[i][0]);
+            int destinationParent = findParent(parent, edges[i][1]);
             
-            if(x != y){
-                if(rank[x] > rank[y]){
-                    parent[y] = x;
-                }
-                else if(rank[x] < rank[y]){
-                    parent[x] = y;
-                }
-                else{
-                    parent[y] = x;
-                    rank[x]++;
-                }                
-                
+            if(sourceParent != destinationParent){
+                parent[destinationParent] = sourceParent;
                 countComponents--;
             }
         }
