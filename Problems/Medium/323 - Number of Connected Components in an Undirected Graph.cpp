@@ -48,7 +48,7 @@ public:
 
 // 2nd Approach
 // Using Disjoint Set Union
-// Time Complexity = O(E * a(N)), where a is the Inverse Ackermann Function and N will never go higher than 4 in the universe.
+// Time Complexity = O(N + (E * a(N))), where a is the Inverse Ackermann Function and N will never go higher than 4 in the universe.
 // Space Complexity = O(V)
 // where E is number of edges and V is number of vertices
 
