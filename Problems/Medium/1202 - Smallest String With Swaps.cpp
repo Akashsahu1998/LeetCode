@@ -66,7 +66,7 @@ public:
 
 
 // 2nd Approach
-// Using Disjoin Set Union
+// Using Disjoin Set Union (DSU)
 // Time complexity: O((E + V) * a(V) + VlogV), where a is the Inverse Ackermann Function and V will never go higher than 4 in the universe.
 // Space complexity: O(V)
 
