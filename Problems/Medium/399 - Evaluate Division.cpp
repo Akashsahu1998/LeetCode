@@ -14,15 +14,18 @@ class Solution {
 private:
     void dfs(unordered_map<string, vector<pair<string, double>>> &graph, unordered_set<string> &visited, string source, string destination, double &ans, double temp){
         
+        // if source is already visited return back
         if(visited.find(source) != visited.end()) return;
         
         visited.insert(source);
         
+        // it means we reached the destination from source, now we need to return back. before that we will put temp into ans, bcz ans is passed by reference and there we are storing the ans for each query
         if(source == destination){
             ans = temp;
             return;
         }
         
+        // exploring all adjacent node of source
         for(auto adjacentNode : graph[source]){
             dfs(graph, visited, adjacentNode.first, destination, ans, temp * adjacentNode.second);
         }
