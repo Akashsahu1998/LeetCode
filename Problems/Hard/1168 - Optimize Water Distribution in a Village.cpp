@@ -10,7 +10,7 @@
 // Where N be the number of houses, and M be the number of pipes from the input.
 // https://www.youtube.com/watch?v=gc6ShDTldb4 // for concept understanding purpose, not code, bcz we have used another method, but concept is same,
 
-// Idea : Creating a grpah from 0 point to all given points, and then just finding the MST
+// Idea : Creating a graph from point 0 to all given points, and then just finding the MST
 // we can solve this problem through Prim's and Kruskal's + Union Find approach as well.
 
 class Solution {
