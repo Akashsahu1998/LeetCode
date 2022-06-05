@@ -31,3 +31,40 @@ public:
         return longestLength;
     }
 };
+
+
+// Efficient Approach
+// Using Binary Search
+// Time Complexity : O(NlogN)
+// Space Complexity : O(N)
+
+// In this approach our SortedArr will have a longest increasing subsequence as well, later we can print that as well if we need
+
+class Solution {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+        
+        vector<int> sortedArr(nums.size());
+        
+        // intializing with 1 bcz atleast 1 length it will have
+        int size = 0;
+        for(auto num : nums){
+            int low = 0, high = size;
+            
+            while(low < high){
+                int mid = low + (high-low)/2;
+                
+                if(sortedArr[mid] < num){
+                    low = mid+1;
+                }
+                else high = mid;
+            }
+            
+            sortedArr[low] = num;
+            if(low == size) size++;
+        }
+        
+        return size;
+    }
+};
+
