@@ -92,3 +92,36 @@ public:
         return dp[m][n];
     }
 };
+
+
+// 4th Approach
+// Space Optimization in DP Approach
+// Time Complexity : O(M*N)
+// Space Complexity : O(min(M,N))
+class Solution {
+public:
+    int longestCommonSubsequence(string text1, string text2) {
+        
+        // if text1 is small string, then putting it into text2, bcz on the basis of text2, we are creating everything, so in this way we are taking small string into consideration for the better space complexity
+        if(text1.size() < text2.size()){
+            return longestCommonSubsequence(text2, text1);
+        }
+        
+        int m = text1.size(), n = text2.size();
+        vector<int> cur(n+1, 0), prev(n+1, 0);
+        
+        for(int i = 1; i <= m; i++){
+            for(int j = 1; j <= n; j++){
+                if(text1[i-1] == text2[j-1]){
+                    cur[j] = 1 + prev[j-1];
+                }
+                else{
+                    cur[j] = max(cur[j-1], prev[j]);
+                }
+            }
+            prev = cur;
+        }
+        
+        return cur[n];
+    }
+};
