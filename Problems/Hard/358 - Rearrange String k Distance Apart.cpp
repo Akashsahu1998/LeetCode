@@ -5,7 +5,7 @@
 // Implementation
 
 // Using Max Heap & Queue
-// Time Complexity : O(NlogN), where N can be max to max 26 char, so O(Nlog26) which is O(N).
+// Time Complexity : O(NlogN), where N can be max to max 26 char, so O(Nlog26), so we can say overall TC will be O(N)
 // Space Complexity : O(N)
 
 class Solution {
