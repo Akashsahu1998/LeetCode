@@ -91,3 +91,43 @@ public:
         return dp[m-1][n-1];
     }
 };
+
+
+// 4th Approach
+// Space Optimization in DP Approach
+// Time Complexity : O(M*N)
+// Space Complexity : O(N)
+
+class Solution {    
+public:
+    int uniquePaths(int m, int n) {
+        vector<int> prev(n, 0);
+        
+        for(int i = 0; i < m; i++){
+            
+            vector<int> cur(n, 0);
+            
+            for(int j = 0; j < n; j++){
+                if(i == 0 && j == 0){
+                    cur[j] = 1;
+                }
+                else{                    
+                    int leftSide = 0;
+                    if(i-1 >= 0){
+                        leftSide = prev[j];
+                    }
+                    
+                    int upSide = 0;
+                    if(j-1 >= 0){
+                        upSide = cur[j-1];
+                    }                        
+                    
+                    cur[j] = leftSide + upSide;
+                }
+            }
+            prev = cur;
+        }
+        
+        return prev[n-1];
+    }
+};
