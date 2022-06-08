@@ -54,3 +54,40 @@ public:
         return solve(m, n, m-1, n-1, memo);
     }
 };
+
+
+
+// 3rd Approach
+// DP Approach / Tabulation
+// Time Complexity : O(M * N)
+// Space Complexity : O(M * N)
+
+class Solution {    
+public:
+    int uniquePaths(int m, int n) {
+        vector<vector<int>> dp(m, vector<int> (n));
+        
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++){
+                if(i == 0 && j == 0){
+                    dp[i][j] = 1;
+                }
+                else{                    
+                    int leftSide = 0;
+                    if(i-1 >= 0){
+                        leftSide = dp[i-1][j];
+                    }
+                    
+                    int upSide = 0;
+                    if(j-1 >= 0){
+                        upSide = dp[i][j-1];
+                    }                        
+                    
+                    dp[i][j] = leftSide + upSide;
+                }
+            }
+        }
+        
+        return dp[m-1][n-1];
+    }
+};
