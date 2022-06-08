@@ -134,3 +134,26 @@ public:
         return prev[n-1];
     }
 };
+
+
+
+// 5th Approach
+// Linear Solution
+// Time Complexity : O(M)
+// Space Complexity : O(1)
+class Solution {    
+public:
+    int uniquePaths(int m, int n) {
+        int formulaValue = m + n - 2;
+        int run = m-1;
+        
+        // NcR formula
+        
+        double sum = 1;
+        for(int i = 1; i <= run; i++){
+            sum = sum * (formulaValue - run + i) / i;
+        }
+        
+        return (int)sum;
+    }
+};
