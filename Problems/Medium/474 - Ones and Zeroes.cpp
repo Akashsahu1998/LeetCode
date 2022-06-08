@@ -83,3 +83,41 @@ public:
         return recursive(strs, 0, m, n, memo);
     }
 };
+
+
+
+
+// 3rd Approach
+// Using DP Approach
+// Time Complexity : O(L * M * N)
+// Space Complexity : O(M * N)
+
+class Solution {
+private:
+    void countZeroesAndOnes(string str, int &cnt0, int &cnt1){
+        for(auto ch : str){
+            if(ch == '0') cnt0++;
+            if(ch == '1') cnt1++;
+        }
+    }
+    
+public:
+    int findMaxForm(vector<string>& strs, int m, int n) {
+        vector<vector<int>> dp(m+1, vector<int> (n+1, 0));
+        
+        for(auto str : strs){
+            
+            int cnt0 = 0, cnt1 = 0;
+            countZeroesAndOnes(str, cnt0, cnt1);
+            
+            for(int j = m; j >= cnt0; j--){
+            
+                for(int k = n; k >= cnt1; k--){
+                    dp[j][k] = max(dp[j][k], 1 + dp[j - cnt0][k - cnt1]);
+                }                
+            }            
+        }
+        
+        return dp[m][n];
+    }
+};
