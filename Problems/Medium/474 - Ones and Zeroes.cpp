@@ -41,3 +41,45 @@ public:
         return recursive(strs, 0, m, n);
     }
 };
+
+
+
+// 2nd Approach
+// Using Memoization Approach
+// Time Complexity : O(L * M * N)
+// Space Complexity : O(L * M * N), Where O(L) is coming from recursion stack trace
+
+class Solution {
+private:
+    void countZeroesAndOnes(string str, int &cnt0, int &cnt1){
+        for(auto ch : str){
+            if(ch == '0') cnt0++;
+            if(ch == '1') cnt1++;
+        }
+    }
+    
+    int recursive(vector<string>& strs, int index, int m, int n, vector<vector<vector<int>>> &memo){
+        // base case
+        if(index == strs.size()) return 0;
+        
+        if(memo[index][m][n] != -1) return memo[index][m][n];
+        
+        int cnt0 = 0, cnt1 = 0;
+        string str = strs[index];
+        countZeroesAndOnes(strs[index], cnt0, cnt1);
+    
+        int notPick = recursive(strs, index+1, m, n, memo);        
+        int pick = INT_MIN;
+        if(cnt0 <= m && cnt1 <= n){
+            pick = 1 + recursive(strs, index+1, m - cnt0, n - cnt1, memo);
+        }
+        
+        return memo[index][m][n] = max(notPick, pick);
+    }
+    
+public:
+    int findMaxForm(vector<string>& strs, int m, int n) {
+        vector<vector<vector<int>>> memo(strs.size(), vector<vector<int>> (m+1, vector<int>(n+1, -1)));
+        return recursive(strs, 0, m, n, memo);
+    }
+};
