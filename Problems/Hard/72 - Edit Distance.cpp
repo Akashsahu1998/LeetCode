@@ -85,3 +85,50 @@ public:
         return solve(word1, word2, word1.size(), word2.size(), memo);
     }
 };
+
+
+
+// 3rd Approach
+// Iterative DP Approach
+// Time Complexity : O(M * N)
+// Space Complexity : O(M * N)
+
+class Solution {    
+public:
+    int minDistance(string word1, string word2) {
+        // Assuming 1 based indexing
+        int n = word1.size(), m = word2.size();
+        vector<vector<int>> dp(n+1, vector<int> (m+1, 0));
+        
+        for(int i = 0; i <= n; i++){
+            dp[i][0] = i;
+        }
+        
+        for(int j = 0; j <= m; j++){
+            dp[0][j] = j;
+        }
+        
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= m; j++){
+                // if matching
+                if(word1[i-1] == word2[j-1]){
+                    dp[i][j] = dp[i-1][j-1];    
+                }
+                else{
+                    // deleting char, hypothetically deleting, it means just decrementing ptr1
+                    int deleteChar = 1 + dp[i-1][j];
+
+                    // inserting char, hypothetically inserting, it means just decrementing ptr2
+                    int insertChar = 1 + dp[i][j-1];
+
+                    // replacing char, hypothetically replacing, it means just decrementing ptr1 & ptr2
+                    int replaceChar = 1 + dp[i-1][j-1];
+
+                    dp[i][j] = min(deleteChar, min(insertChar, replaceChar));    
+                }                
+            }
+        }
+        
+        return dp[n][m];
+    }
+};
