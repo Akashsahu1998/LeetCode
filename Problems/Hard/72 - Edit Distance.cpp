@@ -115,13 +115,13 @@ public:
                     dp[i][j] = dp[i-1][j-1];    
                 }
                 else{
-                    // deleting char, hypothetically deleting, it means just decrementing ptr1
+                    // deleting char, hypothetically deleting
                     int deleteChar = 1 + dp[i-1][j];
 
-                    // inserting char, hypothetically inserting, it means just decrementing ptr2
+                    // inserting char, hypothetically inserting
                     int insertChar = 1 + dp[i][j-1];
 
-                    // replacing char, hypothetically replacing, it means just decrementing ptr1 & ptr2
+                    // replacing char, hypothetically replacing
                     int replaceChar = 1 + dp[i-1][j-1];
 
                     dp[i][j] = min(deleteChar, min(insertChar, replaceChar));    
@@ -159,13 +159,13 @@ public:
                     cur[j] = prev[j-1];    
                 }
                 else{
-                    // deleting char, hypothetically deleting, it means just decrementing ptr1
+                    // deleting char, hypothetically deleting
                     int deleteChar = 1 + prev[j];
 
-                    // inserting char, hypothetically inserting, it means just decrementing ptr2
+                    // inserting char, hypothetically inserting
                     int insertChar = 1 + cur[j-1];
 
-                    // replacing char, hypothetically replacing, it means just decrementing ptr1 & ptr2
+                    // replacing char, hypothetically replacing
                     int replaceChar = 1 + prev[j-1];
 
                     cur[j] = min(deleteChar, min(insertChar, replaceChar));    
