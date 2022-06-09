@@ -5,8 +5,8 @@
 // Implementation
 
 // Iterative DP Approach
-// Time Complexity : O(M.N)
-// Space Complexity : O(M.N)
+// Time Complexity : O(M * N)
+// Space Complexity : O(M * N)
 // https://www.youtube.com/watch?v=xElxAuBcvsU&list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY&index=32
 
 class Solution {
