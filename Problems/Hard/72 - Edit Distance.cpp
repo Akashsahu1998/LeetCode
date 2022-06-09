@@ -132,3 +132,49 @@ public:
         return dp[n][m];
     }
 };
+
+
+
+// 4th Approach
+// Space Optimization in DP Approach
+// Time Complexity : O(M*N)
+// Space Complexity : O(M)
+
+class Solution {    
+public:
+    int minDistance(string word1, string word2) {
+        // Assuming 1 based indexing
+        int n = word1.size(), m = word2.size();
+        vector<int> prev(m+1), cur(m+1, 0);
+        
+        for(int j = 0; j <= m; j++){
+            prev[j] = j;
+        }
+        
+        for(int i = 1; i <= n; i++){
+            cur[0] = i;
+            for(int j = 1; j <= m; j++){
+                // if matching
+                if(word1[i-1] == word2[j-1]){
+                    cur[j] = prev[j-1];    
+                }
+                else{
+                    // deleting char, hypothetically deleting, it means just decrementing ptr1
+                    int deleteChar = 1 + prev[j];
+
+                    // inserting char, hypothetically inserting, it means just decrementing ptr2
+                    int insertChar = 1 + cur[j-1];
+
+                    // replacing char, hypothetically replacing, it means just decrementing ptr1 & ptr2
+                    int replaceChar = 1 + prev[j-1];
+
+                    cur[j] = min(deleteChar, min(insertChar, replaceChar));    
+                }        
+            }
+            
+            prev = cur;
+        }
+        
+        return prev[m];
+    }
+};
