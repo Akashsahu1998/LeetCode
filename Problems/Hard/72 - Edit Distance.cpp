@@ -89,7 +89,7 @@ public:
 
 
 // 3rd Approach
-// Iterative DP Approach
+// Iterative DP Approach / Tabulation
 // Time Complexity : O(M * N)
 // Space Complexity : O(M * N)
 
@@ -136,7 +136,7 @@ public:
 
 
 // 4th Approach
-// Space Optimization in DP Approach
+// Space Optimization in DP Approach / Tabulation
 // Time Complexity : O(M*N)
 // Space Complexity : O(M)
 
