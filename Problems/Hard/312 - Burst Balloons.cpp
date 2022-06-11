@@ -18,8 +18,10 @@ public:
         for(int gap = 0; gap < n; gap++){
             for(int i = 0, j = gap; j < n; i++, j++){
                 
+                // to hold the maximum possible value in the gap from i to j
                 int maxBurstValue = INT_MIN;
                 
+                // running loop in the gap of i to j
                 for(int k = i; k <= j; k++){
                     int left = (k == i) ? 0 : dp[i][k-1];
                     int right = (k == j) ? 0 : dp[k+1][j];
@@ -41,6 +43,7 @@ public:
             }
         }
         
+        // returning the last index of the first row, it will gonna contain the highest possible value
         return dp[0][n-1];
     }
 };
