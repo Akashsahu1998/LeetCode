@@ -57,7 +57,7 @@ public:
         return true;
     }
     
-    void findPartition(vector<vector<string>> &res, vector<string> path, string str){
+    void findPartition(vector<vector<string>> &res, vector<string> &path, string str){
         if(!str.size()){
             res.push_back(path);
             return;
