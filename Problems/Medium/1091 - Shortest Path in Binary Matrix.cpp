@@ -32,33 +32,28 @@ public:
         
         while(!q.empty()){
             
-            int size = q.size();
-            
-            // iterating level by level
-            for(int i = 0; i < size; i++){
-                auto arr = q.front();
-                q.pop();
-                
-                // if we reached the last index(destination) of the matrix then return the total distance
-                if(arr[0] == m-1 && arr[1] == n-1){
-                    return arr[2];
+            auto arr = q.front();
+            q.pop();
+
+            // if we reached the last index(destination) of the matrix then return the total distance
+            if(arr[0] == m-1 && arr[1] == n-1){
+                return arr[2];
+            }
+
+            // trying all possible 8 directions
+            for(auto dir : directions){
+
+                // creating new row & col
+                int row = dir[0] + arr[0];
+                int col = dir[1] + arr[1];
+
+                // validating the border/base conditions
+                if(row >= 0 && col >= 0 && row < m && col < n && grid[row][col] == 0){
+                    q.push({row, col, arr[2] + 1});
+                    // we are visiting it so marking as 1
+                    grid[row][col] = 1;
                 }
-                
-                // trying all possible 8 directions
-                for(auto dir : directions){
-                    
-                    // creating new row & col
-                    int row = dir[0] + arr[0];
-                    int col = dir[1] + arr[1];
-                    
-                    // validating the border/base conditions
-                    if(row >= 0 && col >= 0 && row < m && col < n && grid[row][col] == 0){
-                        q.push({row, col, arr[2] + 1});
-                        // we are visiting it so marking as 1
-                        grid[row][col] = 1;
-                    }
-                }
-            }           
+            }
         }
         
         return -1;
