@@ -4,7 +4,7 @@
 
 // Implementation
 
-// Approach BFS
+// BFS Approach 
 // Using Queue & Unordered Set
 // Time Complexity : O(N * NlogN), where N is the Target
 // Space Complexity : O(N)
