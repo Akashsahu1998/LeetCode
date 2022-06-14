@@ -6,7 +6,7 @@
 
 // DFS Approach
 // Time Complexity : O(N), where N is the total number of nodes in the binary tree
-// Space Complexity : O(H), where H is the height of the binary tree
+//Space Complexity : O(H), where H is the height of the binary tree, not considering the 2-D vector bcz that's a part of result
 class Solution {
 private:
     int findLeavesUsingHeight(TreeNode* root, vector<vector<int>> &res){
