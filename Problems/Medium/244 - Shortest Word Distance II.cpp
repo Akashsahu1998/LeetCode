@@ -20,7 +20,11 @@ public:
         }
     }
     
-    // O(max(K, L)), Where K is the size of wordIndex1 and L is the size of wordIndex2
+    // O(K + L), Where K is the size of wordIndex1 and L is the size of wordIndex2
+    // i.e 
+    // word1 = [1 3 5 7 9]
+    // word2 = [2 4 6 8 10]
+    // in this case we need to traverse both array's fully, so T.C is O(K + L)
     int shortest(string word1, string word2) {
         vector<int> wordIndex1 = mp[word1];
         vector<int> wordIndex2 = mp[word2];
