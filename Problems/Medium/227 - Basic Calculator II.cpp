@@ -4,6 +4,8 @@
 
 // Implementation
 
+// 1st Approach
+// Naive
 // Using Stack
 // Time Complexity : O(N)
 // Space Complexity : O(N)
