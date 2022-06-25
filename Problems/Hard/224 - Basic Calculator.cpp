@@ -16,7 +16,7 @@ public:
         stack<int> st;
         
         // intially taking sign as 1, sign can be 1(positive) & -1(negative)
-        int res = 0, sign = 1, size = s.size();
+        int res = 0, sign = 1, size = s.size(); 
         
         // iterating over the string
         for(int i = 0; i < size; i++){
