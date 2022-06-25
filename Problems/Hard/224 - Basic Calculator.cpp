@@ -65,3 +65,10 @@ public:
         return res;
     }
 };
+
+
+// Hints
+// 1) Use stack
+// 2) try to store the value according to current bracket
+// 3) whenever the '(' this is coming store the res and also the sign, and reinitialize the values
+// 4) whenever the ')' this is coming, calculate the res by multiplying the sign and adding the value.
