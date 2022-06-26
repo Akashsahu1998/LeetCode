@@ -62,7 +62,7 @@ private:
             curOperator = s[i];            
         }
         
-        // adding the sum of all elements of stack and returning it
+        // generating the sum of all elements of stack and returning it
         int res = 0;
         while(!st.empty()){
             res += st.top();
