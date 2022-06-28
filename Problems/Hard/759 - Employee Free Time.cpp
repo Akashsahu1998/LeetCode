@@ -28,7 +28,7 @@ public:
         for(auto keyValue : mp){
             time += keyValue.second;
             
-            // if time is reaching to 0, it means we got one starting interval, but still we are pending with end interval so we will make it 0 for now.
+             // if time is reaching to 0, it means we got one starting interval which is common for all employees, but still we are pending with end interval so we will make it 0 for now.
             if(time == 0) res.push_back(Interval(keyValue.first, 0));
             
             // if our time is having value, and res is not empty, and res last element end is 0, then
