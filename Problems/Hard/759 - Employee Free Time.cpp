@@ -48,6 +48,12 @@ public:
     }
 };
 
+// Algo Steps :
+// 1) taking map bcz it will store in ascending order
+// 2) if start interval is there then do ++, for end do --
+// 3) iterate over the map, and add time, and check if time is 0, then we got the first start interval
+// 4) check to get the last interval
+
 /*
 // Definition for an Interval.
 class Interval {
