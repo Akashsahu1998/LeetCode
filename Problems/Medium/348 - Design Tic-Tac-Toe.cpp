@@ -65,3 +65,42 @@ public:
         return 0;
     }
 };
+
+
+
+// 2nd Approach, Efficient Approach
+// Using Single Dimensional Array
+// Time Complexity : O(1)
+// Space Complexity : O(N)
+
+class TicTacToe {
+private:
+    vector<int> rows, cols;
+    int diagonal = 0, anitDiagonal = 0, n;
+    
+public:
+    TicTacToe(int n) {
+        this->n = n;
+        rows.assign(n, 0);
+        cols.assign(n, 0);
+    }
+    
+    int move(int row, int col, int player) {
+        int curPlayer = (player == 1) ? 1 : -1;
+        
+        rows[row] += curPlayer;
+        cols[col] += curPlayer;
+        
+        if(row == col) diagonal += curPlayer;
+        if(n-row-1 == col) anitDiagonal += curPlayer;
+        
+        if(abs(rows[row]) == n
+               || abs(cols[col]) == n
+               || abs(diagonal) == n
+               || abs(anitDiagonal) == n){
+            return player;
+        }
+        
+        else return 0;
+    }
+};
