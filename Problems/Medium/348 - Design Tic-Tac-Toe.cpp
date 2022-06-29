@@ -104,3 +104,24 @@ public:
         else return 0;
     }
 };
+
+
+// **1st Approach**
+// 1) insert the player on row & col
+// 2) check row, col, diagonal and anti-diagonal
+// 3) if whole row is having same player, then true, same for all cases
+
+
+// **2nd Approach**
+// 1) Take 2 array for row & col, if player one will come then increment the value by 1, if player      2 will come then decrement the value by 1, if any time row or col reaches n so player 1 will win, or reaches -n then player 2 will win.
+// 2) Similarly take 2 variable for diagonal & antidiagonal, and do the same 
+
+
+
+
+
+/**
+ * Your TicTacToe object will be instantiated and called as such:
+ * TicTacToe* obj = new TicTacToe(n);
+ * int param_1 = obj->move(row,col,player);
+ */
