@@ -4,6 +4,7 @@
 
 // Implementation
 
+// 1st Approach
 // Brute force Approach
 // Giving TLE
 // Time Complexity: O(N^2)
@@ -26,6 +27,7 @@ public:
 };
 
 
+// 2nd Approach
 // Efficient Approach
 // Using Two Pointer's Approach
 // Time Complexity: O(N)
