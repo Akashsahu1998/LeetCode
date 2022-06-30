@@ -41,8 +41,8 @@ private:
         for(int i = 0; i < 4; i++){
             
             // creating new dir, which will help in choosing new direction
-            // mod it off by 4, bcz for every step, robot should check all 4 directions
-            // i will run for 4 times, if dir is coming as 2, then in this case also it will check for all directions that's why mod by 4
+            // mod it off by 4, bcz for every step, robot should explore all 4 directions
+            // i will run for 4 times, if dir is coming as 2, then in this case also it will explore all directions that's why mod by 4
             int newDir = (dir + i) % 4;
             
             // generating new row & new col
