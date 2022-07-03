@@ -15,4 +15,4 @@ Examples:
 and so on.
 
 
-Thank you.
+Thank you :)
