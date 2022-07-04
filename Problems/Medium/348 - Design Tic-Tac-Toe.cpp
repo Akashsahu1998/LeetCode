@@ -117,7 +117,6 @@ public:
 // 2) Similarly take 2 variable for diagonal & antidiagonal, and do the same 
 
 
-
 /**
  * Your TicTacToe object will be instantiated and called as such:
  * TicTacToe* obj = new TicTacToe(n);
