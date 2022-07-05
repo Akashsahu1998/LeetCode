@@ -4,15 +4,20 @@
 
 // Implementation
 
-// Time Complexity = O(N), Space Complexity = O(1)
+// Using Greedy Approach
+// Time Complexity = O(N)
+// Space Complexity = O(1)
+
 class Solution {
 public:
     bool canJump(vector<int>& nums) {
-        int maxDist = 0;
-        for(int itr = 0; itr < nums.size(); itr++){
-            if(maxDist < itr) return false;
-            maxDist = max(maxDist, itr + nums[itr]);
+        int maxReach = 0;
+        
+        for(int i = 0; i < nums.size(); i++){
+            if(maxReach < i) return false;
+            maxReach = max(maxReach, i+nums[i]);
         }
+        
         return true;
     }
 };
