@@ -20,6 +20,8 @@ public:
             if(nums[itr] < 0){
                 swap(maxVal, minVal);
             }
+            
+            // take max for maxValue & min for minVal, so we can maintain the max & min values
             maxVal = max(nums[itr], maxVal * nums[itr]);
             minVal = min(nums[itr], minVal * nums[itr]);
             
