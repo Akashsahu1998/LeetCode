@@ -8,7 +8,7 @@
 
 // 1st Approach
 // Naive Solution
-// Using LeftSum & rightSum array
+// Using LeftSum (Prefix Sum) & rightSum (Suffix Sum) array
 // Time Complexity = O(N)
 // Space Complexity = O(N)
 
@@ -45,7 +45,7 @@ public:
 
 // 2nd Approach
 // Efficient Solution
-// Using LeftSum array only and will use that array as a returning result array as well
+// Using LeftSum (Prefix Sum) array only and will use that array as a returning result array as well
 // Time Complexity = O(N)
 // Space Complexity = O(1), here leftSum is a part of output
 
