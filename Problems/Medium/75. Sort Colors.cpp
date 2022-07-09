@@ -52,15 +52,14 @@ public:
 // Time Complexity = O(N)
 // Space Complexity = O(1)
 
-// Check mid value for 0,1,2 
-
 class Solution {
 public:
     void sortColors(vector<int>& nums) {
         int low = 0, mid = 0, high = nums.size()-1;
         
         // traversing over the array with the help of mid, run until and unless mid become greater than high
-        // checking over the mid only
+        // checking over the mid only, whether its 0, 1 or 2
+        // running for mid <= high, means mid == high, also bcz low can have 1 and mid can have 0, so need to run once more and we can swap that as well
         while(mid <= high){
             
             // if nums[mid] is 0, then swap low and mid values and increment low & mid by 1
@@ -79,3 +78,10 @@ public:
         }
     }
 };
+
+
+// Algo steps
+// 1) Check over the mid value only for each color
+// 2) if mid is 0 then swap both low & mid
+// 3) if mid is 1 then move mid by 1
+// 4) if mid is 2 then swap with high, and decrement high by 1
