@@ -5,7 +5,7 @@
 // Implementation
 
 // Naive Approach
-// Time Complexity = O(N), Space Complexity = O(N)
+// Time Complexity = O(N*M), Space Complexity = O(N)
 class Solution {
 public:
     int numberOfBeams(vector<string>& bank) {
@@ -32,7 +32,7 @@ public:
 
 
 // Efficient Approach
-// Time Complexity = O(N), Space Complexity = O(1)
+// Time Complexity = O(N*M), Space Complexity = O(1)
 class Solution {
 public:
     int numberOfBeams(vector<string>& bank) {        
