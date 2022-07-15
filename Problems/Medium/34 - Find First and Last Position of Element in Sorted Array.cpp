@@ -39,6 +39,7 @@ public:
 
 // 2nd Approach
 // Efficient Approach
+// Using Binary Search
 // Time Complexity = O(LogN)
 // Space Complexity = O(1)
 class Solution {
@@ -70,3 +71,8 @@ public:
         return {firstPos, lastPos};
     }
 };
+
+// Algo Steps
+// 1) Use Binary Search
+// 2) Firstly try to find the left side with the help of first binary search
+// 3) After finding the left side, try to find the right side, between that leftSide and high with the help of first binary search.
