@@ -6,31 +6,43 @@
 
 // Using DFS
 // Time Compexity : O(M*N)
-// Space Compexity : O(M*N), bcz of the recursion stack stra
+// Space Compexity : O(M*N), bcz of the recursion stack strace
 
 class Solution {
-public:
-    void dfs(vector<vector<char>>& grid, int itr, int jtr){
-        if(itr < 0 || jtr < 0 || itr == grid.size() || jtr == grid[0].size() || grid[itr][jtr] == '0') return;
+private:
+    void dfs(vector<vector<char>>& grid, int i, int j){
         
-        grid[itr][jtr] = '0';
-        
-        dfs(grid, itr-1, jtr); // top
-        dfs(grid, itr, jtr-1); // left
-        dfs(grid, itr+1, jtr); // down
-        dfs(grid, itr, jtr+1); // right
+        // base case
+        if(i >= 0 && i < grid.size() && j >= 0 && j < grid[i].size() && grid[i][j] == '1'){
+            grid[i][j] = '0';
+            
+            // top
+            dfs(grid, i-1, j);
+            
+            // left
+            dfs(grid, i, j-1);
+            
+            // down
+            dfs(grid, i+1, j);
+            
+            // right
+            dfs(grid, i, j+1);
+        }
     }
     
+public:
     int numIslands(vector<vector<char>>& grid) {
         int count = 0;
-        for(int itr = 0; itr < grid.size(); itr++){
-            for(int jtr = 0; jtr < grid[itr].size(); jtr++){
-                if(grid[itr][jtr] == '1'){
-                    dfs(grid, itr, jtr);                    
+        
+        for(int i = 0; i < grid.size(); i++){
+            for(int j = 0; j < grid[i].size(); j++){
+                if(grid[i][j] == '1'){
+                    dfs(grid, i, j);
                     count++;
                 }
             }
         }
+        
         return count;
     }
 };
