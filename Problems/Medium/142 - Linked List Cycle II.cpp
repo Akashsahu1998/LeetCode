@@ -4,7 +4,7 @@
 
 // Implementation
 
-// Using two ptr, slow & fast
+// Using two ptr, Slow & Fast
 // Time Complexity = O(N)
 // Space Complexity = O(1)
 class Solution {
@@ -15,7 +15,7 @@ public:
         while(fast && fast->next){
             slow = slow->next;
             fast = fast->next->next;
-            if(slow == fast) break;
+            if(slow == fast) break; 
         }
         
         if(!fast || !fast->next) return NULL;
