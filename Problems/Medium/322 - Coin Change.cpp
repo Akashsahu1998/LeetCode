@@ -6,7 +6,7 @@
 
 // 1st Approach
 // Recursive using DP
-// Time Complexity = O(amount*coins.size())
+// Time Complexity = O(amount * coins.size())
 // Space Complexity = O(amount)
 class Solution {
 public:    
@@ -33,7 +33,7 @@ public:
 
 // 2nd Approach
 // Iterative using DP
-// Time Complexity = O(amount*coins.size())
+// Time Complexity = O(amount * coins.size())
 // Space Complexity = O(amount) 
 class Solution {
 public:
