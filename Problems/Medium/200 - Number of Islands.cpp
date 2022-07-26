@@ -5,7 +5,7 @@
 // Implementation
 
 // Using DFS
-// Time Compexity : O(M*N)
+// Time Compexity : O(M*N) 
 // Space Compexity : O(M*N), bcz of the recursion stack strace 
 
 class Solution {
