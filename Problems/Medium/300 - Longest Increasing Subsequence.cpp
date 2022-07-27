@@ -68,3 +68,8 @@ public:
     }
 };
 
+
+// Algo Steps
+// 1) In this approach our SortedArr will have a longest increasing subsequence as well, later we can print that as well if we need
+// 2) Take one size var & Iterate over the org arr, & use binary search inside that
+
