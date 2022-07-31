@@ -25,7 +25,7 @@ public:
 
 
 // 2nd Approach
-// Using 2 pointers
+// Using 2 pointers 
 // Time Complexity = O(N), Space Complexity = O(1)
 
 class Solution {
