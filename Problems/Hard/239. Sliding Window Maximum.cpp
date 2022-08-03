@@ -92,6 +92,7 @@ public:
                 dq.pop_back();
             }
             
+            // push the current element, bcz it can be a bigger element in future, bcz back elements will pop once they will go out of window
             dq.push_back(itr);
             
             // since we are iterating from 0th index that's why this if condition
