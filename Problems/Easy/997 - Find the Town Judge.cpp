@@ -22,6 +22,7 @@ public:
             peopleTrust[trust[itr][1]]++;   // People Who Don't Trust
         }
         
+        // if any person is having n-1 count, it means that everyone trusts that person
         for(int itr = 1; itr < n+1; itr++){
             if(peopleTrust[itr] == n-1) return itr;
         }
