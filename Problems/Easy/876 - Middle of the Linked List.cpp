@@ -5,8 +5,9 @@
 // Implementation
 
 
-// Slow & Fast Pointer
-// Time Complexity = O(N), Space Complexity = O(1)
+// Using Slow & Fast Pointer
+// Time Complexity = O(N)
+// Space Complexity = O(1)
 class Solution {
 public:
     ListNode* middleNode(ListNode* slow) {
