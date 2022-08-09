@@ -5,8 +5,8 @@
 // Implementation
 
 // Iterative Approach
-// Time Complexity = O(max(M, N))
-// Space Complexity = O(M + N)
+// Time Complexity = O(M+N)
+// Space Complexity = O(1), The iterative approach only allocates a few pointers, so it has a constant overall memory footprint.
 class Solution {
 public:    
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
@@ -37,8 +37,8 @@ public:
 
 // Recursive Approach
 // just for knowledge purpose
-// Time Complexity = O(max(M, N))
-// Space Complexity = O(max(M, N))
+// Time Complexity = O(M+N)
+// Space Complexity = O(M+N)
 // class Solution {
 // public:    
 //     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
