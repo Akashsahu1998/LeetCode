@@ -7,6 +7,9 @@
 // Using DFS
 // Time Complexity = O(M*N)
 // Space Complexity = O(M*N)
+
+// Link : https://leetcode.com/problems/surrounded-regions/discuss/691675/C%2B%2B-Beginner-Friendly-or-Boundary-DFS-or-inPlace
+
 class Solution {
 private:
     void dfs(vector<vector<char>> &board, int row, int col){
@@ -24,10 +27,10 @@ private:
 public:
     void solve(vector<vector<char>>& board) {
         
-        int row = board.size(), col = board[0].size();
+        int rowSize = board.size(), colSize = board[0].size();
         
         // checking for first and last row
-        for(int i = 0; i < col; i++){
+        for(int i = 0; i < colSize; i++){
             
             // first row
             if(board[0][i] == 'O'){
@@ -35,13 +38,13 @@ public:
             }
             
             // last row
-            if(board[row-1][i] == 'O'){
-                dfs(board, row-1, i);
+            if(board[rowSize-1][i] == 'O'){
+                dfs(board, rowSize-1, i);
             }
         }
         
         // checking for first and last column
-        for(int i = 0; i < row; i++){
+        for(int i = 0; i < rowSize; i++){
             
             // first row
             if(board[i][0] == 'O'){
@@ -49,14 +52,14 @@ public:
             }
             
             // last row
-            if(board[i][col-1] == 'O'){
-                dfs(board, i, col-1);
+            if(board[i][colSize-1] == 'O'){
+                dfs(board, i, colSize-1);
             }
         }
         
         // traversing over whole matrix
-        for(int i = 0; i < row; i++){
-            for(int j = 0; j < col; j++){
+        for(int i = 0; i < rowSize; i++){
+            for(int j = 0; j < colSize; j++){
                 if(board[i][j] == 'O'){
                     board[i][j] = 'X';
                 }
