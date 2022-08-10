@@ -7,7 +7,7 @@
 // 1st Approach
 // Recursive Approach
 // Time Complexity : O(N)
-// Space Complexity : O(N)
+// Space Complexity : O(N), bcz of the recursion stack trace
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {        
