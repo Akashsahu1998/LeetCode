@@ -4,7 +4,9 @@
 
 // Implementation
 
-// Time Complexity = O(max(l1, l2)), Space Complexity = O(1)
+// Using Normal Math
+// Time Complexity = O(max(M, N)), Where M is the size of l1 & N is the size of L2
+// Space Complexity = O(max(M, N))
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
