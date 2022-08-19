@@ -43,6 +43,7 @@ public:
     }
 };
 
+// Using predefined function
 // Another approach
 class Solution {
 public:    
