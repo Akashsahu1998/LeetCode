@@ -5,7 +5,9 @@
 
 // Question is same as finding the next permutation of a number
 
-// Time Complexity = O(N), Space Complexity = O(1)
+// 1st Approach
+// Time Complexity = O(N)
+// Space Complexity = O(1)
 class Solution {
 public:    
     int nextGreaterElement(int n) {        
@@ -43,24 +45,25 @@ public:
     }
 };
 
+
+// 2nd Approach
 // Using predefined function
-// Another approach
-class Solution {
-public:    
-    int nextGreaterElement(int n) {  
-        // converting number digits into string
-        string str = to_string(n);
+ class Solution {
+ public:    
+     int nextGreaterElement(int n) {  
+         // converting number digits into string
+         string str = to_string(n);
         
-        // C++ STL function used to get the next permutation of a number
-        next_permutation(begin(str), end(str));
+         // C++ STL function used to get the next permutation of a number
+         next_permutation(begin(str), end(str));
                 
-        // convert back into long(not in int bcz of the memory overflow issue)
-        long res = stol(str);
+         // convert back into long(not in int bcz of the memory overflow issue)
+         long res = stol(str);
         
-        // if its more than INT_MAX or its equal to n means no change, then return -1, otherwise res
-        return (res > INT_MAX || res <= n) ? -1 : res;
-    }
-};
+         // if its more than INT_MAX or its equal to n means no change, then return -1, otherwise res
+         return (res > INT_MAX || res <= n) ? -1 : res;
+     }
+ };
 
 
 // Test Cases
