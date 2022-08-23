@@ -20,7 +20,7 @@ public:
             cur = cur->next;
         }
         
-        // Iteratign & Checking if node is already present into map,
+        // Iterating & Checking if node is already present into map,
         // it means that is the intersection point.
         cur = headB;        
         while(cur){
