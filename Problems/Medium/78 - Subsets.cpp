@@ -31,6 +31,7 @@ public:
     }
 };
 
+
 // 2nd Approach
 // Recursive Approach
 // Time Complexity: O(2^N)
@@ -46,6 +47,8 @@ private:
         // pick
         temp.push_back(nums[index]);
         generateSubsets(nums, res, temp, index+1);
+        
+        // backtrack
         temp.pop_back();
         
         // not pick
@@ -73,8 +76,8 @@ public:
          vector<vector<int>> res;
          res.push_back({});
         
-         for(int i = 0; i < nums.size(); i++){            
-             int resSize = res.size();            
+         for(int i = 0; i < nums.size(); i++){
+             int resSize = res.size();
              for(int j = 0; j < resSize; j++){
                  vector<int> temp = res[j];
                  temp.push_back(nums[i]);
