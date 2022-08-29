@@ -21,7 +21,7 @@ private:
         if(candidates[index] <= target){
             temp.push_back(candidates[index]);
             findCombination(candidates, target - candidates[index], res, temp, index);
-            temp.pop_back();
+            temp.pop_back();    // Backtracking
         }
         findCombination(candidates, target, res, temp, index+1);
     }
