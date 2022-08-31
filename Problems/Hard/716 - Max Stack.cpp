@@ -20,7 +20,6 @@ private:
     
 public:
     MaxStack() {
-        
     }
     
     void push(int x) {
@@ -73,7 +72,6 @@ public:
 // Algo Steps
 // 1) dll (list) to store into sequence
 // 2)  Use map with vector of dll (list) to store the key and the address of the last inserted element in dll
-
 
 /**
  * Your MaxStack object will be instantiated and called as such:
