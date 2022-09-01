@@ -4,22 +4,51 @@
 
 // Implementation
 
+// 1st Approach
 // Using DFS
 // Time Complexity : (N)
-// Space Complexity : (H), where H is the height of the binary tree
+// Space Complexity : (H), where H is the height of the binary tree, if all elements are on left/right side, then H will become equal to N
+
 class Solution {
-public:
-    int findDiameter(TreeNode* root, int &res){
-        if(root == NULL) return 0;
-        int lh = findDiameter(root->left, res);
-        int rh = findDiameter(root->right, res);
-        res = max(res, lh+rh+1);
-        return 1 + max(lh, rh);
+    int dfs(TreeNode* root, int &maxAns){
+        if(!root) return 0;
+        int leftHeight = dfs(root->left, maxAns);
+        int rightHeight = dfs(root->right, maxAns);
+        maxAns = max(maxAns, leftHeight+rightHeight);
+        
+        // taking max, bcz we wan't max left/right height, not the total number of nodes.
+        return 1 + max(leftHeight, rightHeight);
     }
-    
+        
+public:
     int diameterOfBinaryTree(TreeNode* root) {
-        int res = 0;
-        findDiameter(root, res);
-        return res-1;
+        int maxAns = 0;
+        dfs(root, maxAns);
+        return maxAns;
     }
 };
+
+
+// 2nd Approach
+// Using DFS
+// Time Complexity : (N)
+// Space Complexity : (H), where H is the height of the binary tree, if all elements are on left/right side, then H will become equal to N
+
+ class Solution {
+     int dfs(TreeNode* root, int &maxAns){
+         if(!root) return 0;
+         int leftHeight = dfs(root->left, maxAns);
+         int rightHeight = dfs(root->right, maxAns);
+         maxAns = max(maxAns, 1+leftHeight+rightHeight);
+        
+         // taking max, bcz we wan't max left/right height, not the total number of nodes.
+         return 1 + max(leftHeight, rightHeight);
+     }
+        
+ public:
+     int diameterOfBinaryTree(TreeNode* root) {
+         int maxAns = 0;
+         dfs(root, maxAns);
+         return maxAns-1;
+     }
+ };
