@@ -62,3 +62,8 @@ public:
         return res;
     }
 };
+
+
+
+// Algo Steps
+// 1) Use sorting & after that just check adjacent elements, according to small & big
