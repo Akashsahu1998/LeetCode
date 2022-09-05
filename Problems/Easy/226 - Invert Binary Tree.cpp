@@ -4,7 +4,7 @@
 
 // Implementation
 
-// Recursive Approach
+// Recursive/DFS Approach
 // Using DFS
 // Time Complexity : O(N)
 // Space Complexity : O(H), Where H is the height of the Binary Tree
