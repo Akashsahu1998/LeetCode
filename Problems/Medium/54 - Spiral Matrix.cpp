@@ -4,7 +4,7 @@
 
 // Implementation
 
-// Using Trick of 4 variables
+// Using Trick of 4 variables, top, down, left, right
 // https://www.youtube.com/watch?v=1ZGJzvkcLsA&t=184s
 // Time Complexity = O(N)
 // Space Complexity = O(1)
