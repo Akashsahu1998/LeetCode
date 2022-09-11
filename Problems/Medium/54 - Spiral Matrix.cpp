@@ -19,6 +19,8 @@ public:
         // both while condition we can use
         while(res.size() < rows*cols){
         // while(top <= down && left <= right){
+        
+        	// going top left
             if(direction == 0){
                 for(int i = left; i <= right; i++){
                     res.push_back(matrix[top][i]);
@@ -26,21 +28,21 @@ public:
                 
                 top++;
             }            
-            else if(direction == 1){
+            else if(direction == 1){ // going down from right side
                 for(int i = top; i <= down; i++){
                     res.push_back(matrix[i][right]);
                 }
                 
                 right--;
             }
-            else if(direction == 2){
+            else if(direction == 2){ // going left from right side
                 for(int i = right; i >= left; i--){
                     res.push_back(matrix[down][i]);
                 }
                 
                 down--;
             }
-            else if(direction == 3){
+            else if(direction == 3){ // going top from left side
                 for(int i = down; i >= top; i--){
                     res.push_back(matrix[i][left]);
                 }
