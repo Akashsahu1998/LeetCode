@@ -41,7 +41,7 @@ public:
         // we will be having n open & close brackets
         int open = n, close = n;
         
-        // will store the combination into this
+        // we will store the combination into this
         string output = "";
         
         // helper function to solve the problem
