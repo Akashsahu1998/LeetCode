@@ -9,6 +9,7 @@
 
 class Solution {
 private:
+	// check whether its a valid cell or not
     bool isValidNeighbour(int newRow, int newCol, vector<vector<int>>& board){
         return (newRow >= 0 && newCol >= 0 && newRow < board.size() && newCol < board[0].size());
     }
