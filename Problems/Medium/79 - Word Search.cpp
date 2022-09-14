@@ -5,8 +5,8 @@
 // Implementation
 
 // Using DFS + Backtracking
-// Time Complexity = O(ROW*COL)
-// Space Complexity = O(ROW*COL)
+// Time Complexity = O(ROW * COL * 3)
+// Space Complexity = O(L), where L is the length of the word to be matched
 class Solution {
 private:    
     bool dfs(vector<vector<char>>& board, string word, int itr, int jtr, int index){
