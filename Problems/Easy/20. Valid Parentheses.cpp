@@ -5,7 +5,8 @@
 // Implementation
 
 // Using Stack
-// Time Complexity = O(N), Space Complexity = O(N)
+// Time Complexity = O(N)
+// Space Complexity = O(N)
 class Solution {
 public:
     bool isValid(string str) {
