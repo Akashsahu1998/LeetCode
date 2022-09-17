@@ -5,7 +5,7 @@
 // Implementation
 
 // Using DFS + Backtracking
-// Time Complexity = O(ROW * COL * L), where L is the length of the word to be matched
+// Time Complexity = O(ROW * COL * 3^L), where L is the length of the word to be matched
 // Space Complexity = O(L), where L is the length of the word to be matched
 class Solution {
 private:
