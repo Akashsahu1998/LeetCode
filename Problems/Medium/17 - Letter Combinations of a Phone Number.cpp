@@ -6,6 +6,8 @@
 
 // 1st Approach
 // Using DFS, Hashing & Backtracking
+// Time Complexity : O(4^N * N)
+// Space Complexity : O(4^N * N)
 class Solution {
 public:
     void makeCombinations(string digits, int index, string mapping[], string output, vector<string> &ans){
