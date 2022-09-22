@@ -51,6 +51,8 @@ public:
 
 // 2nd Approach
 // Using BFS & Hashing
+// Time Complexity : O(4^N * N)
+// Space Complexity : O(4^N * N)
 class Solution {
 public:
     vector<string> letterCombinations(string digits) {
