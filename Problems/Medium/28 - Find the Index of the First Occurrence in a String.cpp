@@ -15,6 +15,7 @@ public:
         // travelling all possible points, it will iterate over each point untill we find the string
         for(int itr = 0 ; itr < haystack.size(); itr++){
             
+            // taking two pointers
             // using i for iterating over haystack to match the value with needle
             // using j for iterating over needle to match the value with haystack
             int i = itr, j = 0;
