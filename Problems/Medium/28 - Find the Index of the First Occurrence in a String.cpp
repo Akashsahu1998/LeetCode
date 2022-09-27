@@ -39,3 +39,6 @@ public:
 // "mississippi"
 // "issip"
 // bcz of this example, we are travelling all possible points
+
+// algo steps
+// 1) use two pointers, and travel all possible index and try to match the string with needle
