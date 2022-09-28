@@ -4,7 +4,9 @@
 
 // Implementation
 
-// Time Complexity = O(N^2), Space Complexity = O(H) where H is the height of the Binary Tree
+// Using DFS
+// Time Complexity = O(N^2)
+// Space Complexity = O(H) where H is the height of the Binary Tree
 
 class Solution {
 public:
