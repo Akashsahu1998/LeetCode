@@ -92,3 +92,9 @@ public:
         return res;
     }
 };
+
+
+
+// Algo Steps
+// 1) Sort all the strings and put into the map as a key(sorted string) & value(org str and also take vector as a value)
+// 2) and iterate over the map, and put vector which is in value into the res(2-d array)
