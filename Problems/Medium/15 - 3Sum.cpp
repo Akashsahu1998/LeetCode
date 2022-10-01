@@ -63,3 +63,8 @@ public:
         return res;
     }
 };
+
+
+// Algo Step's
+// 1) Sort the array
+// 2) Use two pointers
