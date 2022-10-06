@@ -4,7 +4,7 @@
 
 // Implementation
 
-// Recursive Approach 
+// Recursive/DFS Approach 
 // Time Complexity = O(N)
 // Space Complexity = O(H) where H is the height of the Binary Tree
 
@@ -25,7 +25,7 @@ bool isSymmetric(TreeNode* root) {
 }
 
 
-// BFS Approach
+// Iterative/BFS Approach
 // Time Complexity = O(N)
 // Space Complexity = O(W), where W is the width of the Binary Tree
 bool checkIsSymmetric(TreeNode* r1, TreeNode* r2) {
