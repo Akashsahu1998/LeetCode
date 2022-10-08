@@ -32,3 +32,9 @@ public:
         return res;
     }
 };
+
+
+
+// Algo Steps
+// 1) Simple iterate over both the list and add it, and also take care of the carry, and after both list get end, then also take care of carry,
+// it will be a edge case, for ex l1 = 99, l2 = 99
