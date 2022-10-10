@@ -6,7 +6,7 @@
 
 // 1st Approach
 // Idea: Convert into string, then just use two pointer's technique
-// Time Complexity: O(N)
+// Time Complexity: O(N/2) => O(N)
 // Space Complexity: O(1), if we are not considering string into space
 class Solution {
 public:
