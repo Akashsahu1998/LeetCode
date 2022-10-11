@@ -5,6 +5,7 @@
 // Implementation
 
 // Using Binary Search
+// Use cut1 & cut2 approach
 // Time Complexity : O(log(min(n1, n2)))
 // Space Complexity : O(1)
 class Solution {
