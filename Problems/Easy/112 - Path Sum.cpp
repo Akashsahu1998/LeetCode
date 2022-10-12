@@ -45,8 +45,13 @@ public:
 class Solution {
 public:
     bool hasPathSum(TreeNode* root, int targetSum) {
-        if (root == NULL) return false;
-        if (root->val == targetSum && !root->left && !root->right) return true;
+        // if root is null, return false
+        if(!root) return false;
+        
+        // if we found target sum && also the node is leaf node, so return true
+        if(root->val == targetSum && !root->left && !root->right) return true;
+        
+        // if we find targetsum any side on left or right, return true
         return hasPathSum(root->left, targetSum - root->val) || hasPathSum(root->right, targetSum - root->val);
     }
 };
