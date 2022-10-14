@@ -35,7 +35,7 @@ private:
         int right = findParentAndHeight(root->right, parent, value, height+1);
         // if right is 0 it means value didn't found on right side
         if(right)
-            return right;
+            return right; 
         
         // in last if we didn't found value on both left & right side, return 0
         return 0;
