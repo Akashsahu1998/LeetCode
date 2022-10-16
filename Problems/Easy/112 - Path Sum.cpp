@@ -25,7 +25,8 @@ public:
 
 
 // 2nd Approach without using the any helper method
-// Time Complexity = O(N), Space Complexity = O(H) where H is the height of the Binary Tree
+// Time Complexity = O(N)
+//  Space Complexity = O(H) where H is the height of the Binary Tree
 class Solution {
 public:
     bool hasPathSum(TreeNode* root, int targetSum) {        
