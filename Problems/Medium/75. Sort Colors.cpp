@@ -80,6 +80,7 @@ public:
 };
 
 
+
 // Algo steps
 // 1) Check over the mid value only for each color
 // 2) if mid is 0 then swap both low & mid
