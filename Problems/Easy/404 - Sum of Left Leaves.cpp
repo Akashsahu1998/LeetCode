@@ -4,7 +4,7 @@
 
 // Implementation
 
-// 1st Approach Using DFS
+// 1st Approach, Using DFS
 // Time Complexity = O(N)
 // Space Complexity = O(N)
 
@@ -39,7 +39,7 @@ public:
 };
 
 
-// 2nd Approach Using Stack
+// 2nd Approach, Using Stack
 // Time Complexity = O(N)
 // Space Complexity = O(N)
 
