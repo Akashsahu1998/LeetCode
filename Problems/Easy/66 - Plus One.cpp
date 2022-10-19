@@ -52,6 +52,8 @@ public:
                 return digits;
             }
         }
+        
+        // If all values in array are 9
         vector<int> res(digits.size()+1);
         res[0] = 1;
         return res;
