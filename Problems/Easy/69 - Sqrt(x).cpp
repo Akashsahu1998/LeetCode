@@ -9,35 +9,36 @@
 // Using Sqrt function
 // Time Complexity = O(sqrt(n))
 // Space Complexity = O(1)
-// class Solution {
-// public:
-//     int mySqrt(int x) {
-//         return sqrt(x);
-//     }
-// };
+ class Solution {
+ public:
+     int mySqrt(int x) {
+         return sqrt(x);
+     }
+ };
 
 
 // 2nd Approach
+// Using iterating(linear) approach
 // Time Complexity = O(sqrt(n))
 // Space Complexity = O(1)
-// class Solution {
-// public:
-//     int mySqrt(int x) {
-//         int res = 0;
-//         for(long long int itr = 1; itr <= x; itr++){
-//             long long int val = itr*itr;
-//             if(val == x){
-//                 res = itr;
-//                 break;
-//             }
-//             else if(val > x){
-//                 res = itr-1;
-//                 break;
-//             }
-//         }
-//         return res;
-//     }
-// };
+ class Solution {
+ public:
+     int mySqrt(int x) {
+         int res = 0;
+         for(long long int itr = 1; itr <= x; itr++){
+             long long int val = itr*itr;
+             if(val == x){
+                 res = itr;
+                 break;
+             }
+             else if(val > x){
+                 res = itr-1;
+                 break;
+             }
+         }
+         return res;
+     }
+ };
 
 
 // 3rd Approach
