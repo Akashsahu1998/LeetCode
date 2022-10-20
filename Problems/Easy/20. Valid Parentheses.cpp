@@ -14,6 +14,7 @@ public:
         int itr = 0;
         
         while(itr < str.size()){
+        	// whenever stack is empty push the value into
             if(s.empty()){
                 s.push(str[itr]);
             }
