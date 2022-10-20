@@ -36,3 +36,8 @@ public:
         return ans;
     }
 };
+
+
+// Algo Steps
+// 1) Sort the vector
+// 2) Compare char's of first string with last string
