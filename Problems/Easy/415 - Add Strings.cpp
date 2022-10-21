@@ -1,0 +1,36 @@
+
+// Question) 415. Add Strings
+
+
+// Implementation
+
+// Using Normal Maths
+// Time Complexity = O(N)
+// Space Complexity = O(1), not assuming ans string, bcz thats a part of output
+
+class Solution {
+public:
+    string addStrings(string num1, string num2) {
+        
+        string ans = "";        
+        int carry = 0, i = num1.size()-1, j = num2.size()-1;
+        
+        while(i >= 0 || j >= 0){
+            int val1 = (i >= 0) ? (num1[i] - 48) : 0;
+            int val2 = (j >= 0) ? (num2[j] - 48): 0;
+            
+            int sum = val1 + val2 + carry;
+            carry = (sum > 9) ? 1 : 0;
+            ans = (sum > 9) ? (to_string(sum%10) + ans) : (to_string(sum) + ans);
+            
+            i--;
+            j--;
+        }
+        
+        if(carry){
+            ans = to_string(carry) + ans;
+        }
+        
+        return ans;
+    }
+};
