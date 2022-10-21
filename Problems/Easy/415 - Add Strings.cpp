@@ -5,7 +5,7 @@
 // Implementation
 
 // Using Normal Maths
-// Time Complexity = O(N)
+// Time Complexity = O(Max(N1, N2)), where N1 = num1.size(), N2 = num2.size()
 // Space Complexity = O(1), not assuming ans string, bcz thats a part of output
 
 class Solution {
