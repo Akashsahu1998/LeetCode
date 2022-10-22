@@ -4,6 +4,8 @@
 
 // Implementation
 
+// LC Solution : https://leetcode.com/problems/add-two-numbers-ii/discuss/2733150/3-Approaches-2-Follow-Up-Comments-Added-Without-reversing-input-C%2B%2B
+
 // Approach - 1
 // Reverse the Input
 // Time Complexity = O(N1 + N2), where N1 = l1.size(), N2 = l2.size()
