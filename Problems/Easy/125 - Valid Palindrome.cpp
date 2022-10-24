@@ -1,6 +1,7 @@
 
 // Question) 125. Valid Palindrome
 
+// LC Solution : https://leetcode.com/problems/valid-palindrome/discuss/2738575/2-approaches-naive-to-efficient-2-pointers-c 
 
 // Implementation
 
