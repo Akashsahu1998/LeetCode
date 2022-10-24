@@ -28,6 +28,7 @@ public:
             // the first row element will always be 1
             curRowRes.push_back(1);
             
+            // creating the new values using last values and storing into new result
             for(int i = 0, j = 1; j < cur.size(); i++, j++){
                 curRowRes.push_back(cur[i] + cur[j]);
             }
