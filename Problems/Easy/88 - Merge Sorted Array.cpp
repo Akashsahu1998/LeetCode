@@ -81,13 +81,14 @@ public:
 
 // 3rd Approach
 // Most Efficient Approach
-// Time Complexity : O(N), where N = length of the nums1 vector
+// Using 3 Pointers, start from the end
+// Time Complexity : O(N + M), where N = length of the nums1 and M = length of num2
 // Space Complexity : O(1)
 class Solution {
 public:
     void merge(vector<int>& nums1, int n, vector<int>& nums2, int m) {
         
-        // take 3 pointers, itr will start from nums1 end, and jtr will start from nums2 end, and ktr will start from nums1 end
+        // take 3 pointers, itr will start from n, and jtr will start from nums2 end, and ktr will start from nums1 end
         int itr = n-1, jtr = m-1, ktr = m + n - 1;
         
         // run untill & unless jtr become less than 0
