@@ -4,7 +4,7 @@
 
 // Implementation
 
-// Using DP
+// Using DP, Using pre calculated rows to calculate next row
 // Time Complexity = O(numRows ^ 2)
 // Space Complexity = O(1)
 
