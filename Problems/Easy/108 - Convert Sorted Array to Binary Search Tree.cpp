@@ -6,7 +6,7 @@
 
 // Using Divide & Conquer strategy
 // Time Complexity : O(N)
-// Space Complexity : O(H), where H is the height of the BST
+// Space Complexity : Average : O(logN), but in Worst Case : O(N), tree can be skewed tree as well 
 
 class Solution {
 private:
