@@ -34,7 +34,8 @@ public:
 
 
 // 2nd Approach
-// Efficient Approach, only 1 iteration
+// Efficient Approach
+// Using 2 Pointers, only 1 iteration
 // Time Complexity : O(N/2) => O(N)
 // Space Complexity : O(1)
 
@@ -45,16 +46,22 @@ public:
         int left = 0, right = s.size()-1;
         while(left < right){
             
-            // check if the char is alphabet
+            // if char is alphabet, return false if they are not equal
             if(isalpha(s[left]) && isalpha(s[right])){
                 if(tolower(s[left]) != tolower(s[right])) return false;
             }
+            
+            // if char is digit, return false if they are not equal
             else if(isdigit(s[left]) && isdigit(s[right])){
                 if(s[left] != s[right]) return false;
             }
+            
+            // if char is alphabet or digit, it means they are equal, return false
             else if((isalpha(s[left]) || isalpha(s[right])) && (isdigit(s[left]) || isdigit(s[right]))){
                 return false;
             }
+            
+            // if char is not alphanumeric then increase/decrease left/right variables
             else {
                 if(isalpha(s[left]) || isdigit(s[left])){
                     right--;
