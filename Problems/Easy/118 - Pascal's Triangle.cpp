@@ -1,6 +1,7 @@
 
 // Question) 118. Pascal's Triangle
 
+// LC Solution : https://leetcode.com/problems/pascals-triangle/discuss/2738435/dp-simple-approach-comments-added-c
 
 // Implementation
 
