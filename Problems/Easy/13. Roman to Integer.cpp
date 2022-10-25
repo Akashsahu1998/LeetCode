@@ -1,11 +1,12 @@
 
 // Question) 13. Roman to Integer
 
+// LC Solution : https://leetcode.com/problems/roman-to-integer/discuss/2743700/Straight-forward-solution-C%2B%2B
 
 // Implementation
 
 // Left-to-Right Pass
-// Time Complexity: O(1)
+// Time Complexity: O(1), bcz the given input roman number will be in the range of 1 - 3999
 // Space Complexity: O(1)
 
 class Solution {
@@ -32,9 +33,9 @@ public
                 nextValue = getValue(nextSymbol);
             }
             
-             For this case = Ex = CM 
-             M - C = 1000 - 100 = 900
-             increasing i by 2, bcz we are using 2 indexes here
+            // For this case => Ex = CM 
+            // M - C = 1000 - 100 => 900
+            // increasing i by 2, bcz we are using 2 indexes here
             if(currentValue  nextValue){
                 sum += (nextValue - currentValue);
                 i += 2;
