@@ -29,6 +29,6 @@ public:
 
 
 // Algo steps
-// 1) Use cnt & val var
-// 2) whenever cnt is 0, then we got new ele
-// 3) if val == curVariable, then increase the cnt, otherwise decrease it
+// 1) Use cntOfMajorityElement & majorityElement var
+// 2) whenever cntOfMajorityElement is 0, then we got new ele
+// 3) if majorityElement == curVariable, then increase the cntOfMajorityElement, otherwise decrease it
