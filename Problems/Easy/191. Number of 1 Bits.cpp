@@ -18,6 +18,8 @@ public:
             // & means (4 & 3) = (100 & 011) => (000)
             // we will run the loop till n become 0
             n = (n & n-1);
+            
+            // will be counting, until n became 0
             cnt++;
         }
         
