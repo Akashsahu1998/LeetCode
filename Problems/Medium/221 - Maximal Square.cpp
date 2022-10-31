@@ -18,17 +18,22 @@ public:
         
         int rows = matrix.size(), cols = matrix[0].size(), largestSquare = 0;
         
-        // taking +1 more size, bcz to avoid corner cases
-        vector<vector<int>> dp(rows+1, vector<int>(cols+1, 0));
+           Intializing DP
+        vector<vector<int>> dp(rows, vector<int>(cols, 0));
         
-        for(int i = 1; i <= rows; i++){
-            for(int j = 1; j <= cols; j++){
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < cols; j++){
                 
                 // its current matrix is cell is not 1, then don't touch it, let it be 0
-                if(matrix[i-1][j-1] == '1'){
+                if(matrix[i][j] == '1'){
                     // here we have to check three places to calculate the square
                     // up, left-up, left
-                    dp[i][j] = 1 + min(dp[i-1][j], min(dp[i-1][j-1], dp[i][j-1]));
+                    
+                    int up = (i-1 >= 0) ? dp[i-1][j] : 0;
+                    int leftUp = (i-1 >= 0 && j-1 >= 0) ? dp[i-1][j-1] : 0;
+                    int left = (j-1 >= 0) ? dp[i][j-1] : 0;
+                    
+                    dp[i][j] = 1 + min(up, min(leftUp, left));
                     
                     // keep track of maximal square
                     largestSquare = max(largestSquare, dp[i][j]);
@@ -53,23 +58,26 @@ public:
         int rows = matrix.size(), cols = matrix[0].size(), largestSquare = 0;
         
         // taking +1 more size, bcz to avoid corner cases
-        // will take care of previous row        
-        vector<int> prev(cols+1, 0);
+        vector<int> prev(cols, 0);
         
-        for(int i = 1; i <= rows; i++){
+        for(int i = 0; i < rows; i++){
             
             // will take care of current row
-            // taking +1 more size, bcz to avoid corner cases
-            vector<int> curr(cols+1, 0);
+            vector<int> curr(cols, 0);
             
-            for(int j = 1; j <= cols; j++){
+            for(int j = 0; j < cols; j++){
                 
                 // its current matrix is cell is not 1, then don't touch it, let it be 0
-                if(matrix[i-1][j-1] == '1'){
+                if(matrix[i][j] == '1'){
                     // here we have to check three places to calculate the square
                     // up, left-up, left
                     // we can get up from prev, left-up from prev, and left from cur
-                    curr[j] = 1 + min(prev[j], min(prev[j-1], curr[j-1]));
+                    
+                    int up = prev[j];
+                    int leftUp = (j-1 >= 0) ? prev[j-1] : 0;
+                    int left = (j-1 >= 0) ? curr[j-1] : 0;
+                    
+                    curr[j] = 1 + min(up, min(leftUp, left));
                     
                     // keep track of maximal square
                     largestSquare = max(largestSquare, curr[j]);
