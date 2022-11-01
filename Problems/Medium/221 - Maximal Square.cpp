@@ -91,3 +91,7 @@ public:
         return largestSquare * largestSquare;
     }
 };
+
+
+// Algo Steps
+// 1) On each cell, check 3 places, which can be responsible for square
