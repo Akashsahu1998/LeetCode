@@ -4,8 +4,12 @@
 
 // Implementation
 
-// Time Complexity = O(N), Space Complexity = O(1)
-// We are visiting each petrol pump exactly once, therefore the time complexity is O(N)
+// 1st Approach
+// Naive Approach
+// Time Complexity = O(N^2)
+// Space Complexity = O(1)
+// We are iterating over the each station, and calculating the cost at each station, and from each station we are trying to get the possible solution by visiting all the elements, therefore TC is O(N^2)
+
 class Solution {
 public:
     int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
@@ -33,9 +37,12 @@ public:
 };
 
 
+
 // 2nd Approach
-// Most Efficient Approach
-// Time Complexity = O(N), Space Complexity = O(1)
+// Efficient Approach
+// Time Complexity = O(N), // We are visiting each petrol pump exactly once, therefore the time complexity is O(n)
+// Space Complexity = O(1)
+
 class Solution {
 public:
     int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {        
@@ -53,3 +60,7 @@ public:
         return (total + backupTotal) >= 0 ? start : -1 ;
     }
 };
+
+
+// Algo Steps:
+// 1) It's impossible to perform the road trip if sum(gas) < sum(cost). In this situation the answer is -1.
