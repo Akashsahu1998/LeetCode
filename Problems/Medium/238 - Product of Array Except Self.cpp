@@ -45,7 +45,7 @@ public:
 
 // 2nd Approach
 // Efficient Solution
-// Using LeftSum (Prefix Sum) array only and will use that array as a returning result array as well
+// Using LeftSum array only and will use that array as a returning result array as well
 // Time Complexity = O(N)
 // Space Complexity = O(1), here leftSum is a part of output
 
@@ -68,13 +68,7 @@ public:
         
         // multiply the value of leftSum array & rightSum variable
         for(int i = n-1; i >= 0; i--){
-            if(i == n-1){
-                leftSum[i] = rightSum * leftSum[i];
-            }
-            else{
-                leftSum[i] = rightSum * leftSum[i];
-            }
-            
+            leftSum[i] = rightSum * leftSum[i];
             rightSum = rightSum * nums[i];
         }
         
