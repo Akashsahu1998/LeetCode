@@ -4,6 +4,10 @@
 
 // Implementation
 
+// 1st Approach
+// Linear Search
+
+// 2nd Approach
 // Using Binary Search
 // Time Complexity = O(LogN)
 // Space Complexity = O(1)
