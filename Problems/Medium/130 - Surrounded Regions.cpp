@@ -74,6 +74,6 @@ public:
 
 
 // Algo Steps
-// 1) Firstly check boundary (first row, last row, first col & last col) if they are having O then explore all the 4 directions if they are also having O then do the same, sorround it again and convert them into #.
+// 1) Firstly check boundary (first row, last row, first col & last col) if they are having O then explore all the 4 directions if they are also having O then do the same, check it again and convert them into #.
 // 2) # means we can't convert them into X.
-// 3) the values which will remains O those we can easily convert them into X, because they are not connected with any border which are having O.
+// 3) Values which will remains O those we can easily convert them into X, because they are not connected with any border which are having O.
