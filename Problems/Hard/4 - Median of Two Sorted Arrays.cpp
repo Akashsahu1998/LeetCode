@@ -43,3 +43,9 @@ public:
         return 0.0;
     }
 };
+
+
+
+// Algo Steps
+// 1) Think of Binary Search
+// 2) Think of cut1, cut2 approach
