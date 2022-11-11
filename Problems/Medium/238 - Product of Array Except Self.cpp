@@ -9,71 +9,69 @@
 
 // 1st Approach
 // Naive Solution
-// Using LeftSum (Prefix Sum) & rightSum (Suffix Sum) array
+// Using leftProduct (Prefix Sum/Product) & rightProduct (Suffix Sum/Product) array
 // Time Complexity = O(N)
-// Space Complexity = O(N)
+// Space Complexity = O(N), here we are using extra space as rightProduct, we can assume leftProduct as a part of output
 
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
         
         int n = nums.size();
-        vector<int> leftSum(n), rightSum(n);
+        vector<int> leftProduct(n), rightProduct(n);
         
-        // Generating the leftSum & rightSum array
+        // Generating the leftProduct & rightProduct array
         for(int i = 0, j = n-1; i < n; i++, j--){
             if(i == 0 || j == n-1){
-                leftSum[i] = 1;
-                rightSum[j] = 1;
+                leftProduct[i] = 1;
+                rightProduct[j] = 1;
             }
             else{
-                leftSum[i] = leftSum[i-1] * nums[i-1];
-                rightSum[j] = rightSum[j+1] * nums[j+1];
+                leftProduct[i] = leftProduct[i-1] * nums[i-1];
+                rightProduct[j] = rightProduct[j+1] * nums[j+1];
             }
         }
         
-        // multiply the value of leftSum & rightSum
+        // multiply the value of leftProduct & rightProduct
         for(int i = 0; i < n; i++){
-            leftSum[i] = leftSum[i] * rightSum[i];
+            leftProduct[i] = leftProduct[i] * rightProduct[i];
         }
         
-        // returning leftSum as a result
-        return leftSum;
+        // returning leftProduct as a result
+        return leftProduct;
     }
 };
 
 
-
 // 2nd Approach
 // Efficient Solution
-// Using LeftSum array only and will use that array as a returning result array as well
 // Time Complexity = O(N)
-// Space Complexity = O(1), here leftSum is a part of output
+// Space Complexity = O(1), / Using leftProduct array only and will use that array as a returning result array as well
 
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
         
-        int n = nums.size(), rightSum = 1;
-        vector<int> leftSum(n);
+        int n = nums.size(), rightProduct = 1;
+        vector<int> leftProduct(n);
         
-        // Generating the leftSum array
+        // Generating the leftProduct array
         for(int i = 0; i < n; i++){
             if(i == 0){
-                leftSum[i] = 1;
+                leftProduct[i] = 1;
             }
             else{
-                leftSum[i] = leftSum[i-1] * nums[i-1];
+                leftProduct[i] = leftProduct[i-1] * nums[i-1];
             }
         }
         
-        // multiply the value of leftSum array & rightSum variable
+        // multiply the value of leftSum array & rightProduct variable
         for(int i = n-1; i >= 0; i--){
-            leftSum[i] = rightSum * leftSum[i];
-            rightSum = rightSum * nums[i];
+            leftProduct[i] = rightProduct * leftProduct[i];
+            rightProduct = rightProduct * nums[i];
         }
         
         // returning leftSum as a result
-        return leftSum;
+        return leftProduct;
     }
 };
