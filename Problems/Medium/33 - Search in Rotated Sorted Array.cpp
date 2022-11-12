@@ -34,3 +34,8 @@ public:
         return -1;
     }
 };
+
+
+// Algo Steps
+// 1) Use Binary Search
+// 2) check nums[low] <= nums[mid], inside that check target value with low and mid, same do if nums[low] not smaller than nums[mid] go into else and check target inside it
