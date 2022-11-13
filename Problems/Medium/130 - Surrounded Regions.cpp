@@ -46,12 +46,12 @@ public:
         // checking for first and last column
         for(int i = 0; i < rowSize; i++){
             
-            // first row
+            // first column
             if(board[i][0] == 'O'){
                 dfs(board, i, 0);
             }
             
-            // last row
+            // last column
             if(board[i][colSize-1] == 'O'){
                 dfs(board, i, colSize-1);
             }
