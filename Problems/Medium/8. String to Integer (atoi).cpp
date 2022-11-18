@@ -37,7 +37,8 @@ public:
             num = num * 10 + (s[itr++] - '0');
         }
         
-        // if sign is -1 then negative number will return, if its 1 then positive number will return
+        // if sign is -1 then negative number will return
+		// if its 1 then positive number will return
         return sign * num;
     }
 };
