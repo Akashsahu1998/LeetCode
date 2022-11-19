@@ -5,9 +5,10 @@
 // Implementation
 
 // 1st Approach
+// Naive Approach
 // Using Dynamic Programming
 // Time Complexity = O(N^2)
-// Space Complexity = O(N^2) 
+// Space Complexity = O(N^2)
 class Solution {
 public:
     string longestPalindrome(string s) {
@@ -56,6 +57,7 @@ public:
 
 
 // 2nd Approach
+// Best Approach
 // Time Complexity = O(N^2)
 // Space Complexity = O(1)
 class Solution {
