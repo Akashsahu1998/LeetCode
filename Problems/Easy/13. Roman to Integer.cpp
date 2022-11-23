@@ -6,7 +6,7 @@
 // Implementation
 
 
-// Left-to-Right Pass
+// Left-to-Right Pass Aproach
 // Time Complexity: O(1), bcz the given input roman number will be in the range of (1 - 3999)
 // Space Complexity: O(1)
 
