@@ -4,10 +4,11 @@
 
 // Implementation
 
+// https://www.youtube.com/watch?v=rJ9NFK9s_mI
 // Using Unordered Set
 // Time Complexity = O(N^2)
 // Space Complexity = O(N^2)
-class Solution {
+class Solution{
 public:
     bool isValidSudoku(vector<vector<char>>& board) {
         
@@ -20,25 +21,28 @@ public:
         for(int row = 0; row < 9; row++){
             for(int col = 0; col < 9; col++){
                 
-                // if the current index value is dot(.) then we don't need to do anything 
+                // if the current index value if dot(.) then we don't need to do anything 
                 if(board[row][col] != '.'){
                     
-                    // if any particular (row index with value) or (col index with value) or (box index with value) already visited it means that is not a valid sudoku, so we will directly return false
-                    if(visited.find("Row" + to_string(row) + to_string(board[row][col])) != visited.end()
-                       || visited.find("Col" + to_string(col) + to_string(board[row][col])) != visited.end()
-                       || visited.find("Box" + to_string(((row/3) * 3 + (col/3))) + to_string(board[row][col])) != visited.end()){
-                        return false;
-                    }
+                    string rowValue = "row" + to_string(row) + board[row][col];
+                    string colValue = "col" + to_string(col) + board[row][col];
+                    string boxValue = "box" + to_string(((row/3)*3 + (col/3))) + board[row][col];
                     
-                    // if not visited yet, then add (row index & value) and (col index & value) and (box index & value) into the visited unordered set
-                    visited.insert("Row" + to_string(row) + to_string(board[row][col]));
-                    visited.insert("Col" + to_string(col) + to_string(board[row][col]));
-                    visited.insert("Box" + to_string((row/3)*3 + (col/3)) + to_string(board[row][col]));
+                    // if any particular (row index with value) or (col index with value) or (box index with value) already visited it means that is not a valid sudoku, so directly return false
+                    if(visited.find(rowValue) != visited.end() 
+                        || visited.find(colValue) != visited.end()
+                        || visited.find(boxValue) != visited.end()){
+                    return false;
+                }
+                    
+                    // if not visited yet, then add rowValue, colValue and boxValue into the visited unordered set
+                    visited.insert(rowValue);
+                    visited.insert(colValue);
+                    visited.insert(boxValue);
                 }
             }
         }
         
-        // valid sudoku
         return true;
     }
 };
